@@ -17,3 +17,8 @@
   @include button.container-fill-color(rgb(202, 224, 255));
   @include button.ink-color(rgb(0, 0, 0));
 }
+
+.foo-button3 {
+  @include button.container-fill-color(rgb(202, 224, 255));
+  @include button.ink-color(rgb(0, 0, 0));
+}
