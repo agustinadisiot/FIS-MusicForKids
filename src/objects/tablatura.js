@@ -1,43 +1,49 @@
+const { Exceptions } = require("../common/exceptions");
+const { Definiciones } = require("../common/definiciones");
+
 class Tablatura {
   constructor() {
     this.cantActual = 0;
-    this.cuerda1 = [];
-    this.cuerda2 = [];
-    this.cuerda3 = [];
-    this.cuerda4 = [];
-    this.cuerda5 = [];
-    this.cuerda6 = [];
+    this.cuerdas = ["", "", "", "", "", ""];
   }
 
   agregar(cuerdaNueva) {
-    if (validarCuerda(cuerdaNueva)) {
-
-    }
-
-
+    this.validarCuerda(cuerdaNueva);
+    this.cuerdas[cantActual] = cuerdaNueva;
+    cantActual++;
   }
 
+  validarTablatura() {
+    if (this.cantActual < 6) {
+      return () => {
+        throw new Error(Exceptions.UNFINISHED_OBJECT);
+      };
+    }
+  }
 
   validarCuerda(cuerda) {
+    if (typeof cuerda != "string") {
+      return () => {
+        throw new Error(Exceptions.UNEXPECTED_VALUE);
+      };
+    }
 
-    // try {
-    //   if(typeof cuerda != "object"){
-    //     throw new Error();
-    //   }
-
-    // }
-    // catch () {
-
-    // }
-    if (typeof cuerda != "object") {
-
+    if (cuerda.length != Definiciones.largoCuerda) {
+      return () => {
+        throw new Error(Exceptions.UNEXPECTED_LENGTH);
+      };
     }
 
     for (let i = 0; i < cuerda.length; i++) {
+      let sim = cuerda.charAt(i);
 
+      if (isNaN(sim) && sim != "-") {
+        return () => {
+          throw new Error(Exceptions.UNEXPECTED_VALUE);
+        };
+      }
     }
   }
-
 
   toString() {
     return this.cuerda1 + " " + this.acorde + " " + this.letra;
