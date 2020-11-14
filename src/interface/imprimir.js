@@ -54,7 +54,7 @@ function agregarSeccion() {
 
   var bloque_form = document.createElement('form');
   var inTab = crearTablatura();
-  var inAcord = crearTextInput('acorde')
+  var inAcord = crearTextInput('acorde');
   var inLetra = crearTextInput('letra');
 
   bloque_form.appendChild(inTab);
