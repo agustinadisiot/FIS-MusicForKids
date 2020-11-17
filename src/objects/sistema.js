@@ -4,7 +4,7 @@ class Sistema {
   constructor() {
     this.lecciones = [];
   }
-
+  
   toString() {
     return this.lecciones;
   }

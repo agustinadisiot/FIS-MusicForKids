@@ -1,19 +1,37 @@
-#letra, #acorde {
-  width: 800px;
+
+#divLeccion, #divSeccion{
+  
+  width: 80%;
+  padding: 20px;
+  align-items: center;
 }
 
-.seccion{
-  width: 80%
+.tablatura {
+  align-items: center;
+  width: 90%;
+  margin: auto;
 }
 
-#inputField {
+.acorde, .letra {
+  border: none;
 
 }
 
-.cuadroTablatura{
-  width: 10px;
-  font-size: 10px;
+
+
+.cuadroTablatura {
+  width: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-size: 10;
   text-align: center;
+}
+
+
+#divAgregar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 input::-webkit-outer-spin-button,
