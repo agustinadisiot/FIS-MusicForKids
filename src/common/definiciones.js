@@ -1,10 +1,9 @@
 const Definiciones = {
-  largoCuerda: 30,
+  cantidadTrastes: 25,
   cantidadCuerdas: 6,
+  cantidadCuadradosTab: 25,
 };
 
-const largoCuerda = 30;
-const cantidadCuerdas = 6;
-
-
-export { Definiciones };
+module.exports = {
+  Definiciones,
+};

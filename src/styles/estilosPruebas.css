@@ -1,6 +1,5 @@
-
-#divLeccion, #divSeccion{
-  
+#divLeccion,
+#divSeccion {
   width: 80%;
   padding: 20px;
   align-items: center;
@@ -12,12 +11,10 @@
   margin: auto;
 }
 
-.acorde, .letra {
+.acorde,
+.letra {
   border: none;
-
 }
-
-
 
 .cuadroTablatura {
   width: 20px;
@@ -27,8 +24,7 @@
   text-align: center;
 }
 
-
-#divAgregar {
+.divBotonCentrado {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,11 +32,11 @@
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
 }
