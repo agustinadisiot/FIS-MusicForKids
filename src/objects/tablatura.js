@@ -23,7 +23,6 @@ class Tablatura {
 
   //Devuelve la cuerda que se pide, el valor debe ser entre 0 y 5, valida que la tablatura este terminada.
   darCuerda(num) {
-    this.validarTablatura();
 
     if (typeof num != "number") {
       return () => {
@@ -37,10 +36,11 @@ class Tablatura {
       };
     }
 
-    var retorno = this.cuerdas[num];
+    if (this.validarTablatura() != true) {
+      return this.validarTablatura();
+    }
 
-    this.validarCuerda(retorno);
-    return retorno;
+    return this.cuerdas[num];
   }
 
   //Valida que la tablatura haya sido terminada. O sea que todas las cuerdas hayan sido agregadas.
@@ -50,6 +50,20 @@ class Tablatura {
         throw new Error(Exceptions.UNFINISHED_OBJECT);
       };
     }
+
+    if (this.cantActual > 6) {
+      return () => {
+        throw new Error(Exceptions.UNEXPECTED_LENGTH);
+      };
+    }
+
+    for (let i = 0; i < this.cantActual; i++) {
+      let cuerda = this.cuerdas[i];
+      if (this.validarCuerda(cuerda) != true) {
+        return this.validarCuerda(cuerda);
+      }
+    }
+    return true;
   }
 
   //Valida que cada elemento de la cuerda en toda la tablatura (largo definido en definiciones) cumpla con los requisitos.
@@ -74,7 +88,9 @@ class Tablatura {
 
     for (let i = 0; i < cuerda.length; i++) {
       let cuadrado = cuerda[i];
-      this.validarCuadrado(cuadrado);
+      if (this.validarCuadrado(cuadrado) != true) {
+        return this.validarCuadrado(cuadrado);
+      }
     }
     return true;
   }
@@ -101,6 +117,8 @@ class Tablatura {
         };
       }
     }
+
+    return true;
   }
 
   toString() {
