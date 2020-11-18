@@ -33,6 +33,6 @@ describe("deberia probar el metodo agregarCuerda", () => {
   it("deberia probar que pasa al agregar null", () => {
     let tab = new Tablatura();
 
-    expect(tab.agregarCuerda(1)).toThrow(Exceptions.UNEXPECTED_VALUE);
+    expect(tab.agregarCuerda(null)).toThrow(Exceptions.UNEXPECTED_VALUE);
   });
 });
