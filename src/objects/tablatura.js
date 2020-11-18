@@ -9,7 +9,9 @@ class Tablatura {
 
   //Valida y si cumple la verificacion, agrega la a cuerda nueva a la siguiente posicion vacia.
   agregarCuerda(cuerdaNueva) {
-    return this.validarCuerda(cuerdaNueva);
+    if (this.validarCuerda(cuerdaNueva) != true) {
+      return this.validarCuerda(cuerdaNueva);
+    }
 
     this.cuerdas[this.cantActual] = cuerdaNueva;
     this.cantActual++;
@@ -74,6 +76,7 @@ class Tablatura {
       let cuadrado = cuerda[i];
       this.validarCuadrado(cuadrado);
     }
+    return true;
   }
 
   //Valida la accion en un compas especifico en una cuerda de la tablatura.
