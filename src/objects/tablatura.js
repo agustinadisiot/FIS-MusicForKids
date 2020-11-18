@@ -8,8 +8,9 @@ class Tablatura {
   }
 
   //Valida y si cumple la verificacion, agrega la a cuerda nueva a la siguiente posicion vacia.
-  agregar(cuerdaNueva) {
+  agregarCuerda(cuerdaNueva) {
     this.validarCuerda(cuerdaNueva);
+
     this.cuerdas[cantActual] = cuerdaNueva;
     this.cantActual++;
   }
@@ -51,6 +52,12 @@ class Tablatura {
 
   //Valida que cada elemento de la cuerda en toda la tablatura (largo definido en definiciones) cumpla con los requisitos.
   validarCuerda(cuerda) {
+    if (cuerda === null) {
+      return () => {
+        throw new Error(Exceptions.UNEXPECTED_VALUE);
+      };
+    }
+
     if (typeof cuerda != "object") {
       return () => {
         throw new Error(Exceptions.UNEXPECTED_VALUE);
