@@ -9,9 +9,9 @@ class Tablatura {
 
   //Valida y si cumple la verificacion, agrega la a cuerda nueva a la siguiente posicion vacia.
   agregarCuerda(cuerdaNueva) {
-    this.validarCuerda(cuerdaNueva);
+    return this.validarCuerda(cuerdaNueva);
 
-    this.cuerdas[cantActual] = cuerdaNueva;
+    this.cuerdas[this.cantActual] = cuerdaNueva;
     this.cantActual++;
   }
 

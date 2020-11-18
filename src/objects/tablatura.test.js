@@ -33,26 +33,6 @@ describe("deberia probar el metodo agregarCuerda", () => {
   it("deberia probar que pasa al agregar null", () => {
     let tab = new Tablatura();
 
-    expect(tab.agregarCuerda(null)).toThrow(Exceptions.UNEXPECTED_VALUE);
+    expect(tab.agregarCuerda(1)).toThrow(Exceptions.UNEXPECTED_VALUE);
   });
-
-  // it("should test sum method returning 8", () => {
-  //   const valueA = 5;
-  //   const valueB = 3;
-  //   expect(sum(valueA, valueB)).toBe(8);
-  // });
-});
-
-describe("deberia probar el metodo agregarCuerda", () => {
-  it("deberia probar que pasa al agregar null", () => {
-    let tab = new Tablatura();
-
-    expect(tab.agregarCuerda(null)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-  // it("should test sum method returning 8", () => {
-  //   const valueA = 5;
-  //   const valueB = 3;
-  //   expect(sum(valueA, valueB)).toBe(8);
-  // });
 });
