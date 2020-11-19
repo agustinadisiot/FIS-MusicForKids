@@ -79,3 +79,30 @@ describe("deberia probar el metodo agregarCuerda", () => {
   });
 
 });
+
+//Puebas darCuerda
+describe("deberia probar el metodo darCuerda", () => {
+  it("deberia probar que pasa al preguntar null", () => {
+    let tab = new Tablatura();
+    expect(tab.darCuerda(null)).toThrow(Exceptions.UNEXPECTED_VALUE);
+  });
+
+  it("deberia probar que pasa al preguntar numero negativo", () => {
+    let tab = new Tablatura();
+    let num = -1;
+    expect(tab.darCuerda(num)).toThrow(Exceptions.OUT_OF_BOUNDS);
+  });
+
+  it("deberia probar que pasa al preguntar numero mayor a 5", () => {
+    let tab = new Tablatura();
+    let num = 10;
+    expect(tab.darCuerda(num)).toThrow(Exceptions.OUT_OF_BOUNDS);
+  });
+
+  it("deberia probar que pasa al preguntar numero negativo", () => {
+    let tab = new Tablatura();
+    let num = -1;
+    expect(tab.darCuerda(num)).toThrow(Exceptions.OUT_OF_BOUNDS);
+  });
+
+});
