@@ -7,7 +7,7 @@ class Leccion {
     this.bpm = 0;
     this.desc = "";
   }
-
+  
   toString() {
     return this.secciones + " " + this.titulo + " " + this.autor + " " + this.bpm + " " + this.desc;
   }

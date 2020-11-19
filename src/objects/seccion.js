@@ -50,7 +50,7 @@ class Seccion {
   }
 
   //Agrega la letra a la seccion
-  agregarletra(letra) {
+  agregarLetra(letra) {
     if (this.verificarLetra(letra) != true) {
       return this.verificarLetra(letra);
     }
@@ -71,18 +71,39 @@ class Seccion {
 
   //Verifica que el acorde sea un string.
   verificarAcorde(acorde) {
+    if (acorde == null) {
+      return () => {
+        throw new Error(Exceptions.UNEXPECTED_VALUE);
+      };
+    }
+    if (typeof acorde != "object") {
+      return () => {
+        throw new Error(Exceptions.UNEXPECTED_VALUE);
+      };
+    }
+
     let largo = acorde.length;
     for (let i = 0; i < largo; i++) {
+
       if (typeof acorde[i] != "string") {
         return () => {
           throw new Error(Exceptions.UNEXPECTED_VALUE);
         };
       }
-      if (acorde[i].length <= 3) {
+
+      if (acorde[i].length >= 3) {
         return () => {
           throw new Error(Exceptions.UNEXPECTED_LENGTH);
         };
       }
+
+      var hasNumber = /\d/;
+      if (hasNumber.test(acorde[i])) {
+        return () => {
+          throw new Error(Exceptions.UNEXPECTED_VALUE);
+        };
+      }
+
     }
 
     return true;
