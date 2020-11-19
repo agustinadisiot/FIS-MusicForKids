@@ -1,7 +1,7 @@
-const { Tablatura } = require("./Tablatura");
+const { Tablatura } = require("./tablatura");
 const { Definiciones } = require("../common/definiciones");
 const { Exceptions } = require("../common/exceptions");
-const { Seccion } = require("./Seccion");
+const { Seccion } = require("./seccion");
 
 //Pruebas verificarTab
 describe("deberia probar el metodo verificarTab", () => {

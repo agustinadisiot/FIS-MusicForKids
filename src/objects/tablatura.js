@@ -1,5 +1,6 @@
 const { Exceptions } = require("../common/exceptions");
 const { Definiciones } = require("../common/definiciones");
+const { numbers } = require("@material/ripple");
 
 class Tablatura {
   constructor() {
@@ -17,7 +18,18 @@ class Tablatura {
     this.cantActual++;
   }
 
+  //Devuelve la cantActual de la tablatura
   darCantActual() {
+    if (typeof this.cantActual != "number") {
+      return () => {
+        throw new Error(Exceptions.UNEXPECTED_VALUE);
+      };
+    }
+    if (this.cantActual < 0 || this.cantActual > 6) {
+      return () => {
+        throw new Error(Exceptions.UNEXPECTED_VALUE);
+      };
+    }
     return this.cantActual;
   }
 

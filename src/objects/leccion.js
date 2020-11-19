@@ -1,14 +1,14 @@
-import { Seccion } from './seccion.js';
+const { Exceptions } = require("../common/exceptions");
+const { Definiciones } = require("../common/definiciones");
+const { Tablatura } = require("./tablatura");
+const { Seccion } = require("./seccion");
+
 class Leccion {
   constructor() {
     this.secciones = [];
     this.titulo = "";
     this.autor = "";
     this.desc = "";
-  }
-  
-  toString() {
-    return this.secciones + " " + this.titulo + " " + this.autor + " " + this.bpm + " " + this.desc;
   }
 
   darSeccion() {
@@ -124,7 +124,14 @@ class Leccion {
     return ret;
   }
 
+  toString() {
+    return this.secciones + " " + this.titulo + " " + this.autor + " " + this.bpm + " " + this.desc;
+  }
+
+
 }
 
 
-export { Leccion };
+module.exports = {
+  Leccion,
+};
