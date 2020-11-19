@@ -7,9 +7,9 @@ class Seccion {
     //if (this.verificarTab(tab) != true) {
     //  return this.verificarTab(tab);
     //}
-    this.tab = tab;
-    this.acorde = acorde;
-    this.letra = letra;
+    this.tab = new Tablatura();
+    this.acorde = [];
+    this.letra = "";
   }
 
   //Devuelve la tablatura de la seccion.
@@ -25,6 +25,7 @@ class Seccion {
     if (this.verificarAcorde(this.acorde) != true) {
       return this.verificarAcorde(this.acorde);
     }
+    return this.acorde;
   }
 
   //Devuelve la letra de la seccion.
@@ -32,6 +33,7 @@ class Seccion {
     if (this.verificarLetra(this.letra) != true) {
       return this.verificarLetra(this.letra);
     }
+    return this.letra;
   }
 
   //Verifica que la tab de la seccion sea una tablatura y que cumpla con todos los requisitos definidos en la funcion validarTablatura de la clase Tablatura.
