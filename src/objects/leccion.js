@@ -13,16 +13,18 @@ class Leccion {
   }
 
   toString() {
-    return this.secciones + " " + this.titulo + " " + this.autor + " " + this.bpm + " " + this.desc;
+    return this.secciones + " " + this.titulo + " " + this.autor + " " + this.desc;
   }
 
-  darSeccion() {
-    if (this.verificarSeccion(seccion) != true) {
-      return this.verificarSeccion(seccion);
+  //Devuelve la leccion por posicion del array
+  darSeccion(pos) {
+    if (this.verificarSeccion(this.secciones[pos]) != true) {
+      return this.verificarSeccion(this.secciones[pos]);
     }
-    this.secciones.push(seccion);
+    return this.secciones[pos];
   }
 
+  //Devuelve el titulo de la leccion
   darTitulo() {
     if (this.verificarTitulo(this.titulo) != true) {
       return this.verificarTitulo(this.titulo);
@@ -30,6 +32,7 @@ class Leccion {
     return this.titulo;
   }
 
+  //Devuelve el nombre del autor de la leccion
   darAutor() {
     if (this.verificarAutor(this.autor) != true) {
       return this.verificarAutor(this.autor);
@@ -37,6 +40,7 @@ class Leccion {
     return this.autor;
   }
 
+  //Devuelve la descripcion de la leccion
   darDesc() {
     if (this.verificarDesc(this.desc) != true) {
       return this.verificarDesc(this.desc);
@@ -44,6 +48,7 @@ class Leccion {
     return this.desc;
   }
 
+  //Valida la seccion y si es correcta, la agrega a la leccion
   agregarSeccion(seccion) {
     if (this.verificarSeccion(seccion) != true) {
       return this.verificarSeccion(seccion);
@@ -51,6 +56,7 @@ class Leccion {
     this.secciones.push(seccion);
   }
 
+  //Agrega el titulo a la leccion
   agregarTitulo(title) {
     if (this.verificarTitulo(title) != true) {
       return this.verificarTitle(title);
@@ -58,6 +64,7 @@ class Leccion {
     this.titulo = title.charAt(0).toUpperCase() + title.slice(1);
   }
 
+  //Agrega el autor a la leccion despues de verificarlo
   agregarAutor(autor) {
     if (this.verificarAutor(autor) != true) {
       return this.verificarAutor(autor);
@@ -107,19 +114,21 @@ class Leccion {
         throw new Error(Exceptions.UNEXPECTED_VALUE);
       };
     }
-    if (sec.verificarAcorde() != true) {
-      return sec.verificarAcorde();
+    if (sec.verificarAcorde(sec.acorde) != true) {
+      return sec.verificarAcorde(sec.acorde);
     }
-    if (sec.verificarLetra() != true) {
-      return sec.verificarLetra();
+    if (sec.verificarLetra(sec.letra) != true) {
+      return sec.verificarLetra(sec.letra);
     }
-    if (sec.verificarTab() != true) {
-      return sec.verificarTab();
+    if (sec.verificarTab(sec.tab) != true) {
+      return sec.verificarTab(sec.tab);
     }
 
     return true;
   }
 
+
+  //Pasa a mayusculas la primer letra de todas las palabras del string
   capFirstLetters(pal) {
     var spliteado = pal.split(" ");
     var ret = "";
