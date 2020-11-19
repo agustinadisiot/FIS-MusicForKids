@@ -1,4 +1,9 @@
-import { Seccion } from './seccion.js';
+
+const { Exceptions } = require("../common/exceptions");
+const { Definiciones } = require("../common/definiciones");
+const { Tablatura } = require("./tablatura");
+const { Seccion } = require("./seccion");
+
 class Leccion {
   constructor() {
     this.secciones = [];
@@ -127,4 +132,6 @@ class Leccion {
 }
 
 
-export { Leccion };
+module.exports = {
+  Leccion,
+};
