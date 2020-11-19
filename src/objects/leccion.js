@@ -1,4 +1,5 @@
-import { Seccion } from './seccion.js';
+import { Seccion } from "./seccion.js";
+
 class Leccion {
   constructor(titulo, autor, bpm, desc) {
     this.secciones = [];
@@ -9,7 +10,17 @@ class Leccion {
   }
 
   toString() {
-    return this.secciones + " " + this.titulo + " " + this.autor + " " + this.bpm + " " + this.desc;
+    return (
+      this.secciones +
+      " " +
+      this.titulo +
+      " " +
+      this.autor +
+      " " +
+      this.bpm +
+      " " +
+      this.desc
+    );
   }
 
   agregarSeccion(tab, acorde, letra) {
@@ -17,6 +28,5 @@ class Leccion {
     this.secciones.push(nuevaSeccion);
   }
 }
-
 
 export { Leccion };

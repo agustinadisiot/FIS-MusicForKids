@@ -1,11 +1,7 @@
-try {
-  const { Definiciones } = require("../common/definiciones");
-} catch (err) {}
-
 window.addEventListener("load", inicio);
 
-var cantSecciones = 1;
-var actual = 1;
+var cantSecciones = 0;
+var actual = 0;
 
 function inicio() {
   document
@@ -23,9 +19,10 @@ function crearTablatura() {
   var tablatura = document.createElement("div");
   tablatura.className = "tablatura";
 
-  for (let cuerda = 1; cuerda <= 6; cuerda++) {
-    for (let entrada = 1; entrada <= cantidadCuadrados; entrada++) {
+  for (let cuerda = 0; cuerda < 6; cuerda++) {
+    for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
       let inputSolo = document.createElement("input");
+      inputSolo.name = clase + "(" + cuerda + "-" + entrada + ")";
       inputSolo.size = ancho;
       inputSolo.type = "number";
       inputSolo.placeholder = "-";
@@ -49,6 +46,7 @@ function crearInputsAcordes() {
 
   for (let entrada = 1; entrada <= cantidadCuadrados; entrada++) {
     let inputSolo = document.createElement("input");
+    inputSolo.name = clase + entrada;
     inputSolo.size = ancho;
     inputSolo.type = "text";
     inputSolo.placeholder = "";
@@ -65,7 +63,8 @@ function crearInputLetra() {
   letra.className = "letra";
 
   var entrada = document.createElement("input");
-  entrada.maxsize = largo;
+  entrada.maxlength = largo;
+  entrada.size = 90;
   entrada.type = "text";
   entrada.placeholder = "Ingrese la letra aqui";
   entrada.className = "cuadroLetra";
@@ -79,9 +78,10 @@ function agregarSeccion() {
   var seccion = document.createElement("div");
   seccion.id = "div" + cantSecciones;
   seccion.className = "divSeccion";
+  var bloque_form = document.createElement("form");
+  bloque_form.id = "form" + cantSecciones;
   cantSecciones++;
 
-  var bloque_form = document.createElement("form");
   var inTab = crearTablatura();
   var inAcord = crearInputsAcordes();
   var inLetra = crearInputLetra();
@@ -102,22 +102,42 @@ function agregarSeccion() {
 }
 
 function guardarLeccion() {
-  var myArr = document.forms.inputField;
-  var myControls = myArr;
-  var name_value_array = [];
-  for (var i = 0; i < myControls.length; i++) {
-    var aControl = myControls[i];
+  for (let numSec = 0; numSec < cantSecciones; numSec++) {
+    let formActual = document.getElementById("form" + numSec);
+    var leccion = new Leccion();
+    var tab = new Tablatura();
 
-    // don't print the button value
-    if (aControl.type != "button") {
-      // store value in a map
-      name_value_array.push(aControl.value, aControl.name);
-
-      document
-        .getElementById("resultField")
-        .appendChild(document.createTextNode(aControl.value + " "));
+    for (let i = 0; i < 6; i++) {
+      let cuerda = [];
+      for (let j = 0; j < Definiciones.cantidadCuadrados; j++) {
+        let texto = formActual[cuadroTablatura + "(" + i + "-" + j + ")"];
+        cuerda.push(texto.value);
+        alert(texto.value);
+      }
+      try {
+        tab.agregarCuerda(cuerda);
+      } catch (err) {
+        alert("Hay datos incorrectos en la tablatura de la seccion " + numSec);
+      }
     }
   }
-  // show map values as a popup
-  alert(JSON.stringify(name_value_array));
+
+  // var myArr = document.forms.inputField;
+  // var myControls = myArr;
+  // var name_value_array = [];
+  // for (let i = 0; i < myControls.length; i++) {
+  //   var aControl = myControls[i];
+
+  //   // don't print the button value
+  //   if (aControl.type != "button") {
+  //     // store value in a map
+  //     name_value_array.push(aControl.value, aControl.name);
+
+  //     document
+  //       .getElementById("resultField")
+  //       .appendChild(document.createTextNode(aControl.value + " "));
+  //   }
+  // }
+  // // show map values as a popup
+  // alert(JSON.stringify(name_value_array));
 }

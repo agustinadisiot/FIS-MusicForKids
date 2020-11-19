@@ -7,7 +7,6 @@ describe("deberia probar el metodo validarCuadrado", () => {
   it("deberia probar que pasa al validar null", () => {
     let tab = new Tablatura();
     expect(tab.validarCuadrado(null)).toThrow(Exceptions.UNEXPECTED_VALUE);
-
   });
 
   it("deberia probar que pasa al validar algo que no sea un string", () => {
@@ -33,7 +32,6 @@ describe("deberia probar el metodo validarCuadrado", () => {
 
 //Pruebas validarCuerda
 describe("deberia probar el metodo validarCuerda", () => {
-
   it("deberia probar que pasa al validar null", () => {
     let tab = new Tablatura();
     expect(tab.validarCuerda(null)).toThrow(Exceptions.UNEXPECTED_VALUE);
@@ -56,7 +54,6 @@ describe("deberia probar el metodo validarCuerda", () => {
     let cuerdaAux = 1;
     expect(tab.validarCuerda(cuerdaAux)).toThrow(Exceptions.UNEXPECTED_VALUE);
   });
-
 });
 
 //Prueba agregarCuerda
@@ -65,7 +62,6 @@ describe("deberia probar el metodo agregarCuerda", () => {
     let tab = new Tablatura();
     expect(tab.agregarCuerda(null)).toThrow(Exceptions.UNEXPECTED_VALUE);
   });
-
 
   it("deberia probar que pasa al agregar algo que no sea un objeto cuerda", () => {
     let tab = new Tablatura();
@@ -77,5 +73,4 @@ describe("deberia probar el metodo agregarCuerda", () => {
     let cuerda = [];
     expect(tab.agregarCuerda(cuerda)).toThrow(Exceptions.UNEXPECTED_LENGTH);
   });
-
 });
