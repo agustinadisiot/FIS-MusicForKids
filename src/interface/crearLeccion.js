@@ -101,11 +101,20 @@ function agregarSeccion() {
   puntero.appendChild(seccion);
 }
 
+function validarEntradas() {
+  for (let i = 0; i < cantSecciones; i++) {
+    let formActual = document.forms[i];
+    
+  }
+}
+
 function guardarLeccion() {
+  var leccion = new Leccion();
+
   for (let numSec = 0; numSec < cantSecciones; numSec++) {
     let formActual = document.getElementById("form" + numSec);
-    var leccion = new Leccion();
-    var tab = new Tablatura();
+
+    let tab = new Tablatura();
 
     for (let i = 0; i < 6; i++) {
       let cuerda = [];
@@ -121,23 +130,4 @@ function guardarLeccion() {
       }
     }
   }
-
-  // var myArr = document.forms.inputField;
-  // var myControls = myArr;
-  // var name_value_array = [];
-  // for (let i = 0; i < myControls.length; i++) {
-  //   var aControl = myControls[i];
-
-  //   // don't print the button value
-  //   if (aControl.type != "button") {
-  //     // store value in a map
-  //     name_value_array.push(aControl.value, aControl.name);
-
-  //     document
-  //       .getElementById("resultField")
-  //       .appendChild(document.createTextNode(aControl.value + " "));
-  //   }
-  // }
-  // // show map values as a popup
-  // alert(JSON.stringify(name_value_array));
 }

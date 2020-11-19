@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-const { Exceptions } = require("../common/exceptions");
-const { Definiciones } = require("../common/definiciones");
-=======
-
-const { Exceptions } = require("../common/exceptions");
-const { Definiciones } = require("../common/definiciones");
-const { Tablatura } = require("./tablatura");
-const { Seccion } = require("./seccion");
-const { Leccion } = require("./leccion");
->>>>>>> 7de121a07bc94ffb6506aaf04cd03177ef859d6c
+// const { Exceptions } = require("../common/exceptions");
+// const { Definiciones } = require("../common/definiciones");
+// const { Tablatura } = require("./tablatura");
+// const { Seccion } = require("./seccion");
+// const { Leccion } = require("./leccion");
 
 class Sistema {
   constructor() {
@@ -41,11 +35,6 @@ class Sistema {
   }
 }
 
-module.exports = {
-<<<<<<< HEAD
-  Tablatura,
-};
-=======
-  Sistema,
-};
->>>>>>> 7de121a07bc94ffb6506aaf04cd03177ef859d6c
+// module.exports = {
+//   Sistema,
+// };
