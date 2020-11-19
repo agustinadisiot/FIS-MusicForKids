@@ -10,8 +10,9 @@ class Tablatura {
 
   //Valida y si cumple la verificacion, agrega la a cuerda nueva a la siguiente posicion vacia.
   agregarCuerda(cuerdaNueva) {
-    if (this.validarCuerda(cuerdaNueva) != true) {
-      return this.validarCuerda(cuerdaNueva);
+    let resp = this.validarCuerda(cuerdaNueva);
+    if (resp != true) {
+      return resp;
     }
 
     this.cuerdas[this.cantActual] = cuerdaNueva;
@@ -48,8 +49,9 @@ class Tablatura {
       };
     }
 
-    if (this.validarTablatura() != true) {
-      return this.validarTablatura();
+    let resp = this.validarTablatura();
+    if (resp != true) {
+      return resp;
     }
 
     return this.cuerdas[num];
@@ -72,8 +74,10 @@ class Tablatura {
 
     for (let i = 0; i < this.cantActual; i++) {
       let cuerda = this.cuerdas[i];
-      if (this.validarCuerda(cuerda) != true) {
-        return this.validarCuerda(cuerda);
+
+      let resp = this.validarCuerda(cuerda);
+      if (resp != true) {
+        return resp;
       }
     }
     return true;
@@ -101,8 +105,10 @@ class Tablatura {
 
     for (let i = 0; i < cuerda.length; i++) {
       let cuadrado = cuerda[i];
-      if (this.validarCuadrado(cuadrado) != true) {
-        return this.validarCuadrado(cuadrado);
+
+      let resp = this.validarCuadrado(cuadrado);
+      if (resp != true) {
+        return resp;
       }
     }
 
@@ -138,6 +144,7 @@ class Tablatura {
   toString() {
     return this.cuerda1 + " " + this.acorde + " " + this.letra;
   }
+
 }
 
 module.exports = {

@@ -11,48 +11,58 @@ class Seccion {
 
   //Devuelve la tablatura de la seccion.
   darTab() {
-    if (this.verificarTab(this.tab) != true) {
-      return this.verificarTab(this.tab);
+
+    let resp = this.verificarTab(this.tab);
+    if (resp != true) {
+      return resp;
     }
     return this.tab;
   }
 
   //Devuelve los acordes de la seccion.
   darAcorde() {
-    if (this.verificarAcorde(this.acorde) != true) {
-      return this.verificarAcorde(this.acorde);
+
+    let resp = this.verificarAcorde(this.acorde)
+    if (resp != true) {
+      return resp;
     }
     return this.acorde;
   }
 
   //Devuelve la letra de la seccion.
   darLetra() {
-    if (this.verificarLetra(this.letra) != true) {
-      return this.verificarLetra(this.letra);
+    let resp = this.verificarLetra(this.letra);
+    if (resp != true) {
+      return resp;
     }
     return this.letra;
   }
 
   //Agrega la tablatura a la seccion
   agregarTab(tab) {
-    if (this.verificarTab(tab) != true) {
-      return this.verificarTab(tab);
+    let resp = this.verificarTab(tab);
+    if (resp != true) {
+      return resp;
     }
     this.tab = tab;
   }
 
   //Agrega los acordes a la seccion
   agregarAcorde(acorde) {
-    if (this.verificarAcorde(acorde) != true) {
-      return this.verificarAcorde(acorde);
+
+    let resp = this.verificarAcorde(acorde)
+    if (resp != true) {
+      return resp;
     }
     this.acorde = acorde;
   }
 
   //Agrega la letra a la seccion
   agregarLetra(letra) {
-    if (this.verificarLetra(letra) != true) {
-      return this.verificarLetra(letra);
+
+    let resp = this.verificarLetra(letra);
+    if (resp != true) {
+      return resp;
     }
     this.letra = letra;
   }
@@ -63,8 +73,10 @@ class Seccion {
       return () => {
         throw new Error(Exceptions.UNEXPECTED_VALUE);
       };
-    } else if (tab.validarTablatura() != true) {
-      return tab.validarTablatura();
+    }
+    let resp = tab.validarTablatura();
+    if (resp != true) {
+      return resp;
     }
     return true;
   }
