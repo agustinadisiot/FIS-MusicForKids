@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 const { Exceptions } = require("../common/exceptions");
 const { Definiciones } = require("../common/definiciones");
+=======
+
+const { Exceptions } = require("../common/exceptions");
+const { Definiciones } = require("../common/definiciones");
+const { Tablatura } = require("./tablatura");
+const { Seccion } = require("./seccion");
+const { Leccion } = require("./leccion");
+>>>>>>> 7de121a07bc94ffb6506aaf04cd03177ef859d6c
 
 class Sistema {
   constructor() {
@@ -7,7 +16,11 @@ class Sistema {
   }
 
   toString() {
-    return this.lecciones;
+    let ret = "";
+    for (let i = 0; i < this.lecciones.length; i++) {
+      ret = ret + this.lecciones[i].darTitulo();
+    }
+    return ret;
   }
 
   agregarLeccion() {
@@ -29,5 +42,10 @@ class Sistema {
 }
 
 module.exports = {
+<<<<<<< HEAD
   Tablatura,
 };
+=======
+  Sistema,
+};
+>>>>>>> 7de121a07bc94ffb6506aaf04cd03177ef859d6c
