@@ -78,7 +78,7 @@ class Seccion {
           throw new Error(Exceptions.UNEXPECTED_VALUE);
         };
       }
-      if (acorde[i].length <= 4) {
+      if (acorde[i].length <= 3) {
         return () => {
           throw new Error(Exceptions.UNEXPECTED_LENGTH);
         };
@@ -98,9 +98,12 @@ class Seccion {
     return true;
   }
 
+
+
   toString() {
     return this.tab + " " + this.acorde + " " + this.letra;
   }
+
 }
 
 module.exports = {
