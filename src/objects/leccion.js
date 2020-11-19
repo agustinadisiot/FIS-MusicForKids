@@ -1,4 +1,4 @@
-import { Seccion } from './seccion.js';
+import { Seccion } from "./seccion.js";
 class Leccion {
   constructor() {
     this.secciones = [];
@@ -8,7 +8,17 @@ class Leccion {
   }
 
   toString() {
-    return this.secciones + " " + this.titulo + " " + this.autor + " " + this.bpm + " " + this.desc;
+    return (
+      this.secciones +
+      " " +
+      this.titulo +
+      " " +
+      this.autor +
+      " " +
+      this.bpm +
+      " " +
+      this.desc
+    );
   }
 
   darSeccion() {
@@ -60,12 +70,11 @@ class Leccion {
     this.autor = this.capFirstLetters(autor);
   }
 
-
   agregarDesc(desc) {
     if (this.verificarDesc(desc) != true) {
       return this.verificarDesc(desc);
     }
-    this.desc = desc.charAt(0).toUpperCase() + desc.slice(1);;
+    this.desc = desc.charAt(0).toUpperCase() + desc.slice(1);
   }
 
   verificarTitulo(title) {
@@ -95,7 +104,6 @@ class Leccion {
     return true;
   }
 
-
   verificarSeccion(sec) {
     if (!(sec instanceof Seccion)) {
       return () => {
@@ -119,12 +127,14 @@ class Leccion {
     var spliteado = pal.split(" ");
     var ret = "";
     for (let i = 0; i < spliteado.length; i++) {
-      ret = ret + spliteado[i].charAt(0).toUpperCase() + spliteado[i].slice(1) + " ";
+      ret =
+        ret +
+        spliteado[i].charAt(0).toUpperCase() +
+        spliteado[i].slice(1) +
+        " ";
     }
     return ret;
   }
-
 }
-
 
 export { Leccion };

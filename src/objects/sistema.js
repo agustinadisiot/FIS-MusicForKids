@@ -1,10 +1,11 @@
-import { Leccion } from './leccion.js';
+const { Exceptions } = require("../common/exceptions");
+const { Definiciones } = require("../common/definiciones");
 
 class Sistema {
   constructor() {
     this.lecciones = [];
   }
-  
+
   toString() {
     return this.lecciones;
   }
@@ -26,3 +27,7 @@ class Sistema {
     }
   }
 }
+
+module.exports = {
+  Tablatura,
+};
