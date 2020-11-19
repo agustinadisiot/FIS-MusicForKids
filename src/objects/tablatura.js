@@ -46,13 +46,13 @@ class Tablatura {
   //Valida que la tablatura haya sido terminada. O sea que todas las cuerdas hayan sido agregadas.
   validarTablatura() {
 
-    if (this.cantActual < 6) {
+    if (this.cantActual < 6 && this.cantActual == this.cuerdas.length) {
       return () => {
         throw new Error(Exceptions.UNFINISHED_OBJECT);
       };
     }
 
-    if (this.cantActual > 6) {
+    if (this.cantActual > 6 && this.cantActual == this.cuerdas.length) {
       return () => {
         throw new Error(Exceptions.UNEXPECTED_LENGTH);
       };
@@ -93,6 +93,7 @@ class Tablatura {
         return this.validarCuadrado(cuadrado);
       }
     }
+
     return true;
   }
 
