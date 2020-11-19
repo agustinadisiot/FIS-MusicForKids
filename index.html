@@ -5,8 +5,10 @@
   <meta charset="utf-8">
   <title>Inicio</title>
   <link rel="stylesheet" href="./bundle.css">
-  <link rel="stylesheet" href="../styles/estilosPruebas.css">
-  <script src="../interface/crearLeccion.js"></script>
+  <link rel="stylesheet" href="./src/styles/estilosInterfaz.css">
+
+  <script src="./src/common/definiciones.js"></script>
+  <script src="./src/interface/crearLeccion.js"></script>
 </head>
 
 <body>
@@ -42,24 +44,26 @@
     </section>
 
     <!-- Realizar Leccion -->
-    <section id="crearLeccion">
-      <div id="divLeccion"></div>
+    <div id="divLeccion"></div>
+
+    
+    <div class="divBotonCentrado">
+      <button class="foo-button mdc-button" id="botonAgregar">
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Agregar</span>
+      </button>
+    </div>
 
 
-      <div class="divBotonCentrado" id="divAgregar">
-        <button class="foo-button mdc-button" id="botonAgregar">
-          <div class="mdc-button__ripple"></div>
-          <span class="mdc-button__label">Agregar</span>
-        </button>
-      </div>
 
-      <div class="divBotonDerecha" id="divTerminarCrear">
-        <button class="foo-button mdc-button" id="botonTerminarCrear">
-          <div class="mdc-button__ripple"></div>
-          <span class="mdc-button__label">Agregar</span>
-        </button>
+    <div id="divAgregar">
+      <button class="foo-button mdc-button" id="botonGuardar">
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Guardar</span>
+      </button>
+    </div>
 
-      </div>
+    </div>
     </section>
 
   </main>
