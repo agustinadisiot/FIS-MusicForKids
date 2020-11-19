@@ -45,6 +45,7 @@ class Tablatura {
 
   //Valida que la tablatura haya sido terminada. O sea que todas las cuerdas hayan sido agregadas.
   validarTablatura() {
+
     if (this.cantActual < 6) {
       return () => {
         throw new Error(Exceptions.UNFINISHED_OBJECT);

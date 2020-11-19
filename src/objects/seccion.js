@@ -4,9 +4,9 @@ const { Tablatura } = require("./tablatura");
 
 class Seccion {
   constructor(tab, acorde, letra) {
-    if (this.verificarTab(tab) != true) {
-      return this.verificarTab(tab);
-    }
+    //if (this.verificarTab(tab) != true) {
+    //  return this.verificarTab(tab);
+    //}
     this.tab = tab;
     this.acorde = acorde;
     this.letra = letra;
@@ -40,9 +40,8 @@ class Seccion {
       return () => {
         throw new Error(Exceptions.UNEXPECTED_VALUE);
       };
-    }
-    if (this.tab.validarTablatura() != true) {
-      return this.tab.validarTablatura();
+    } else if (tab.validarTablatura() != true) {
+      return tab.validarTablatura();
     }
     return true;
   }

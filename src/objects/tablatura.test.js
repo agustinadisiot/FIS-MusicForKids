@@ -2,6 +2,7 @@ const { Tablatura } = require("./Tablatura");
 const { Definiciones } = require("../common/definiciones");
 const { Exceptions } = require("../common/exceptions");
 
+//Pruebas validarCuadrado
 describe("deberia probar el metodo validarCuadrado", () => {
   it("deberia probar que pasa al validar null", () => {
     let tab = new Tablatura();
@@ -30,6 +31,7 @@ describe("deberia probar el metodo validarCuadrado", () => {
   });
 });
 
+//Pruebas validarCuerda
 describe("deberia probar el metodo validarCuerda", () => {
 
   it("deberia probar que pasa al validar null", () => {
@@ -57,6 +59,7 @@ describe("deberia probar el metodo validarCuerda", () => {
 
 });
 
+//Prueba agregarCuerda
 describe("deberia probar el metodo agregarCuerda", () => {
   it("deberia probar que pasa al agregar null", () => {
     let tab = new Tablatura();
