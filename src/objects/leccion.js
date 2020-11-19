@@ -1,11 +1,11 @@
 import { Seccion } from './seccion.js';
 class Leccion {
-  constructor(titulo, autor, bpm, desc) {
+  constructor() {
     this.secciones = [];
-    this.titulo = titulo;
-    this.autor = autor;
-    this.bpm = bpm;
-    this.desc = desc;
+    this.titulo = "";
+    this.autor = "";
+    this.bpm = 0;
+    this.desc = "";
   }
 
   toString() {
