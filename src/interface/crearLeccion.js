@@ -129,6 +129,9 @@ function validarEntradas() {
 function guardarLeccion() {
   var lec = new Leccion();
   let valido = true;
+
+
+  
   if (!validarEntradas()) {
     valido = false;
     alert("Error en las entradas");
@@ -196,7 +199,11 @@ function guardarLeccion() {
 
     }
 
-    if(valido){
+    if(valido && sistema.verificarLeccion(lec)){
+      sistema.agregarLeccion(lec);
+      alert("Se guardo exitosamente");
+    }else{
+      alert("Hubo un problema al guardar la leccion, revise los datos ingresados, nuevamente");
     }
   }
 }
