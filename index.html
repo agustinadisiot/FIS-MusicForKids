@@ -6,11 +6,12 @@
   <title>Inicio</title>
   <link rel="stylesheet" href="./bundle.css">
   <link rel="stylesheet" href="./src/styles/estilosInterfaz.css">
-
   <script src="./src/common/definiciones.js"></script>
-  <script src="./src/objects/leccion.js"></script>
   <script src="./src/objects/tablatura.js"></script>
-  <script src="./src/interface/crearLeccion.js"></script>
+  <script src="./src/objects/seccion.js"></script>
+  <script src="./src/objects/leccion.js"></script>
+  <script src="./src/objects/sistema.js"></script>
+  <script src="./src/interface/inicio.js"></script>
 </head>
 
 <body>
@@ -30,23 +31,12 @@
     <div id="divLeccion"></div>
 
 
-    <div class="divBotonCentrado">
-      <button class="foo-button mdc-button" id="botonAgregar">
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Agregar</span>
-      </button>
-    </div>
+    <a href="./src/scenes/mostrarLecciones.html" class="button">Crear Leccion</a>
 
 
 
-    <div>
-      <button class="foo-button mdc-button" id="botonGuardar">
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Guardar</span>
-      </button>
-    </div>
+    <a href="./src/scenes/realizarLeccion.html" class="button">Realizar Leccion</a>
 
-    
   </main>
 
 </body>
