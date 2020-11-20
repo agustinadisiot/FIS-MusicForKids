@@ -1,8 +1,8 @@
-// const { Exceptions } = require("../common/exceptions");
-// const { Definiciones } = require("../common/definiciones");
-// const { Tablatura } = require("./tablatura");
-// const { Seccion } = require("./seccion");
-// const { Leccion } = require("./leccion");
+const { Exceptions } = require("../common/exceptions");
+const { Definiciones } = require("../common/definiciones");
+const { Tablatura } = require("./tablatura");
+const { Seccion } = require("./seccion");
+const { Leccion } = require("./leccion");
 
 class Sistema {
   constructor() {
@@ -35,6 +35,6 @@ class Sistema {
   }
 }
 
-// module.exports = {
-//   Sistema,
-// };
+module.exports = {
+  Sistema,
+};

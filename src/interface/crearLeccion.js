@@ -1,4 +1,8 @@
-window.addEventListener("load", inicio);
+//window.addEventListener("load", inicio);
+// window.onload = function () {
+//   inicio();
+// };
+document.addEventListener("DOMContentLoaded", inicio(), false);
 
 var cantSecciones = 0;
 var actual = 0;
@@ -104,7 +108,6 @@ function agregarSeccion() {
 function validarEntradas() {
   for (let i = 0; i < cantSecciones; i++) {
     let formActual = document.forms[i];
-    
   }
 }
 

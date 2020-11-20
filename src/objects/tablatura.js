@@ -1,5 +1,5 @@
-// const { Exceptions } = require("../common/exceptions");
-// const { Definiciones } = require("../common/definiciones");
+const { Exceptions } = require("../common/exceptions");
+const { Definiciones } = require("../common/definiciones");
 
 class Tablatura {
   constructor() {
@@ -9,6 +9,8 @@ class Tablatura {
 
   //Valida y si cumple la verificacion, agrega la a cuerda nueva a la siguiente posicion vacia.
   agregarCuerda(cuerdaNueva) {
+    const resp = this.validarCuerda(cuerdaNueva);
+
     if (this.validarCuerda(cuerdaNueva) != true) {
       return this.validarCuerda(cuerdaNueva);
     }
@@ -126,6 +128,6 @@ class Tablatura {
   }
 }
 
-// module.exports = {
-//   Tablatura,
-// };
+module.exports = {
+  Tablatura,
+};

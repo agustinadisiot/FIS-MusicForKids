@@ -1,6 +1,6 @@
-// const { Exceptions } = require("../common/exceptions");
-// const { Definiciones } = require("../common/definiciones");
-// const { Tablatura } = require("./tablatura");
+const { Exceptions } = require("../common/exceptions");
+const { Definiciones } = require("../common/definiciones");
+const { Tablatura } = require("./tablatura");
 
 class Seccion {
   constructor() {
@@ -98,14 +98,11 @@ class Seccion {
     return true;
   }
 
-
-
   toString() {
     return this.tab + " " + this.acorde + " " + this.letra;
   }
-
 }
 
-// module.exports = {
-//   Seccion,
-// };
+module.exports = {
+  Seccion,
+};
