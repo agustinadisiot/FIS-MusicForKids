@@ -19,46 +19,54 @@ class Sistema {
   }
 
   //Devuelve la leccion por titulo
-  darLeccion(titulo) {
-    for (let i = 0; i < this.lecciones.length; i++) {
-      if (this.lecciones[i].darTitulo == titulo) {
-        if (this.verificarLeccion(this.lecciones[i]) != true) {
-          return this.verificarLeccion(this.lecciones[i]);
-        }
-        return this.lecciones[i];
-      }
+  darLeccion(pos) {
+
+    let resp = this.verificarLeccion(this.lecciones[pos]);
+    if (resp != true) {
+      return resp;
     }
+    return this.lecciones[pos];
   }
 
   //Valida y si cumple la verificacion, agrega la leccion nueva a la siguiente posicion vacia.
   agregarLeccion(lecc) {
-    if (this.verificarLeccion(lecc) != true) {
-      return this.verificarLeccion(lecc);
+    let resp = this.verificarLeccion(lecc);
+    if (resp != true) {
+      return resp;
     }
     this.lecciones.push(lecc);
   }
 
-
+  //Verifica si la leccion es correcta
   verificarLeccion(lec) {
     if (!(lec instanceof Leccion)) {
       return () => {
         throw new Error(Exceptions.UNEXPECTED_VALUE);
       };
     }
-    if (lec.verificarTitulo(lec.titulo) != true) {
-      return lec.verificarTitulo(lec.titulo);
+
+    let respTitulo = lec.verificarTitulo(lec.titulo);
+    if (respTitulo != true) {
+      return respTitulo;
     }
-    if (lec.verificarAutor(lec.autor) != true) {
-      return lec.verificarAutor(lec.autor);
+
+    let respAutor = lec.verificarAutor(lec.autor);
+    if (respAutor != true) {
+      return respAutor;
     }
-    if (lec.verificarDesc(lec.desc) != true) {
-      return sec.verificarTab(lec.desc);
+
+    let respDesc = lec.verificarDesc(lec.desc);
+    if (respDesc != true) {
+      return respDesc;
     }
+
     for (let i = 0; i < lec.secciones.length; i++) {
-      if (lec.verificarSeccion(lec.secciones[i]) != true) {
-        return sec.verificarSeccion(lec.secciones[i]);
+      let respSecc = lec.verificarSeccion(lec.secciones[i]);
+      if (respSecc != true) {
+        return respSecc;
       }
     }
+
     return true;
   }
 

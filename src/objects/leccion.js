@@ -13,24 +13,34 @@ class Leccion {
 
   //Devuelve la leccion por posicion del array
   darSeccion(pos) {
-    if (this.verificarSeccion(this.secciones[pos]) != true) {
-      return this.verificarSeccion(this.secciones[pos]);
+    let largo = this.secciones.length;
+    if (pos >= largo || pos < 0) {
+      return () => {
+        throw new Error(Exceptions.OUT_OF_BOUNDS);
+      };
+    }
+
+    let resp = this.verificarSeccion(this.secciones[pos]);
+    if (resp != true) {
+      return resp;
     }
     return this.secciones[pos];
   }
 
   //Devuelve el titulo de la leccion
   darTitulo() {
-    if (this.verificarTitulo(this.titulo) != true) {
-      return this.verificarTitulo(this.titulo);
+    let resp = this.verificarTitulo(this.titulo);
+    if (resp != true) {
+      return resp;
     }
     return this.titulo;
   }
 
   //Devuelve el nombre del autor de la leccion
   darAutor() {
-    if (this.verificarAutor(this.autor) != true) {
-      return this.verificarAutor(this.autor);
+    let resp = this.verificarAutor(this.autor);
+    if (resp != true) {
+      return resp;
     }
     return this.autor;
   }
@@ -56,7 +66,7 @@ class Leccion {
     if (this.verificarTitulo(titulo) != true) {
       return this.verificarTitulo(titulo);
     }
-    this.titulo = this.capFirstLetters(titulo);
+    this.titulo = this.capFirstLetters(titulo.trim());
   }
 
   //Agrega el autor a la leccion despues de verificarlo
@@ -64,7 +74,7 @@ class Leccion {
     if (this.verificarAutor(autor) != true) {
       return this.verificarAutor(autor);
     }
-    this.autor = this.capFirstLetters(autor);
+    this.autor = this.capFirstLetters(autor.trim());
   }
 
 
@@ -72,7 +82,8 @@ class Leccion {
     if (this.verificarDesc(desc) != true) {
       return this.verificarDesc(desc);
     }
-    this.desc = desc.charAt(0).toUpperCase() + desc.slice(1);
+    let resp = desc.trim();
+    this.desc = resp.charAt(0).toUpperCase() + resp.slice(1);
   }
 
   verificarTitulo(titulo) {
