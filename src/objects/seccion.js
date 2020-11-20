@@ -131,8 +131,6 @@ class Seccion {
     return true;
   }
 
-
-
   toString() {
     return this.tab + " " + this.acorde + " " + this.letra;
   }
