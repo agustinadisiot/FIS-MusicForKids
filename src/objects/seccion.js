@@ -22,7 +22,7 @@ class Seccion {
   //Devuelve los acordes de la seccion.
   darAcorde() {
 
-    let resp = this.verificarAcorde(this.acorde)
+    let resp = this.verificarAcorde(this.acorde);
     if (resp != true) {
       return resp;
     }
@@ -50,7 +50,7 @@ class Seccion {
   //Agrega los acordes a la seccion
   agregarAcorde(acorde) {
 
-    let resp = this.verificarAcorde(acorde)
+    let resp = this.verificarAcorde(acorde);
     if (resp != true) {
       return resp;
     }

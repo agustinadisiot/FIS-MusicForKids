@@ -69,7 +69,7 @@ describe("deberia probar el metodo validarTablatura", () => {
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
 
-    expect(tab.validarTablatura()).toBeTruthy();
+    expect(tab.validarTablatura()).toBe(true);
   });
 
 

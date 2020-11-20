@@ -15,7 +15,7 @@ describe("deberia probar el metodo verificarTab", () => {
     let secc = new Seccion();
     secc.tab = tab;
 
-    expect(secc.verificarTab(tab)).toBeTruthy();
+    expect(secc.verificarTab(tab)).toBe(true);
   });
 
 
@@ -179,13 +179,13 @@ describe("deberia probar el metodo verificarLetra", () => {
   it("deberia probar que pasa al verificar una letra vacia", () => {
     let secc = new Seccion();
 
-    expect(secc.verificarLetra("")).toBeTruthy();
+    expect(secc.verificarLetra("")).toBe(true);
   });
 
   it("deberia probar que pasa al verificar una letra que es un string", () => {
     let secc = new Seccion();
-    let letra = "esto es una prueba"
-    expect(secc.verificarLetra(letra)).toBeTruthy();
+    let letra = "esto es una prueba";
+    expect(secc.verificarLetra(letra)).toBe(true);
   });
 
   it("deberia probar que pasa al verificar una letra que no sea de tipo string", () => {
@@ -208,7 +208,7 @@ describe("deberia probar el metodo verificarAcorde", () => {
   it("deberia probar que pasa al verificar un acorde vacio", () => {
     let secc = new Seccion();
 
-    expect(secc.verificarAcorde([])).toBeTruthy();
+    expect(secc.verificarAcorde([])).toBe(true);
   });
 
 
@@ -224,7 +224,7 @@ describe("deberia probar el metodo verificarAcorde", () => {
     let acorde = ["A", "#D", "C", "B"];
     secc.acorde = acorde;
 
-    expect(secc.verificarAcorde(acorde)).toBeTruthy();
+    expect(secc.verificarAcorde(acorde)).toBe(true);
   });
 
 

@@ -46,11 +46,11 @@ class Leccion {
     this.secciones.push(seccion);
   }
 
-  agregarTitulo(title) {
-    if (this.verificarTitulo(title) != true) {
-      return this.verificarTitle(title);
+  agregarTitulo(titulo) {
+    if (this.verificarTitulo(titulo) != true) {
+      return this.verificarTitulo(titulo);
     }
-    this.titulo = title.charAt(0).toUpperCase() + title.slice(1);
+    this.titulo = titulo.charAt(0).toUpperCase() + titulo.slice(1);
   }
 
   agregarAutor(autor) {
@@ -65,13 +65,18 @@ class Leccion {
     if (this.verificarDesc(desc) != true) {
       return this.verificarDesc(desc);
     }
-    this.desc = desc.charAt(0).toUpperCase() + desc.slice(1);;
+    this.desc = desc.charAt(0).toUpperCase() + desc.slice(1);
   }
 
-  verificarTitulo(title) {
-    if (typeof title != "string") {
+  verificarTitulo(titulo) {
+    if (typeof titulo != "string") {
       return () => {
         throw new Error(Exceptions.UNEXPECTED_VALUE);
+      };
+    }
+    if (titulo.replace(/\s/g, '') == "") {
+      return () => {
+        throw new Error(Exceptions.UNFINISHED_OBJECT);
       };
     }
     return true;
