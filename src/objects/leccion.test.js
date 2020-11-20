@@ -173,7 +173,7 @@ describe("deberia probar el metodo verificarDesc", () => {
 //Prueba verificarSeccion
 describe("deberia probar el metodo verificarSeccion", () => {
 
-  it("deberia probar que pasa al verificar un a seccion correcta", () => {
+  it("deberia probar que pasa al verificar una seccion correcta", () => {
     let tab = new Tablatura();
     let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
@@ -191,6 +191,11 @@ describe("deberia probar el metodo verificarSeccion", () => {
     expect(lecc.verificarSeccion(secc)).toBe(true);
   });
 
+  //Pruebas de verificacion de los acordes de la seccion realizada en Seccion.test.js
+
+  //Pruebas de verificacion de la letra de la seccion realizada en Seccion.test.js
+
+  //Pruebas de verificacion de la tablatura de la seccion realizada en Seccion.test.js
 });
 
 //Prueba darTitulo
@@ -333,6 +338,40 @@ describe("deberia probar el metodo darSeccion", () => {
     expect(lecc.darSeccion(1)).toBe(secc);
   });
 
+  it("deberia probar que pasa al intentar agregar una seccion que no es de la clase Seccion", () => {
+    let secc = 1;
+    let lecc = new Leccion();
+    lecc.secciones = [secc, secc];
+    expect(lecc.darSeccion(0)).toThrow(Exceptions.UNEXPECTED_VALUE);
+  });
+
+  it("deberia probar que pasa al intentar agregar una seccion que sea null", () => {
+    let secc = null;
+    let lecc = new Leccion();
+    lecc.secciones = [secc, secc];
+    expect(lecc.darSeccion(0)).toThrow(Exceptions.UNEXPECTED_VALUE);
+  });
+
+  it("deberia probar que pasa al intentar dar una secccion de una posision fuera del array de secciones", () => {
+    let tab = new Tablatura();
+    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
+    tab.cantActual = 6;
+    let secc = new Seccion();
+    secc.tab = tab;
+    let acorde = ["A", "#D", "C", "B"];
+    secc.acorde = acorde;
+    let letra = "esto es una prueba";
+    secc.letra = letra;
+    let lecc = new Leccion();
+    lecc.secciones = [secc, secc, secc];
+
+
+    expect(lecc.darSeccion(4)).toThrow(Exceptions.OUT_OF_BOUNDS);
+  });
+
+  //Resto de las pruebas ya hechas en las pruebas de verificarSeccion 
+
 });
 
 //Prueba agregarTitulo
@@ -463,9 +502,10 @@ describe("deberia probar el metodo agregarSeccion", () => {
     let lecc = new Leccion();
     lecc.agregarSeccion(secc);
 
-
     expect(lecc.darSeccion(0)).toBe(secc);
   });
+
+  //Resto de pruebas en las pruebas de verificarSeccion
 
 });
 
