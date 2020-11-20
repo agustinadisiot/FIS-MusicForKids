@@ -12,27 +12,56 @@ class Sistema {
   toString() {
     let ret = "";
     for (let i = 0; i < this.lecciones.length; i++) {
-      ret = ret + this.lecciones[i].darTitulo();
+      ret = ret + this.lecciones[i].darTitulo() + " ";
     }
     return ret;
   }
 
-  agregarLeccion() {
-    let nuevaLeccion = new Leccion(titulo, autor, bpm, desc);
-    this.lecciones.push(nuevaLeccion);
-  }
-
-  borrarLeccion(titulo) {
-    let posAborrar = -1;
+  //Devuelve la leccion por titulo
+  darLeccion(titulo) {
     for (let i = 0; i < this.lecciones.length; i++) {
-      if (titulo == this.lecciones[i].titulo) {
-        posAborrar = i;
+      if (this.lecciones[i].darTitulo == titulo) {
+        if (this.verificarLeccion(this.lecciones[i]) != true) {
+          return this.verificarLeccion(this.lecciones[i]);
+        }
+        return this.lecciones[i];
       }
     }
-    if (posAborrar != -1) {
-      this.lecciones.splice(posAborrar, 1);
-    }
   }
+
+  //Valida y si cumple la verificacion, agrega la leccion nueva a la siguiente posicion vacia.
+  agregarLeccion(lecc) {
+    if (this.verificarLeccion(lecc) != true) {
+      return this.verificarLeccion(lecc);
+    }
+    this.lecciones.push(lecc);
+  }
+
+
+  verificarLeccion(lec) {
+    if (!(lec instanceof Leccion)) {
+      return () => {
+        throw new Error(Exceptions.UNEXPECTED_VALUE);
+      };
+    }
+    if (lec.verificarTitulo(lec.titulo) != true) {
+      return lec.verificarTitulo(lec.titulo);
+    }
+    if (lec.verificarAutor(lec.autor) != true) {
+      return lec.verificarAutor(lec.autor);
+    }
+    if (lec.verificarDesc(lec.desc) != true) {
+      return sec.verificarTab(lec.desc);
+    }
+    for (let i = 0; i < lec.secciones.length; i++) {
+      if (lec.verificarSeccion(lec.secciones[i]) != true) {
+        return sec.verificarSeccion(lec.secciones[i]);
+      }
+    }
+    return true;
+  }
+
+
 }
 
 // module.exports = {
