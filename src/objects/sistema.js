@@ -21,6 +21,12 @@ class Sistema {
   //Devuelve la leccion por titulo
   darLeccion(pos) {
 
+    let largo = this.lecciones.length;
+    if (pos >= largo || pos < 0) {
+      return () => {
+        throw new Error(Exceptions.OUT_OF_BOUNDS);
+      };
+    }
     let resp = this.verificarLeccion(this.lecciones[pos]);
     if (resp != true) {
       return resp;

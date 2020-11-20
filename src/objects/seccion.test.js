@@ -32,144 +32,7 @@ describe("deberia probar el metodo verificarTab", () => {
     expect(secc.verificarTab("")).toThrow(Exceptions.UNEXPECTED_VALUE);
   });
 
-
-  it("deberia probar que pasa al verificar una tablatura con una cuerda de menos", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda];
-    tab.cantActual = 5;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.verificarTab(tab)).toThrow(Exceptions.UNFINISHED_OBJECT);
-  });
-
-
-  it("deberia probar que pasa al verificar una tablatura con una cuerda de mas", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
-    tab.cantActual = 7;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.verificarTab(tab)).toThrow(Exceptions.UNEXPECTED_LENGTH);
-  });
-
-
-  it("deberia probar que pasa al verificar una tablatura con una cuerda de largo menor al correcto", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.verificarTab(tab)).toThrow(Exceptions.UNEXPECTED_LENGTH);
-  });
-
-
-  it("deberia probar que pasa al verificar una tablatura con una cuerda de largo mayor al correcto ", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.verificarTab(tab)).toThrow(Exceptions.UNEXPECTED_LENGTH);
-  });
-
-
-  it("deberia probar que pasa al verificar una tablatura con una cuerda nula", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = null;
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.verificarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al verificar una tablatura con una cuerda que no sea del tipo correcto", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = 1;
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.verificarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al verificar una tablatura con una cuerda con un dato mayor a la cantidad de trastes de la guitarra", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "44"/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.verificarTab(tab)).toThrow(Exceptions.OUT_OF_BOUNDS);
-  });
-
-
-  it("deberia probar que pasa al verificar una tablatura con una cuerda con un dato de diferente tipo a string", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", 1/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.verificarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al verificar una tablatura con una cuerda con un dato que es un string pero no un numero o un guion", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "a"/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.verificarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al verificar una tablatura con una cuerda con un dato que es un null", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", null/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.verificarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
+  //resto de prubas ya realizadas en las pruebas de validarTablatura en las pruebas de la clase Tablatura  
 
 });
 
@@ -270,162 +133,7 @@ describe("deberia probar el metodo darTab", () => {
     expect(secc.darTab()).toBe(tab);
   });
 
-
-  it("deberia probar que pasa al intentar dar un null", () => {
-    let tab = null;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar dar algo que no sea del tipo Tablatura", () => {
-    let tab = "";
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar dar una tablatura con una cuerda de menos", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda];
-    tab.cantActual = 5;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.UNFINISHED_OBJECT);
-  });
-
-
-  it("deberia probar que pasa al intentar dar una tablatura con una cuerda de mas", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
-    tab.cantActual = 7;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.UNEXPECTED_LENGTH);
-  });
-
-
-  it("deberia probar que pasa al intentar dar una tablatura con una cuerda de largo menor al correcto", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.UNEXPECTED_LENGTH);
-  });
-
-
-  it("deberia probar que pasa al intentar dar una tablatura con una cuerda de largo mayor al correcto ", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.UNEXPECTED_LENGTH);
-  });
-
-
-  it("deberia probar que pasa al intentar dar una tablatura con una cuerda nula", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = null;
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar dar una tablatura con una cuerda que no sea del tipo correcto", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = 1;
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar dar una tablatura con una cuerda con un dato mayor a la cantidad de trastes de la guitarra", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "44"/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.OUT_OF_BOUNDS);
-  });
-
-
-  it("deberia probar que pasa al intentar dar una tablatura con una cuerda con un dato de diferente tipo a string", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", 1/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar dar una tablatura con una cuerda con un dato que es un string pero no un numero o un guion", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "a"/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar dar una tablatura con una cuerda con un dato que es un null", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", null/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-    secc.tab = tab;
-
-    expect(secc.darTab()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
+  //resto de prubas ya realizadas en las pruebas de verificarTab
 
 });
 
@@ -448,21 +156,7 @@ describe("deberia probar el metodo darLetra", () => {
     expect(secc.darLetra()).toBe("esto es una prueba");
   });
 
-  it("deberia probar que pasa al intentar dar una letra que no sea de tipo string", () => {
-    let letra = 1;
-    let secc = new Seccion();
-    secc.letra = letra;
-
-    expect(secc.darLetra()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-  it("deberia probar que pasa al verificar una letra que sea null", () => {
-    let letra = null;
-    let secc = new Seccion();
-    secc.letra = letra;
-
-    expect(secc.darLetra()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
+  //resto de prubas ya realizadas en las pruebas de verificarLetra
 
 });
 
@@ -477,16 +171,6 @@ describe("deberia probar el metodo darAcorde", () => {
     expect(secc.darAcorde()).toEqual([]);
   });
 
-
-  it("deberia probar que pasa al intentar dar un acorde null", () => {
-    let acorde = null;
-    let secc = new Seccion();
-    secc.acorde = acorde;
-
-    expect(secc.darAcorde()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
   it("deberia probar que pasa al verificar un acorde correcto", () => {
     let secc = new Seccion();
     let acorde = ["A", "#D", "C", "B"];
@@ -495,32 +179,8 @@ describe("deberia probar el metodo darAcorde", () => {
     expect(secc.darAcorde(acorde)).toEqual(["A", "#D", "C", "B"]);
   });
 
+  //resto de prubas ya realizadas en las pruebas de verificarAcorde
 
-  it("deberia probar que pasa al intentar dar un acorde que tenga un dato distinto a string", () => {
-    let secc = new Seccion();
-    let acorde = ["A", "#D", 2, "B"];
-    secc.acorde = acorde;
-
-    expect(secc.darAcorde()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar dar un acorde con un dato de mas de 3 caracteres", () => {
-    let secc = new Seccion();
-    let acorde = ["A", "#D", "E", "BCSA"];
-    secc.acorde = acorde;
-
-    expect(secc.darAcorde()).toThrow(Exceptions.UNEXPECTED_LENGTH);
-  });
-
-
-  it("deberia probar que pasa al intentar dar un acorde con un dato que contiene numeros", () => {
-    let secc = new Seccion();
-    let acorde = ["A", "#D", "E", "B1"];
-    secc.acorde = acorde;
-
-    expect(secc.darAcorde()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
 });
 
 //Pruebas agregarTab
@@ -538,150 +198,7 @@ describe("deberia probar el metodo agregarTab", () => {
     expect(secc.darTab()).toBe(tab);
   });
 
-
-  it("deberia probar que pasa al intentar agregar un null", () => {
-    let tab = null;
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar agregar algo que no sea del tipo Tablatura", () => {
-    let tab = "";
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar agregar una tablatura con una cuerda de menos", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda];
-    tab.cantActual = 5;
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.UNFINISHED_OBJECT);
-  });
-
-
-  it("deberia probar que pasa al intentar agregar una tablatura con una cuerda de mas", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
-    tab.cantActual = 7;
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.UNEXPECTED_LENGTH);
-  });
-
-
-  it("deberia probar que pasa al intentar agregar una tablatura con una cuerda de largo menor al correcto", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.UNEXPECTED_LENGTH);
-  });
-
-
-  it("deberia probar que pasa al intentar agregar una tablatura con una cuerda de largo mayor al correcto ", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.UNEXPECTED_LENGTH);
-  });
-
-
-  it("deberia probar que pasa al intentar agregar una tablatura con una cuerda nula", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = null;
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar agregar una tablatura con una cuerda que no sea del tipo correcto", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = 1;
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar agregar una tablatura con una cuerda con un dato mayor a la cantidad de trastes de la guitarra", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "44"/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.OUT_OF_BOUNDS);
-  });
-
-
-  it("deberia probar que pasa al intentar agregar una tablatura con una cuerda con un dato de diferente tipo a string", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", 1/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar agregar una tablatura con una cuerda con un dato que es un string pero no un numero o un guion", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "a"/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar agregar una tablatura con una cuerda con un dato que es un null", () => {
-
-    let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", null/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
-    tab.cantActual = 6;
-    let secc = new Seccion();
-
-    expect(secc.agregarTab(tab)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
+  //resto de prubas ya realizadas en las pruebas de verificarTab
 
 });
 
@@ -704,19 +221,7 @@ describe("deberia probar el metodo agregarLetra", () => {
     expect(secc.darLetra()).toBe("esto es una prueba");
   });
 
-  it("deberia probar que pasa al intentar dar una letra que no sea de tipo string", () => {
-    let letra = 1;
-    let secc = new Seccion();
-
-    expect(secc.agregarLetra(letra)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-  it("deberia probar que pasa al verificar una letra que sea null", () => {
-    let letra = null;
-    let secc = new Seccion();
-
-    expect(secc.agregarLetra(letra)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
+  //resto de prubas ya realizadas en las pruebas de verificarLetra
 
 });
 
@@ -731,15 +236,6 @@ describe("deberia probar el metodo agregarAcorde", () => {
     expect(secc.darAcorde()).toEqual([]);
   });
 
-
-  it("deberia probar que pasa al intentar dar un acorde null", () => {
-    let acorde = null;
-    let secc = new Seccion();
-
-    expect(secc.agregarAcorde(acorde)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
   it("deberia probar que pasa al verificar un acorde correcto", () => {
     let secc = new Seccion();
     let acorde = ["A", "#D", "C", "B"];
@@ -748,28 +244,7 @@ describe("deberia probar el metodo agregarAcorde", () => {
     expect(secc.darAcorde(acorde)).toEqual(["A", "#D", "C", "B"]);
   });
 
+  //resto de prubas ya realizadas en las pruebas de verificarAcorde
 
-  it("deberia probar que pasa al intentar dar un acorde que tenga un dato distinto a string", () => {
-    let secc = new Seccion();
-    let acorde = ["A", "#D", 2, "B"];
-
-    expect(secc.agregarAcorde(acorde)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-
-  it("deberia probar que pasa al intentar dar un acorde con un dato de mas de 3 caracteres", () => {
-    let secc = new Seccion();
-    let acorde = ["A", "#D", "E", "BCSA"];
-
-    expect(secc.agregarAcorde(acorde)).toThrow(Exceptions.UNEXPECTED_LENGTH);
-  });
-
-
-  it("deberia probar que pasa al intentar dar un acorde con un dato que contiene numeros", () => {
-    let secc = new Seccion();
-    let acorde = ["A", "#D", "E", "B1"];
-
-    expect(secc.agregarAcorde(acorde)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
 });
 

@@ -213,6 +213,8 @@ describe("deberia probar el metodo agregarCuerda", () => {
     expect(tab.agregarCuerda(cuerda)).toThrow(Exceptions.UNEXPECTED_LENGTH);
   });
 
+  //resto de prubas ya realizadas en las pruebas de validarCuerda
+
 });
 
 //Puebas darCuerda
@@ -241,7 +243,7 @@ describe("deberia probar el metodo darCuerda", () => {
     expect(tab.darCuerda(num)).toThrow(Exceptions.OUT_OF_BOUNDS);
   });
 
-
+  //resto de prubas ya realizadas en las pruebas de validarCuerda
 
 });
 

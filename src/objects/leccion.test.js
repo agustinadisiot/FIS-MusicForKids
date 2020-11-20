@@ -209,37 +209,7 @@ describe("deberia probar el metodo darTitulo", () => {
     expect(lecc.darTitulo()).toBe("titulo cancion");
   });
 
-  it("deberia probar que pasa al intentar dar un titulo null", () => {
-    let lecc = new Leccion();
-    let titulo = null;
-    lecc.titulo = titulo;
-
-    expect(lecc.darTitulo()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-  it("deberia probar que pasa al intentar dar un titulo que no es del tipo string", () => {
-    let lecc = new Leccion();
-    let titulo = 22;
-    lecc.titulo = titulo;
-
-    expect(lecc.darTitulo()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-  it("deberia probar que pasa al intentar dar un titulo vacio", () => {
-    let lecc = new Leccion();
-    let titulo = "";
-    lecc.titulo = titulo;
-
-    expect(lecc.darTitulo()).toThrow(Exceptions.UNFINISHED_OBJECT);
-  });
-
-  it("deberia probar que pasa al intentar dar un titulo con solo espacios", () => {
-    let lecc = new Leccion();
-    let titulo = "       ";
-    lecc.titulo = titulo;
-
-    expect(lecc.darTitulo()).toThrow(Exceptions.UNFINISHED_OBJECT);
-  });
+  //resto de prubas ya realizadas en las pruebas de verificarTitulo
 
 });
 
@@ -262,21 +232,7 @@ describe("deberia probar el metodo darAutor", () => {
     expect(lecc.darAutor()).toBe("");
   });
 
-  it("deberia probar que pasa al intentar dar un autor que sea null", () => {
-    let lecc = new Leccion();
-    let autor = null;
-    lecc.autor = autor;
-
-    expect(lecc.darAutor()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-  it("deberia probar que pasa al intentar dar un autor que no sea del tipo string", () => {
-    let lecc = new Leccion();
-    let autor = 22;
-    lecc.autor = autor;
-
-    expect(lecc.darAutor()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
+  //resto de prubas ya realizadas en las pruebas de verificarAutor
 
 });
 
@@ -299,21 +255,7 @@ describe("deberia probar el metodo darDesc", () => {
     expect(lecc.darDesc()).toBe("");
   });
 
-  it("deberia probar que pasa al intentar dar una descripcion que sea null", () => {
-    let lecc = new Leccion();
-    let desc = null;
-    lecc.desc = desc;
-
-    expect(lecc.darDesc()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-  it("deberia probar que pasa al intentar dar una descripcion que no es del tipo string", () => {
-    let lecc = new Leccion();
-    let desc = 22;
-    lecc.desc = desc;
-
-    expect(lecc.darDesc()).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
+  //resto de prubas ya realizadas en las pruebas de verificarDesc
 
 });
 
@@ -385,33 +327,7 @@ describe("deberia probar el metodo agregarTitulo", () => {
     expect(lecc.darTitulo()).toBe("Titulo Cancion");
   });
 
-  it("deberia probar que pasa al intentar agregar un titulo null", () => {
-    let lecc = new Leccion();
-    let titulo = null;
-
-    expect(lecc.agregarTitulo(titulo)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-  it("deberia probar que pasa al intentar agregar un titulo que no es del tipo string", () => {
-    let lecc = new Leccion();
-    let titulo = 22;
-
-    expect(lecc.agregarTitulo(titulo)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-  it("deberia probar que pasa al intentar agregar un titulo vacio", () => {
-    let lecc = new Leccion();
-    let titulo = "";
-
-    expect(lecc.agregarTitulo(titulo)).toThrow(Exceptions.UNFINISHED_OBJECT);
-  });
-
-  it("deberia probar que pasa al intentar agregar un titulo con solo espacios", () => {
-    let lecc = new Leccion();
-    let titulo = "        ";
-
-    expect(lecc.agregarTitulo(titulo)).toThrow(Exceptions.UNFINISHED_OBJECT);
-  });
+  //resto de prubas ya realizadas en las pruebas de verificarTitulo
 
 });
 
@@ -434,19 +350,7 @@ describe("deberia probar el metodo agregarAutor", () => {
     expect(lecc.darAutor()).toBe("");
   });
 
-  it("deberia probar que pasa al intentar agregar un autor que sea null", () => {
-    let lecc = new Leccion();
-    let autor = null;
-
-    expect(lecc.agregarAutor(autor)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-  it("deberia probar que pasa al intentar agregar un autor que no sea del tipo string", () => {
-    let lecc = new Leccion();
-    let autor = 22;
-
-    expect(lecc.agregarAutor(autor)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
+  //resto de prubas ya realizadas en las pruebas de verificarAutor
 
 });
 
@@ -469,19 +373,7 @@ describe("deberia probar el metodo agregarDesc", () => {
     expect(lecc.darDesc()).toBe("");
   });
 
-  it("deberia probar que pasa al intentar agregar una descripcion que sea null", () => {
-    let lecc = new Leccion();
-    let desc = null;
-
-    expect(lecc.agregarDesc(desc)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
-
-  it("deberia probar que pasa al intentar agregar una descripcion que no es del tipo string", () => {
-    let lecc = new Leccion();
-    let desc = 22;
-
-    expect(lecc.agregarDesc(desc)).toThrow(Exceptions.UNEXPECTED_VALUE);
-  });
+  //resto de prubas ya realizadas en las pruebas de verificarDesc
 
 });
 
