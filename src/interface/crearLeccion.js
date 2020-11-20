@@ -4,9 +4,10 @@ var cantSecciones = 0;
 var actual = 0;
 
 function inicio() {
+  crearSeccion();
   document
     .getElementById("botonAgregar")
-    .addEventListener("click", agregarSeccion);
+    .addEventListener("click", crearSeccion);
   document
     .getElementById("botonGuardar")
     .addEventListener("click", guardarLeccion);
@@ -18,8 +19,14 @@ function crearTablatura() {
   var cantidadCuadrados = Definiciones.cantidadCuadradosTab;
   var tablatura = document.createElement("div");
   tablatura.className = "tablatura";
+  let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
 
   for (let cuerda = 0; cuerda < 6; cuerda++) {
+
+
+    tablatura.innerHTML = tablatura.innerHTML + "" + nomCuerdas[cuerda] + " | ";
+
+
     for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
       let inputSolo = document.createElement("input");
       inputSolo.name = clase + "(" + cuerda + "-" + entrada + ")";
@@ -34,7 +41,7 @@ function crearTablatura() {
           inputSolo.value = inputSolo.value.slice(0, 0);
         }
         if (isNaN(inputSolo.value)) {
-          inputSolo.value = inputSolo.value.slice(0,inputSolo.value.length - 1);
+          inputSolo.value = inputSolo.value.slice(0, inputSolo.value.length - 1);
         }
       };
       inputSolo.size = ancho;
@@ -58,6 +65,7 @@ function crearInputsAcordes() {
   var acorde = document.createElement("div");
   acorde.className = "acorde";
 
+  acorde.innerHTML = acorde.innerHTML + "Acordes: ";
   for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
     let inputSolo = document.createElement("input");
     inputSolo.name = clase + entrada;
@@ -80,6 +88,7 @@ function crearInputLetra() {
   var entrada = document.createElement("input");
   entrada.maxlength = largo;
   entrada.size = 90;
+  entrada.name = "cuadroLetra";
   entrada.type = "text";
   entrada.placeholder = "Ingrese la letra aqui";
   entrada.className = "cuadroLetra";
@@ -88,7 +97,7 @@ function crearInputLetra() {
   return letra;
 }
 
-function agregarSeccion() {
+function crearSeccion() {
   //Defino seccion con su id
   var seccion = document.createElement("div");
   seccion.id = "div" + cantSecciones;
@@ -126,83 +135,125 @@ function validarEntradas() {
   return true;
 }
 
+function guardarTablatura(sec, tab, formActual) {
+  for (let i = 0; i < 6; i++) {
+    let cuerda = [];
+
+    for (let j = 0; j < Definiciones.cantidadCuadradosTab; j++) {
+      let texto = formActual["cuadroTablatura" + "(" + i + "-" + j + ")"].value;
+
+      texto = texto.trim();
+      if (texto == "") {
+        texto = "-";
+      }
+      cuerda.push(texto);
+    }
+    if (tab.validarCuerda(cuerda) == true) {
+      tab.agregarCuerda(cuerda);
+    } else {
+      alert("Hay un error en las tablatura");
+      return false;
+    }
+
+  }
+
+
+  if (!sec.verificarTab(tab)) {
+    return false;
+  }
+  sec.agregarTab(tab);
+  return true;
+}
+
+function guardarAcorde(sec, acorde, formActual) {
+  for (let j = 0; j < Definiciones.cantidadCuadradosTab; j++) {
+    let texto = formActual["cuadroAcorde" + j].value;
+    texto = texto.trim();
+    acorde.push(texto);
+  }
+  if (sec.verificarAcorde(acorde) == true) {
+    sec.agregarAcorde(acorde);
+  } else {
+    alert("Hay un error en los acordes de la seccion");
+    return false;
+  }
+  return true;
+}
+
+function guardarLetra(sec, letra, formActual) {
+  if (sec.verificarLetra(letra) == true) {
+    sec.agregarLetra(letra);
+  } else {
+    alert("Hay un error en la letra de la seccion");
+    return false;
+  }
+  return true;
+}
+
+function guardarSeccion(lec, sec, formActual) {
+  let tab = new Tablatura();
+
+  if (!guardarTablatura(sec, tab, formActual)) {
+    return false;
+  }
+
+  let acorde = [];
+  if (!guardarAcorde(sec, acorde, formActual)) {
+    return false;
+  }
+
+  let letra = formActual.cuadroLetra.value;
+  if (!guardarLetra(sec, letra, formActual)) {
+    return false;
+  }
+
+  if (!lec.verificarSeccion(sec)) {
+    alert("Hay un error en la seccion");
+  } else {
+    lec.agregarSeccion(sec);
+  }
+
+  return true;
+}
+
+
 function guardarLeccion() {
-  var lec = new Leccion();
+  let lec = new Leccion();
   let valido = true;
-
-
-  
   if (!validarEntradas()) {
-    valido = false;
     alert("Error en las entradas");
   } else {
-    for (let numSec = 0; numSec < cantSecciones && valido; numSec++) {
+
+    let titulo = document.getElementById("titulo").value;
+    let autor = document.getElementById("autor").value;
+    let desc = document.getElementById("descripcion").value;
+
+    if (lec.verificarTitulo(titulo) == true) {
+      lec.agregarTitulo(titulo);
+    }
+
+    if (lec.verificarAutor(autor) == true) {
+      lec.agregarAutor(autor);
+    }
+
+    if (lec.verificarDesc(desc) == true) {
+      lec.agregarDesc(desc);
+    }
+
+    for (let numSec = 0; numSec < cantSecciones; numSec++) {
       let formActual = document.getElementById("form" + numSec);
       let sec = new Seccion();
-      let tab = new Tablatura();
 
-      for (let i = 0; i < 6; i++) {
-        let cuerda = [];
-
-        for (let j = 0; j < Definiciones.cantidadCuadradosTab && valido; j++) {
-          let texto = formActual["cuadroTablatura" + "(" + i + "-" + j + ")"].value;
-
-          texto = texto.trim();
-          if(texto == ""){
-            texto = "-";
-          }
-          cuerda.push(texto);
-        }
-        if(tab.validarCuerda(cuerda)==true){
-          tab.agregarCuerda(cuerda);
-        }else{
-          valido = false;
-          alert("Hay un error en las tablatura de la seccion " + (numSec+1));
-        }
-
-      }
-
-      if(!tab.validarTablatura()){
-        valido = false;
-        alert("Error en la tablatura " + numSec);
-      }
-
-      let acorde = [];
-
-      for (let j = 0; j < Definiciones.cantidadCuadradosTab && valido; j++) {
-        let texto = formActual["cuadroAcorde" + j].value;
-        texto = texto.trim();
-        acorde.push(texto);
-      }
-      if(sec.verificarAcorde(acorde)==true){
-        sec.agregarAcorde(acorde);
-      }else{
-        valido = false;
-        alert("Hay un error en los acordes de la seccion " + (numSec+1));
-      }
-
-      let letra = formActual["letra"].value;
-
-      if(sec.verificarLetra(letra)==true){
-        sec.agregarLetra(letra);
-      }else{
-        valido = false;
-        alert("Hay un error en la letra de la seccion " + (numSec+1));
-      }
-
-      if(lec.verificarSeccion(sec)){
-        lec.agregarSeccion(sec);
-      }else{
+      if (!guardarSeccion(lec, sec, formActual)) {
         valido = false;
         alert("Hay un error en la seccion " + numSec);
       }
-
     }
 
-    if(valido && sistema.verificarLeccion(lec)){
+    if (valido && sistema.verificarLeccion(lec) == true) {
       sistema.agregarLeccion(lec);
       alert("Se guardo exitosamente");
-    }else{
+    } else {
       alert("Hubo un problema al guardar la leccion, revise los datos ingresados, nuevamente");
     }
   }

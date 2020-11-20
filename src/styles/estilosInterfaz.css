@@ -5,9 +5,13 @@
   align-items: center;
 }
 
+
+
 .tablatura,
 .acorde,
 .letra {
+  font-family: monospace;
+  font-size: 18px;
   align-items: center;
   align-self: center;
   width: 90%;

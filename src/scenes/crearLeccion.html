@@ -2,75 +2,67 @@
 <html lang="en">
 
 <head>
-  <title>Prueba estilos</title>
-  <link rel="stylesheet" href="../styles/estilosPruebas.css">
+  <meta charset="utf-8">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="../../bundle.css">
+  <link rel="stylesheet" href="../styles/estilosInterfaz.css">
+
+  <script src="../common/definiciones.js"></script>
+  <script src="../objects/tablatura.js"></script>
+  <script src="../objects/seccion.js"></script>
+  <script src="../objects/leccion.js"></script>
+  <script src="../objects/sistema.js"></script>
+  <script src="../interface/crearLeccion.js"></script>
 </head>
 
 <body>
+  <header>
+    <h1 class="titulo" id="tope">Obligatorio 2</h1>
+  </header>
 
-  <div class="seccion">
-    <h1 class="text-center">Crear Tareas</h1>
-    <form id="inputField" role="form">
+  <nav>
 
-      <input class="cuadroTablatura" type="number" name="field00" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field01" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field02" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field03" size="1" placeholder="-" />
+    <!-- <a id="verOperadores" href="#section1">Operadores</a>
+    <a id="verLlamadas" href="#section2">Llamadas</a>
+    <a id="verConsultas" href="#section3">Consultas</a> -->
 
-      <br>
+  </nav>
 
-      <input class="cuadroTablatura" type="number" name="field00" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field01" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field02" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field03" size="1" placeholder="-" />
+  <main>
+    <div>
+      <form>
+        <input size="90" id="titulo" type="text" placeholder="Titulo">
+        <br>
+        <br>
+        <input size="90" id="autor" type="text" placeholder="Autor">
+        <br>
+        <br>
+        <textarea size="90" id="descripcion" type="text" placeholder="Titulo"></textarea>
+      </form>
+    </div>
 
-      <br>
+    <div id="divLeccion"></div>
 
-      <input class="cuadroTablatura" type="number" name="field00" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field01" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field02" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field03" size="1" placeholder="-" />
 
-      <br>
 
-      <input class="cuadroTablatura" type="number" name="field00" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field01" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field02" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field03" size="1" placeholder="-" />
+    <div class="divBotonCentrado">
+      <button class="foo-button mdc-button" id="botonAgregar">
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Agregar</span>
+      </button>
+    </div>
 
-      <br>
 
-      <input class="cuadroTablatura" type="number" name="field00" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field01" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field02" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field03" size="1" placeholder="-" />
 
-      <br>
+    <div>
+      <button class="foo-button mdc-button" id="botonGuardar">
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Guardar</span>
+      </button>
+    </div>
 
-      <input class="cuadroTablatura" type="number" name="field00" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field01" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field02" size="1" placeholder="-" />
-      <input class="cuadroTablatura" type="number" name="field03" size="1" placeholder="-" />
-      <br>
-    </form>
 
-    <br>
-
-    <form>
-      <input type="text" id="letra" size="30" placeholder="ingrese letra de la cancion" />
-    </form>
-
-    <br>
-
-    <form>
-      <input type="text" id="acorde" size="30" placeholder="ingrese acordes de la cancion" />
-    </form>
-
-  </div>
-
-  <br>
-
-  <input type="button" onclick="calcJacobian()" value="abregar" name="agregar" class="btn btn-info" />
+  </main>
 
 </body>
 
