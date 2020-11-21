@@ -4,9 +4,31 @@
   align-items: center;
 }
 
-.testNav{
-  overflow: hidden;
-  position: fixed;
+.card1 {
+  margin:5%;
+  width: 40%;
+  float: left;
+}
+
+.card2 {
+  margin:5%;
+  width: 40%;
+  float: right;
+}
+
+.tituloNav{
+  font-size: 40px;
+  margin: 0.67em 0;
+}
+
+.cardLink{
+  font-weight: bold;
+}
+
+main{
+  display: flex;
+  min-height: 50vh;
+  flex-direction: column;
 }
 
 .tablatura,
@@ -50,6 +72,22 @@ input[type="number"] {
 
 @media screen and (max-width : 700px){
 
+  .card1,
+  .card2 {
+    margin:10%;
+    width: auto;
+    float: left;
+  }
+
+  .tituloNav{
+    font-size: 40px;
+    margin: 0.67em 0;
+  }
+  
+  .cardLink{
+    font-weight: bold;
+  }
+
   .tablatura,
   .acorde,
   .letra {
@@ -80,6 +118,22 @@ input[type="number"] {
 }
 
 @media screen and (max-width : 350px){
+
+  .card1,
+  .card2 {
+    margin:auto;
+    width: auto;
+    float: left;
+  }
+
+  .tituloNav{
+    font-size: 40px;
+    margin: 0.67em 0;
+  }
+  
+  .cardLink{
+    font-weight: bold;
+  }
 
   .tablatura,
   .acorde,
