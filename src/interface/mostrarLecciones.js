@@ -8,20 +8,20 @@ var sistema = new Sistema();
 function levantarSistema() {
   let sisGuardado = localStorage.getItem("testSistema");
   if (sisGuardado) {
-    let auxSistema = Object.assign(new Sistema, JSON.parse(sisGuardado));
+    let auxSistema = Object.assign(new Sistema(), JSON.parse(sisGuardado));
     let array = auxSistema.lecciones;
 
 
     for (let i = 0; i < array.length; i++) {
-      let auxLeccion = Object.assign(new Leccion, (array[i]));
+      let auxLeccion = Object.assign(new Leccion(), (array[i]));
       let leccion = new Leccion();
       leccion.agregarTitulo(auxLeccion.titulo);
       leccion.agregarAutor(auxLeccion.autor);
       leccion.agregarDesc(auxLeccion.desc);
       for (let j = 0; j < auxLeccion.secciones.length; j++) {
-        let auxSeccion = Object.assign(new Seccion, (auxLeccion.secciones[j]));
+        let auxSeccion = Object.assign(new Seccion(), (auxLeccion.secciones[j]));
         let seccion = new Seccion();
-        let tab = Object.assign(new Tablatura, (auxSeccion.tab));
+        let tab = Object.assign(new Tablatura(), (auxSeccion.tab));
         seccion.agregarTab(tab);
         seccion.agregarLetra(auxSeccion.letra);
         seccion.agregarAcorde(auxSeccion.acorde);
@@ -31,12 +31,12 @@ function levantarSistema() {
     }
   }
 
-  let tab = new Tablatura();
+  let nuevoTab = new Tablatura();
   let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
-  tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
-  tab.cantActual = 6;
+  nuevoTab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
+  nuevoTab.cantActual = 6;
   let secc = new Seccion();
-  secc.tab = tab;
+  secc.tab = nuevoTab;
   let acorde = ["A", "#D", "C", "B"];
   secc.acorde = acorde;
   let letra = "esto es una prueba";
