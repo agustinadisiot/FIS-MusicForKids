@@ -1,7 +1,7 @@
 window.addEventListener("load", inicio);
-var sistema = new Sistema();
-var cantSecciones = 0;
-var actual = 0;
+let sistema = new Sistema();
+let cantSecciones = 0;
+let actual = 0;
 
 function inicio() {
   levantarSistema();
@@ -47,10 +47,10 @@ function guardarSistema() {
 }
 
 function crearTablatura() {
-  var ancho = 1;
-  var clase = "cuadroTablatura";
-  var cantidadCuadrados = Definiciones.cantidadCuadradosTab;
-  var tablatura = document.createElement("div");
+  let ancho = 1;
+  let clase = "cuadroTablatura";
+  let cantidadCuadrados = Definiciones.cantidadCuadradosTab;
+  let tablatura = document.createElement("div");
   tablatura.className = "browser-default tablatura";
   let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
 
@@ -99,10 +99,10 @@ function controlInput(entrada) {
 };
 
 function crearInputsAcordes() {
-  var ancho = 1;
-  var clase = "cuadroAcorde";
-  var cantidadCuadrados = Definiciones.cantidadCuadradosTab;
-  var acorde = document.createElement("div");
+  let ancho = 1;
+  let clase = "cuadroAcorde";
+  let cantidadCuadrados = Definiciones.cantidadCuadradosTab;
+  let acorde = document.createElement("div");
   acorde.className = "browser-default acorde";
 
   acorde.innerHTML = acorde.innerHTML + "Acordes: ";
@@ -122,11 +122,11 @@ function crearInputsAcordes() {
 }
 
 function crearInputLetra() {
-  var largo = 100;
-  var letra = document.createElement("div");
+  let largo = 100;
+  let letra = document.createElement("div");
   letra.className = "letra";
 
-  var entrada = document.createElement("input");
+  let entrada = document.createElement("input");
   entrada.maxlength = largo;
   entrada.size = 90;
   entrada.name = "cuadroLetra";
@@ -140,16 +140,16 @@ function crearInputLetra() {
 
 function crearSeccion() {
   //Defino seccion con su id
-  var seccion = document.createElement("div");
+  let seccion = document.createElement("div");
   seccion.id = "div" + cantSecciones;
   seccion.className = "divSeccion";
-  var bloque_form = document.createElement("form");
+  let bloque_form = document.createElement("form");
   bloque_form.id = "form" + cantSecciones;
   cantSecciones++;
 
-  var inTab = crearTablatura();
-  var inAcord = crearInputsAcordes();
-  var inLetra = crearInputLetra();
+  let inTab = crearTablatura();
+  let inAcord = crearInputsAcordes();
+  let inLetra = crearInputLetra();
 
   bloque_form.appendChild(inTab);
   bloque_form.appendChild(document.createElement("br"));
@@ -160,7 +160,7 @@ function crearSeccion() {
   bloque_form.appendChild(document.createElement("br"));
   seccion.appendChild(bloque_form);
 
-  var puntero;
+  let puntero;
 
   puntero = document.getElementById("divLeccion");
   puntero.appendChild(seccion);

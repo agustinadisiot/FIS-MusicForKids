@@ -21,7 +21,7 @@
   <script src="../objects/seccion.js"></script>
   <script src="../objects/leccion.js"></script>
   <script src="../objects/sistema.js"></script>
-  <script src="../interface/crearLeccion.js"></script>
+  <script src="../interface/realizarLeccion.js"></script>
 </head>
 
 <body>
@@ -48,23 +48,9 @@
     </div>
     <div class="browser-default row center">
       <div>
-        <form>
-          <div class="input-field row s6">
-            <input id="titulo" type="text" class="validate">
-            <label for="titulo">Titulo</label>
-          </div>
-          <br>
-          <div class="input-field row s6">
-            <input id="autor" type="text" class="validate">
-            <label for="autor">Autor</label>
-          </div>
-          <br>
-          <div class="input-field row s12">
-            <textarea id="descripcion" class="materialize-textarea"></textarea>
-            <label for="descripcion">Descripcion</label>
-          </div>
-          <br>
-        </form>
+        <h1 id="titulo"></h1>
+        <h3 id="subtitulo"></h3>
+        <p id=descripcion></p>
       </div>
       <div class="row center" id="divLeccion"></div>
 
@@ -78,19 +64,11 @@
       </div>
 
 
-      <div class="container">
-        <div class="row right">
-          <a id="botonGuardar" class="btn waves-effect waves-light teal lighten-1">
-            Guardar
-          </a>
-          <br><br>
-        </div>
-        <br><br>
-      </div>
-      <br><br>
+
 
     </div>
   </div>
+
   <footer class="page-footer teal">
     <div class="container">
       <div class="row">

@@ -57,9 +57,37 @@ function inicio() {
   // document.getElementById("botonGuardar").addEventListener("click", guardarLeccion);
 }
 
+function imprimirTablatura(tab) {
+  let parrafo = document.createElement("p");
+  let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
+  for (let i = 0; i < 6; i++) {
+    let cuerda = tab.darCuerda(i);
+    parrafo.innerHTML = parrafo.innerHTML + nomCuerdas[i] + " | " + cuerda;
+    parrafo.appendChild(document.createElement("br"));
+  }
+  return parrafo;
+}
 
+function imprimirSeccion(seccion, puntero) {
+  puntero.appendChild(imprimirTablatura(seccion.darTab()));
+
+  let acorde = document.createElement("p");
+  acorde.innerHTML = seccion.darAcorde();
+  puntero.appendChild(acorde);
+  puntero.appendChild(document.createElement("br"));
+
+  let letra = document.createElement("p");
+  letra.innerHTML = seccion.darLetra();
+  puntero.appendChild(letra);
+  puntero.appendChild(document.createElement("br"));
+
+}
 
 function mostrarLeccion() {
-
+  let puntero = document.getElementById("divLeccion");
+  let cant = leccionActual.secciones.length;
+  for (let i = 0; i < leccionActual.secciones.length; i++) {
+    imprimirSeccion(leccionActual.darSeccion(i), puntero);
+  }
 
 }
