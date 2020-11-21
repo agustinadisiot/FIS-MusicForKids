@@ -17,7 +17,7 @@ class Sistema {
     return ret;
   }
 
-  //Devuelve la leccion por titulo
+  //Devuelve la leccion por posicion
   darLeccion(pos) {
 
     let largo = this.lecciones.length;
