@@ -1,7 +1,6 @@
 #divLeccion,
 #divSeccion {
-  width: 80%;
-  padding: 20px;
+  width: 100%;
   align-items: center;
 }
 
@@ -14,12 +13,9 @@
   font-size: 18px;
   align-items: center;
   align-self: center;
-  width: 90%;
-  margin: auto;
+  width: 100%;
 }
 
-.cuadroLetra {
-}
 
 .cuadroTablatura,
 .cuadroAcorde,
@@ -45,4 +41,26 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
+}
+
+@media screen and (max-width : 700px){
+
+  .tablatura,
+  .acorde,
+  .letra {
+    font-family: monospace;
+    font-size: 7px;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+  }
+  
+  
+  .cuadroTablatura,
+  .cuadroAcorde,
+  .cuadroletra {
+    width: 12.9px;
+    text-align: center;
+  }
+  
 }

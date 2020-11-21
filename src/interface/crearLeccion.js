@@ -63,7 +63,7 @@ function crearInputsAcordes() {
   var clase = "cuadroAcorde";
   var cantidadCuadrados = Definiciones.cantidadCuadradosTab;
   var acorde = document.createElement("div");
-  acorde.className = "acorde";
+  acorde.className = "browser-default acorde";
 
   acorde.innerHTML = acorde.innerHTML + "Acordes: ";
   for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
@@ -73,7 +73,7 @@ function crearInputsAcordes() {
     inputSolo.maxLength = "3";
     inputSolo.type = "text";
     inputSolo.placeholder = "";
-    inputSolo.className = clase;
+    inputSolo.className = "browser-default " + clase;
     acorde.appendChild(inputSolo);
   }
 
