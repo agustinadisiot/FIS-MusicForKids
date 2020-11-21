@@ -20,17 +20,13 @@
 .cuadroTablatura,
 .cuadroAcorde,
 .cuadroletra {
-  width: 20px;
-  font-size: 100%;
-  font-weight: bold;
+  width: 30px;
+  font-size: 15px;
+  height: 30px;
   text-align: center;
 }
 
-.divBotonCentrado {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -49,18 +45,22 @@ input[type="number"] {
   .acorde,
   .letra {
     font-family: monospace;
-    font-size: 7px;
+    font-size: 11px;
     align-items: center;
     align-self: center;
     width: 100%;
+    margin: none;
   }
   
   
   .cuadroTablatura,
   .cuadroAcorde,
   .cuadroletra {
-    width: 12.9px;
+    width: 16.29px;
+    font-size: 8.5px;
+    height: 16px;
     text-align: center;
+  
   }
   
 }

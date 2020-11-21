@@ -24,7 +24,7 @@ function crearTablatura() {
   for (let cuerda = 0; cuerda < 6; cuerda++) {
 
 
-    tablatura.innerHTML = tablatura.innerHTML + "" + nomCuerdas[cuerda] + " | ";
+    tablatura.innerHTML = tablatura.innerHTML + "" + nomCuerdas[cuerda] + " ";
 
 
     for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
