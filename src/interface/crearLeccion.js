@@ -18,7 +18,7 @@ function crearTablatura() {
   var clase = "cuadroTablatura";
   var cantidadCuadrados = Definiciones.cantidadCuadradosTab;
   var tablatura = document.createElement("div");
-  tablatura.className = "tablatura";
+  tablatura.className = "browser-default tablatura";
   let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
 
   for (let cuerda = 0; cuerda < 6; cuerda++) {
@@ -47,7 +47,7 @@ function crearTablatura() {
       inputSolo.size = ancho;
       inputSolo.type = "text";
       inputSolo.placeholder = "-";
-      inputSolo.className = clase;
+      inputSolo.className = "browser-default " + clase;
       tablatura.appendChild(inputSolo);
     }
     if (cuerda != 6) {
