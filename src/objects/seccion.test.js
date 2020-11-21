@@ -9,7 +9,7 @@ describe("deberia probar el metodo verificarTab", () => {
   it("deberia probar que pasa al verificar una tablatura correcta", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
     let secc = new Seccion();
@@ -124,7 +124,7 @@ describe("deberia probar el metodo darTab", () => {
   it("deberia probar que pasa al intentar dar una tablatura correcta", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
     let secc = new Seccion();
@@ -189,7 +189,7 @@ describe("deberia probar el metodo agregarTab", () => {
   it("deberia probar que pasa al intentar agregar una tablatura correcta", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
     let secc = new Seccion();

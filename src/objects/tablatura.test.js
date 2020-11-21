@@ -47,7 +47,7 @@ describe("deberia probar el metodo validarCuerda", () => {
 
   it("deberia probar que pasa al validar cuerda de largo 5", () => {
     let tab = new Tablatura();
-    let cuerdaAux = [1, "-", "-", 4, "-"];
+    let cuerdaAux = ["1", "-", "-", "4", "-"];
     expect(tab.validarCuerda(cuerdaAux)).toThrow(Exceptions.UNEXPECTED_LENGTH);
   });
 
@@ -65,7 +65,7 @@ describe("deberia probar el metodo validarTablatura", () => {
   it("deberia probar que pasa al verificar una tablatura correcta", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
 
@@ -77,7 +77,7 @@ describe("deberia probar el metodo validarTablatura", () => {
   it("deberia probar que pasa al verificar una tablatura con una cuerda de menos", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 5;
 
@@ -88,7 +88,7 @@ describe("deberia probar el metodo validarTablatura", () => {
   it("deberia probar que pasa al verificar una tablatura con una cuerda de mas", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 7;
 
@@ -99,8 +99,8 @@ describe("deberia probar el metodo validarTablatura", () => {
   it("deberia probar que pasa al verificar una tablatura con una cuerda de largo menor al correcto", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
+    let cuerdaError = ["1", "1", "1", "1", "-", "-", "-"];
     tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
 
@@ -111,8 +111,8 @@ describe("deberia probar el metodo validarTablatura", () => {
   it("deberia probar que pasa al verificar una tablatura con una cuerda de largo mayor al correcto ", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
+    let cuerdaError = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "1", "11", "1", "-", "1", "1", "1"];
     tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
 
@@ -123,7 +123,7 @@ describe("deberia probar el metodo validarTablatura", () => {
   it("deberia probar que pasa al verificar una tablatura con una cuerda nula", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     let cuerdaError = null;
     tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
@@ -135,7 +135,7 @@ describe("deberia probar el metodo validarTablatura", () => {
   it("deberia probar que pasa al verificar una tablatura con una cuerda que no sea del tipo correcto", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     let cuerdaError = 1;
     tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
@@ -147,8 +147,8 @@ describe("deberia probar el metodo validarTablatura", () => {
   it("deberia probar que pasa al verificar una tablatura con una cuerda con un dato mayor a la cantidad de trastes de la guitarra", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "44"/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
+    let cuerdaError = ["44"/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
 
@@ -159,8 +159,8 @@ describe("deberia probar el metodo validarTablatura", () => {
   it("deberia probar que pasa al verificar una tablatura con una cuerda con un dato de diferente tipo a string", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", 1/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
+    let cuerdaError = [1/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
 
@@ -171,8 +171,8 @@ describe("deberia probar el metodo validarTablatura", () => {
   it("deberia probar que pasa al verificar una tablatura con una cuerda con un dato que es un string pero no un numero o un guion", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", "a"/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
+    let cuerdaError = ["a"/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
 
@@ -183,8 +183,8 @@ describe("deberia probar el metodo validarTablatura", () => {
   it("deberia probar que pasa al verificar una tablatura con una cuerda con un dato que es un null", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
-    let cuerdaError = ["1", "11", "1", "-", "1", null/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
+    let cuerdaError = [null/*<-dato incorrecto*/, "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerdaError, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
 

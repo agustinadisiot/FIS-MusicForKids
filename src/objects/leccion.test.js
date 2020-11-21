@@ -175,7 +175,7 @@ describe("deberia probar el metodo verificarSeccion", () => {
 
   it("deberia probar que pasa al verificar una seccion correcta", () => {
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
     let secc = new Seccion();
@@ -264,7 +264,7 @@ describe("deberia probar el metodo darSeccion", () => {
 
   it("deberia probar que pasa al intentar dar una seccion correcta", () => {
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
     let secc = new Seccion();
@@ -296,7 +296,7 @@ describe("deberia probar el metodo darSeccion", () => {
 
   it("deberia probar que pasa al intentar dar una secccion de una posision fuera del array de secciones", () => {
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
     let secc = new Seccion();
@@ -382,7 +382,7 @@ describe("deberia probar el metodo agregarSeccion", () => {
 
   it("deberia probar que pasa al intentar agregar una seccion correcta", () => {
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
     let secc = new Seccion();
