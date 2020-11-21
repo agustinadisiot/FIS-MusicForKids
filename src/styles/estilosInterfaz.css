@@ -4,7 +4,10 @@
   align-items: center;
 }
 
-
+.testNav{
+  overflow: hidden;
+  position: fixed;
+}
 
 .tablatura,
 .acorde,
@@ -14,8 +17,14 @@
   align-items: center;
   align-self: center;
   width: 100%;
+  margin:none;
 }
 
+.letra{
+  font-family:unset;
+  margin:auto;
+  width:50%;
+} 
 
 .cuadroTablatura,
 .cuadroAcorde,
@@ -52,11 +61,16 @@ input[type="number"] {
     margin: none;
   }
   
+  .letra{
+    font-family:unset;
+    margin:auto;
+    width:75%;
+  } 
   
   .cuadroTablatura,
   .cuadroAcorde,
   .cuadroletra {
-    width: 21.5px;
+    width: 20.7px;
     font-size: 12px;
     height: 21.5px;
     text-align: center;
@@ -78,6 +92,11 @@ input[type="number"] {
     margin: none;
   }
   
+  .letra{
+    font-family:unset;
+    margin:auto;
+    width:100%;
+  } 
   
   .cuadroTablatura,
   .cuadroAcorde,
