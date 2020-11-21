@@ -27,13 +27,13 @@
 <body>
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <a id="logo-container" href="#" class="brand-logo">Obligatorio 2</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#">Realizar Leccion</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#">Realizar Leccion</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -49,16 +49,23 @@
     <div class="browser-default row center">
       <div>
         <form>
-          <input size="90" id="titulo" type="text" placeholder="Titulo">
+          <div class="input-field row s6">
+            <input id="titulo" type="text" class="validate">
+            <label for="titulo">Titulo</label>
+          </div>
           <br>
+          <div class="input-field row s6">
+            <input id="autor" type="text" class="validate">
+            <label for="autor">Autor</label>
+          </div>
           <br>
-          <input size="90" id="autor" type="text" placeholder="Autor">
+          <div class="input-field row s12">
+            <textarea id="descripcion" class="materialize-textarea"></textarea>
+            <label for="descripcion">Descripcion</label>
+          </div>
           <br>
-          <br>
-          <textarea size="90" id="descripcion" type="text" placeholder="Descripcion" style="resize:none"></textarea>
         </form>
       </div>
-
       <div class="row center" id="divLeccion"></div>
 
 
@@ -75,8 +82,8 @@
 
 
       <div class="container">
-        <div class="row left">
-          <a id="botonGuardar" class="btn-large waves-effect waves-light teal lighten-1">
+        <div class="row right">
+          <a id="botonGuardar" class="btn waves-effect waves-light teal lighten-1">
             Guardar
           </a>
           <br><br>
@@ -85,50 +92,46 @@
       </div>
       <br><br>
 
-      <footer class="page-footer teal">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Company Bio</h5>
-              <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's
-                our
-                full time job. Any amount would help support and continue development on this project and is greatly
-                appreciated.</p>
-
-
-            </div>
-            <div class="col l3 s12">
-              <h5 class="white-text">Settings</h5>
-              <ul>
-                <li><a class="white-text" href="#!">Link 1</a></li>
-                <li><a class="white-text" href="#!">Link 2</a></li>
-                <li><a class="white-text" href="#!">Link 3</a></li>
-                <li><a class="white-text" href="#!">Link 4</a></li>
-              </ul>
-            </div>
-            <div class="col l3 s12">
-              <h5 class="white-text">Connect</h5>
-              <ul>
-                <li><a class="white-text" href="#!">Link 1</a></li>
-                <li><a class="white-text" href="#!">Link 2</a></li>
-                <li><a class="white-text" href="#!">Link 3</a></li>
-                <li><a class="white-text" href="#!">Link 4</a></li>
-              </ul>
-            </div>
-          </div>
+    </div>
+  </div>
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h3 class="white-text">Obligatorio 2</h3>
+          <p class="grey-text text-lighten-4">Este es nuestro segundo obligatorio para Fundamentos en Ingenieria de
+            Software</p>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-            Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-          </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Integrantes</h5>
+          <ul>
+            <li><a class="white-text">Santiago Diaz 240926</a></li>
+            <li><a class="white-text">Agustina Disiot 221025</a></li>
+            <li><a class="white-text">Joaquin Meerhoff 247096</a></li>
+          </ul>
         </div>
-      </footer>
+        <div class="col l3 s12">
+          <h5 class="white-text">Profesor </h5>
+          <ul>
+            <li><a class="white-text">Martin Solari</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Documentado en <a class="brown-text text-lighten-3"
+          href="https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1">nuestro repositorio git</a>
+      </div>
+    </div>
+  </footer>
 
 
-      <!--  Scripts-->
-      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="../interface/materialize.js"></script>
-      <script src="../interface/init.js"></script>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../interface/materialize.js"></script>
+  <script src="../interface/init.js"></script>
 
 </body>
 
