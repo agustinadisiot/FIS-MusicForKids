@@ -73,6 +73,7 @@ function crearInputsAcordes() {
   acorde.className = "browser-default acorde";
 
   acorde.innerHTML = acorde.innerHTML + "Acordes: ";
+  acorde.appendChild(document.createElement("br"));
   for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
     let inputSolo = document.createElement("input");
     inputSolo.name = clase + entrada;
