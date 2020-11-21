@@ -33,17 +33,7 @@ function crearTablatura() {
       inputSolo.maxLength = "2";
       inputSolo.max = 25;
       inputSolo.min = 0;
-      inputSolo.oninput = function () {
-        if (inputSolo.value.length > 2) {
-          inputSolo.value = inputSolo.value.slice(0, 2);
-        }
-        if (inputSolo.value.includes("-")) {
-          inputSolo.value = inputSolo.value.slice(0, 0);
-        }
-        if (isNaN(inputSolo.value)) {
-          inputSolo.value = inputSolo.value.slice(0, inputSolo.value.length - 1);
-        }
-      };
+      //inputSolo.oninput = (this.value = controlInput(this.value));
       inputSolo.size = ancho;
       inputSolo.type = "text";
       inputSolo.placeholder = "-";
@@ -57,6 +47,23 @@ function crearTablatura() {
   }
   return tablatura;
 }
+
+function controlInput(entrada) {
+  if (!entrada) {
+    return entrada;
+  }
+  if (isNaN(entrada)) {
+    return entrada.slice(0, entrada.length - 1);
+  }
+  if (entrada.length > 2) {
+    return entrada.slice(0, 2);
+  }
+  if (entrada.includes("-")) {
+    return entrada.slice(0, 0);
+  }
+  return entrada;
+
+};
 
 function crearInputsAcordes() {
   var ancho = 1;
