@@ -31,31 +31,9 @@ function levantarSistema() {
     }
   }
 
-  let nuevoTab = new Tablatura();
-  let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
-  nuevoTab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
-  nuevoTab.cantActual = 6;
-  let secc = new Seccion();
-  secc.tab = nuevoTab;
-  let acorde = ["A", "#D", "C", "B"];
-  secc.acorde = acorde;
-  let letra = "esto es una prueba";
-  secc.letra = letra;
-  let lecc = new Leccion();
-  lecc.secciones = [secc, secc, secc];
-  lecc.titulo = "Test";
-  lecc.autor = "No te va gustar";
-  lecc.desc = "descripcion de la leccion que es demasiado larga como para que entre en un archivo normal asi que esto deberia quedar cortado antes de este punto";
-
-  sistema.agregarLeccion(lecc);
 }
 
 function guardarSistema() {
-
-
-
-
-
   let guardar = JSON.stringify(sistema);
   localStorage.setItem("testSistema", guardar);
 }
@@ -69,7 +47,7 @@ function inicio() {
   document.getElementById("botonGuardar").addEventListener("click", guardarSistema);
 }
 
-function crearLi(lec) {
+function crearLi(lec, pos) {
   let elem = document.createElement("li");
   elem.className = "collection-item avatar";
 
@@ -96,7 +74,7 @@ function crearLi(lec) {
   p.innerHTML = p.innerHTML + desc;
   elem.appendChild(p);
 
-  let boton = crearBoton(lec);
+  let boton = crearBoton(pos);
   elem.appendChild(boton);
   return elem;
 }
@@ -104,17 +82,20 @@ function crearLi(lec) {
 function crearBoton(pos) {
   let boton = document.createElement("a");
   boton.className = "secondary-content";
-
   let icono = document.createElement("i");
   icono.className = "material-icons";
   icono.innerHTML = "play_arrow";
-  boton.onclick = elegirLeccion(pos);
+
+  boton.setAttribute("onclick", "elegirLeccion(" + pos + ")");
   boton.appendChild(icono);
 
   return boton;
 }
 
 function elegirLeccion(pos) {
+  let guardar = JSON.stringify(sistema.darLeccion(pos));
+  localStorage.setItem("testLeccion", guardar);
+  window.location.href = "./realizarLeccion.html";
 }
 
 function mostrarLecciones() {
@@ -122,7 +103,7 @@ function mostrarLecciones() {
   let puntero = document.getElementById('divListaLecciones');
   for (let i = 0; i < cant; i++) {
     let lec = sistema.darLeccion(i);
-    let elem = crearLi(lec);
+    let elem = crearLi(lec, i);
 
     puntero.append(elem);
 

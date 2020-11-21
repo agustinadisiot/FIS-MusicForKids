@@ -4,6 +4,7 @@ var cantSecciones = 0;
 var actual = 0;
 
 function inicio() {
+  levantarSistema();
   crearSeccion();
   document
     .getElementById("botonAgregar")
@@ -11,6 +12,38 @@ function inicio() {
   document
     .getElementById("botonGuardar")
     .addEventListener("click", guardarLeccion);
+}
+
+function levantarSistema() {
+  let sisGuardado = localStorage.getItem("testSistema");
+  if (sisGuardado) {
+    let auxSistema = Object.assign(new Sistema(), JSON.parse(sisGuardado));
+    let array = auxSistema.lecciones;
+
+
+    for (let i = 0; i < array.length; i++) {
+      let auxLeccion = Object.assign(new Leccion(), (array[i]));
+      let leccion = new Leccion();
+      leccion.agregarTitulo(auxLeccion.titulo);
+      leccion.agregarAutor(auxLeccion.autor);
+      leccion.agregarDesc(auxLeccion.desc);
+      for (let j = 0; j < auxLeccion.secciones.length; j++) {
+        let auxSeccion = Object.assign(new Seccion(), (auxLeccion.secciones[j]));
+        let seccion = new Seccion();
+        let tab = Object.assign(new Tablatura(), (auxSeccion.tab));
+        seccion.agregarTab(tab);
+        seccion.agregarLetra(auxSeccion.letra);
+        seccion.agregarAcorde(auxSeccion.acorde);
+        leccion.agregarSeccion(seccion);
+      }
+      sistema.agregarLeccion(leccion);
+    }
+  }
+}
+
+function guardarSistema() {
+  let guardar = JSON.stringify(sistema);
+  localStorage.setItem("testSistema", guardar);
 }
 
 function crearTablatura() {
@@ -261,6 +294,7 @@ function guardarLeccion() {
     if (valido && sistema.verificarLeccion(lec) == true) {
       sistema.agregarLeccion(lec);
       alert("Se guardo exitosamente");
+      guardarSistema();
     } else {
       alert("Hubo un problema al guardar la leccion, revise los datos ingresados, nuevamente");
     }
