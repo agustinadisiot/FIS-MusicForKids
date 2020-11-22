@@ -47,6 +47,12 @@ main{
   opacity: 0;
 }
 
+.separarFooter{
+  display: flex;
+  min-height:50vh;
+  flex-direction: column;
+}
+
 .tablatura,
 .acorde,
 .letra {
