@@ -24,6 +24,11 @@
   float: right;
 }
 
+.inline-icon {
+  vertical-align: bottom;
+  font-size: 18px !important;
+}
+
 /* Titulo de la barra de navegador */
 .tituloNav{
   font-size: 40px;
