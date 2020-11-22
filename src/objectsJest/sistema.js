@@ -60,15 +60,6 @@ class Sistema {
     }
     return true;
   }
-
-  toString() {
-    let ret = "";
-    for (let i = 0; i < this.lecciones.length; i++) {
-      ret = ret + this.lecciones[i].darTitulo() + " ";
-    }
-    return ret;
-  }
-
 }
 
 module.exports = {

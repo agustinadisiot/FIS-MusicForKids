@@ -122,7 +122,24 @@ class Seccion {
   }
 
   toString() {
-    return this.tab + " " + this.acorde + " " + this.letra;
+    let tab = this.tab;
+    let resp1 = this.verificarTab(tab);
+    if (resp1 != true) {
+      return resp1;
+    }
+    let acorde = this.acorde;
+
+    let resp2 = this.verificarAcorde(acorde);
+    if (resp2 != true) {
+      return resp2;
+    }
+    let letra = this.letra;
+    let resp3 = this.verificarLetra(letra);
+    if (resp3 != true) {
+      return resp3;
+    }
+    let retorno = this.tab.toString() + " " + this.acorde + " " + this.letra;
+    return retorno;
   }
 
 }

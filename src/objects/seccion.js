@@ -11,7 +11,6 @@ class Seccion {
 
   //Devuelve la tablatura de la seccion.
   darTab() {
-
     let resp = this.verificarTab(this.tab);
     if (resp != true) {
       return resp;
@@ -49,7 +48,6 @@ class Seccion {
 
   //Agrega los acordes a la seccion
   agregarAcorde(acorde) {
-
     let resp = this.verificarAcorde(acorde);
     if (resp != true) {
       return resp;
@@ -59,7 +57,6 @@ class Seccion {
 
   //Agrega la letra a la seccion
   agregarLetra(letra) {
-
     let resp = this.verificarLetra(letra);
     if (resp != true) {
       return resp;
@@ -93,31 +90,24 @@ class Seccion {
         throw new Error(Exceptions.UNEXPECTED_VALUE);
       };
     }
-
     let largo = acorde.length;
     for (let i = 0; i < largo; i++) {
-
       if (typeof acorde[i] != "string") {
         return () => {
           throw new Error(Exceptions.UNEXPECTED_VALUE);
         };
       }
-
       if (acorde[i].length >= 3) {
         return () => {
           throw new Error(Exceptions.UNEXPECTED_LENGTH);
         };
       }
-
-      var hasNumber = /\d/;
-      if (hasNumber.test(acorde[i])) {
+      if (/\d/.test(acorde[i])) {
         return () => {
           throw new Error(Exceptions.UNEXPECTED_VALUE);
         };
       }
-
     }
-
     return true;
   }
 
@@ -132,7 +122,24 @@ class Seccion {
   }
 
   toString() {
-    return this.tab + " " + this.acorde + " " + this.letra;
+    let tab = this.tab;
+    let resp1 = this.verificarTab(tab);
+    if (resp1 != true) {
+      return resp1;
+    }
+    let acorde = this.acorde;
+
+    let resp2 = this.verificarAcorde(acorde);
+    if (resp2 != true) {
+      return resp2;
+    }
+    let letra = this.letra;
+    let resp3 = this.verificarLetra(letra);
+    if (resp3 != true) {
+      return resp3;
+    }
+    let retorno = this.tab.toString() + " " + this.acorde + " " + this.letra;
+    return retorno;
   }
 
 }

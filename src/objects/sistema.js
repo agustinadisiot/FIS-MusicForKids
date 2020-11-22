@@ -9,17 +9,8 @@ class Sistema {
     this.lecciones = [];
   }
 
-  toString() {
-    let ret = "";
-    for (let i = 0; i < this.lecciones.length; i++) {
-      ret = ret + this.lecciones[i].darTitulo() + " ";
-    }
-    return ret;
-  }
-
   //Devuelve la leccion por posicion
   darLeccion(pos) {
-
     let largo = this.lecciones.length;
     if (pos >= largo || pos < 0) {
       return () => {
@@ -49,33 +40,26 @@ class Sistema {
         throw new Error(Exceptions.UNEXPECTED_VALUE);
       };
     }
-
     let respTitulo = lec.verificarTitulo(lec.titulo);
     if (respTitulo != true) {
       return respTitulo;
     }
-
     let respAutor = lec.verificarAutor(lec.autor);
     if (respAutor != true) {
       return respAutor;
     }
-
     let respDesc = lec.verificarDesc(lec.desc);
     if (respDesc != true) {
       return respDesc;
     }
-
     for (let i = 0; i < lec.secciones.length; i++) {
       let respSecc = lec.verificarSeccion(lec.secciones[i]);
       if (respSecc != true) {
         return respSecc;
       }
     }
-
     return true;
   }
-
-
 }
 
 // module.exports = {

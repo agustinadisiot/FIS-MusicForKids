@@ -20,7 +20,6 @@ class Leccion {
         throw new Error(Exceptions.OUT_OF_BOUNDS);
       };
     }
-
     let resp = this.verificarSeccion(this.secciones[pos]);
     if (resp != true) {
       return resp;
@@ -48,41 +47,46 @@ class Leccion {
 
   //Devuelve la descripcion de la leccion
   darDesc() {
-    if (this.verificarDesc(this.desc) != true) {
-      return this.verificarDesc(this.desc);
+    let resp = this.verificarDesc(this.desc)
+    if (resp != true) {
+      return resp;
     }
     return this.desc;
   }
 
   //Valida la seccion y si es correcta, la agrega a la leccion
   agregarSeccion(seccion) {
-    if (this.verificarSeccion(seccion) != true) {
-      return this.verificarSeccion(seccion);
+    let resp = this.verificarSeccion(seccion);
+    if (resp != true) {
+      return resp;
     }
     this.secciones.push(seccion);
   }
 
   //Agrega el titulo a la leccion
   agregarTitulo(titulo) {
-    if (this.verificarTitulo(titulo) != true) {
-      return this.verificarTitulo(titulo);
+    let resp = this.verificarTitulo(titulo);
+    if (resp != true) {
+      return resp;
     }
     this.titulo = this.capFirstLetters(titulo.trim());
   }
 
   //Agrega el autor a la leccion despues de verificarlo
   agregarAutor(autor) {
-    if (this.verificarAutor(autor) != true) {
-      return this.verificarAutor(autor);
+    let resp = this.verificarAutor(autor);
+    if (resp != true) {
+      return resp;
     }
     this.autor = this.capFirstLetters(autor.trim());
   }
 
   agregarDesc(desc) {
-    if (this.verificarDesc(desc) != true) {
-      return this.verificarDesc(desc);
+    let resp = this.verificarDesc(desc);
+    if (resp != true) {
+      return resp;
     }
-    let resp = desc.trim();
+    resp = desc.trim();
     this.desc = resp.charAt(0).toUpperCase() + resp.slice(1);
   }
 
@@ -133,7 +137,6 @@ class Leccion {
     if (sec.verificarTab(sec.tab) != true) {
       return sec.verificarTab(sec.tab);
     }
-
     return true;
   }
 
@@ -154,18 +157,10 @@ class Leccion {
       } else {
         ret = ret + spliteado[i].charAt(0).toUpperCase() + spliteado[i].slice(1);
       }
-
     }
     return ret;
   }
-
-  toString() {
-    return this.secciones + " " + this.titulo + " " + this.autor + " " + this.desc;
-  }
-
-
 }
-
 
 // module.exports = {
 //   Leccion,

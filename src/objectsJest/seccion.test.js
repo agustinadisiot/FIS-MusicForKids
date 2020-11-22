@@ -256,3 +256,29 @@ describe("deberia probar el metodo agregarAcorde", () => {
 
 });
 
+
+//Pruebas toString
+describe("deberia probar el metodo toString", () => {
+
+  it("deberia probar que pasa al intentar hacer toString() cuando esta incompleta", () => {
+
+    let secc = new Seccion();
+
+    expect(secc.toString()).toThrow(Exceptions.UNFINISHED_OBJECT);
+  });
+
+  it("deberia probar que pasa al intentar hacer toString() cuando es correcta", () => {
+    let secc = new Seccion();
+
+    let tab = new Tablatura();
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
+    for (let i = 0; i < 6; i++) {
+      tab.agregarCuerda(cuerda);
+    }
+    secc.agregarTab(tab);
+    expect(secc.toString()).toBe(tab.toString() + "  ");
+  });
+
+  //resto de prubas ya realizadas en las pruebas de verificarAcorde y verificarLetra
+
+});

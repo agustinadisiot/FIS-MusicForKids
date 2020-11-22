@@ -204,7 +204,9 @@ describe("deberia probar el metodo agregarCuerda", () => {
   it("deberia probar que pasa al dar una cuerda correcta", () => {
     let tab = new Tablatura();
     let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
-    tab.agregarCuerda(cuerda);
+    for (let i = 0; i < 6; i++) {
+      tab.agregarCuerda(cuerda);
+    }
     expect(tab.darCuerda(0)).toBe(cuerda);
   });
 
@@ -240,7 +242,9 @@ describe("deberia probar el metodo darCuerda", () => {
   it("deberia probar que pasa al dar una cuerda correcta", () => {
     let tab = new Tablatura();
     let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
-    tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
+    for (let i = 0; i < 6; i++) {
+      tab.agregarCuerda(cuerda);
+    }
     expect(tab.darCuerda(0)).toBe(cuerda);
   });
 
@@ -309,4 +313,26 @@ describe("deberia probar el metodo darCantActual", () => {
     expect(tab.darCantActual()).toBe(5);
   });
 
+});
+
+//Pruebas toString
+describe("deberia probar el metodo toString", () => {
+
+  it("deberia probar que pasa al intentar toString a una tablatura sin cuerdas ", () => {
+    let tab = new Tablatura();
+
+    expect(tab.toString()).toThrow(Exceptions.UNFINISHED_OBJECT);
+  });
+
+  it("deberia probar que pasa al intentar toString a una tablatura correcta", () => {
+    let tab = new Tablatura();
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
+    let cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda]
+    tab.cuerdas = cuerdas;
+    tab.cantActual = 6;
+
+    expect(tab.toString()).toBe(cuerdas);
+  });
+
+  //resto de prubas ya realizadas en las pruebas de validarTablatura
 });

@@ -160,11 +160,6 @@ class Leccion {
     }
     return ret;
   }
-
-  toString() {
-    return this.secciones + " " + this.titulo + " " + this.autor + " " + this.desc;
-  }
-
 }
 
 module.exports = {

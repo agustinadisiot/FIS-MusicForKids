@@ -4,7 +4,7 @@
 class Tablatura {
   constructor() {
     this.cantActual = 0;
-    this.cuerdas = [[], [], [], [], [], []];
+    this.cuerdas = [];
   }
 
   //Valida y si cumple la verificacion, agrega la a cuerda nueva a la siguiente posicion vacia.
@@ -13,8 +13,7 @@ class Tablatura {
     if (resp != true) {
       return resp;
     }
-
-    this.cuerdas[this.cantActual] = cuerdaNueva;
+    this.cuerdas.push(cuerdaNueva);
     this.cantActual++;
   }
 
@@ -51,19 +50,18 @@ class Tablatura {
     if (resp != true) {
       return resp;
     }
-
     return this.cuerdas[num];
   }
 
   //Valida que la tablatura haya sido terminada. O sea que todas las cuerdas hayan sido agregadas.
   validarTablatura() {
-    if (this.cantActual < 6 && this.cantActual == this.cuerdas.length) {
+    if (this.cantActual < 6) {
       return () => {
         throw new Error(Exceptions.UNFINISHED_OBJECT);
       };
     }
 
-    if (this.cantActual > 6 && this.cantActual == this.cuerdas.length) {
+    if (this.cantActual > 6 || this.cantActual != this.cuerdas.length) {
       return () => {
         throw new Error(Exceptions.UNEXPECTED_LENGTH);
       };
@@ -71,7 +69,6 @@ class Tablatura {
 
     for (let i = 0; i < this.cantActual; i++) {
       let cuerda = this.cuerdas[i];
-
       let resp = this.validarCuerda(cuerda);
       if (resp != true) {
         return resp;
@@ -87,28 +84,23 @@ class Tablatura {
         throw new Error(Exceptions.UNEXPECTED_VALUE);
       };
     }
-
     if (typeof cuerda != "object") {
       return () => {
         throw new Error(Exceptions.UNEXPECTED_VALUE);
       };
     }
-
     if (cuerda.length != Definiciones.cantidadCuadradosTab) {
       return () => {
         throw new Error(Exceptions.UNEXPECTED_LENGTH);
       };
     }
-
     for (let i = 0; i < cuerda.length; i++) {
       let cuadrado = cuerda[i];
-
       let resp = this.validarCuadrado(cuadrado);
       if (resp != true) {
         return resp;
       }
     }
-
     return true;
   }
 
@@ -134,14 +126,17 @@ class Tablatura {
         };
       }
     }
-
     return true;
   }
 
   toString() {
-    return this.cuerda1 + " " + this.acorde + " " + this.letra;
-  }
+    let resp = this.validarTablatura();
+    if (resp != true) {
+      return resp;
+    }
 
+    return this.cuerdas;
+  }
 }
 
 // module.exports = {
