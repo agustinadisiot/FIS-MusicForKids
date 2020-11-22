@@ -72,7 +72,10 @@ main{
   text-align: center;
 }
 
-
+.cuadroMostrar{
+  border: none;
+  outline: none;  
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
