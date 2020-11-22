@@ -23,4 +23,10 @@ Es importante mencionar, que utilizamos código de otras [fuentes](./documentati
 
 Para toda clase x en nuestro programa, hicimos un archivo x.test.js, para asegurarnos que su uso no lleve a errores inesperados.
 Creamos nuestro propio archivo de [excepciones](./src/common/exceptions.js)
+con excepciones como Excepctions.UNEXPECTED_VALUE para retornarlas cuándo no se reciben parámetros adecuados en los métodos de las clases.
 
+Esto nos causo varios problemas a la hora de abrir el programa en un buscador, porque no los métodos require y export utilizados en las clases no son reconocidos por javascript y no funcionan las clases.
+
+Consultamos en las ayudantías, y una de las soluciones que surgieron fue tener una copia de las clases que son utilizadas para las pruebas de jest, y una copia para el funcionamiento normal del programa.
+
+Hicimos métodos
