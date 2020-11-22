@@ -89,7 +89,7 @@ function crearTablatura(tabActual) {
   return tablatura;
 }
 
-function crearInputsAcordes(acorActual) {
+function crearInputsAcordes(acordesActuales) {
   let ancho = 1;
   let clase = "cuadroAcorde";
   let cantidadCuadrados = Definiciones.cantidadCuadradosTab;
@@ -103,12 +103,17 @@ function crearInputsAcordes(acorActual) {
     inputSolo.name = clase + entrada;
     inputSolo.size = ancho;
     inputSolo.maxLength = "3";
+    inputSolo.type = "text";
     inputSolo.readOnly = true;
-    //inputSolo.value = acorActual[entrada];
-    inputSolo.className = "browser-default " + clase;
+    inputSolo.placeholder = "";
+    let acordeActual = acordesActuales[entrada];
+    if (!acordeActual) {
+      acordeActual = " ";
+    }
+    inputSolo.value = acordeActual;
+    inputSolo.className = "browser-default " + clase + " cuadroMostrar";
     acorde.appendChild(inputSolo);
   }
-
   return acorde;
 }
 
