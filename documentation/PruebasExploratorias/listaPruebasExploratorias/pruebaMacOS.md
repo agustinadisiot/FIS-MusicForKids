@@ -21,10 +21,14 @@ La prueba se realiza en una instalación limpia del repositorio en la rama testi
 
 #### Para reproducir
 Pasos para recrear la prueba:
-1. Ve a '...'
-2. Click en '....'
-3. Scrollear hacia '....'
-4. Ver error.
+1. Elegir "Realizar Leccion" debajo de la imagen derecha.
+2. La lista aparece vacía pero no se indica nada. [Esto es un issue]()
+3. Se ajusta la ventana hasta que aparezca el botón hamburgesa.
+4. Se clickea el botón hamburguesa.
+5. Se abre el "nav bar".
+6. Se ajusta la ventana hasta que desaparezca el botón hamburgesa.
+7. Se rompe el texto del navbar. [Esto es un issue]()
+8. Ver error.
 
 ### Misión
 #### Resultado esperado
