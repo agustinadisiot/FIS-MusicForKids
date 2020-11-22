@@ -33,10 +33,7 @@ function levantarSistema() {
 
 }
 
-function guardarSistema() {
-  let guardar = JSON.stringify(sistema);
-  localStorage.setItem("testSistema", guardar);
-}
+
 
 
 function inicio() {
@@ -44,7 +41,6 @@ function inicio() {
   mostrarLecciones();
   // document.getElementById("botonAgregar").addEventListener("click", crearSeccion);
   // document.getElementById("botonGuardar").addEventListener("click", guardarLeccion);
-  document.getElementById("botonGuardar").addEventListener("click", guardarSistema);
 }
 
 function crearLi(lec, pos) {
