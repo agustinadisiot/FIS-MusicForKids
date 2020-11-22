@@ -29,4 +29,4 @@ Esto nos causo varios problemas a la hora de abrir el programa en un buscador, p
 
 Consultamos en las ayudantías, y una de las soluciones que surgieron fue tener una copia de las clases que son utilizadas para las pruebas de jest, y una copia para el funcionamiento normal del programa.
 
-Hicimos métodos
+Otra cosa que se nos dijo y asi lo aplicamos es que cuando estamos haciendo las pruebas a una funcion que llama a otras funciones no es necesario repetir las pruebas que ya hicimos para las funciones llamadas ya que quedan explicitas. Por lo que comentamos abajo de dicha prueba de la funcion donde estaria el resto de las verificaciones. Por esta razon al verificar con el coverage te marca que hay parte de funciones sin verificar.
