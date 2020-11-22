@@ -63,7 +63,7 @@ function crearTablatura() {
       inputSolo.maxLength = "2";
       inputSolo.max = 25;
       inputSolo.min = 0;
-      inputSolo.oninput = "(this.value = controlInput(this.value))";
+      inputSolo.onkeypress = controlInput;
       inputSolo.size = ancho;
       inputSolo.type = "text";
       inputSolo.placeholder = "-";
@@ -78,20 +78,12 @@ function crearTablatura() {
   return tablatura;
 }
 
-function controlInput(entrada) {
-  if (!entrada) {
-    return entrada;
-  }
-  if (isNaN(entrada)) {
-    return entrada.slice(0, entrada.length - 1);
-  }
-  if (entrada.length > 2) {
-    return entrada.slice(0, 2);
-  }
-  if (entrada.includes("-")) {
-    return entrada.slice(0, 0);
-  }
-  return entrada;
+//Este código proviene de la página: https://stackoverflow.com/questions/5563416/how-can-i-assign-onkeypress-function-to-dynamically-created-input-boxes-in-javas/5563458
+function controlInput(evt) {
+  var ASCIICode = (evt.which) ? evt.which : evt.keyCode;
+  if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+    return false;
+  return true;
 
 }
 
@@ -298,6 +290,7 @@ function guardarLeccion() {
       sistema.agregarLeccion(lec);
       alert("Se guardo exitosamente");
       guardarSistema();
+      window.location.href = "./mostrarLecciones.html";
     } else {
       alert("Hubo un problema al guardar la leccion, revise los datos ingresados, nuevamente");
     }
