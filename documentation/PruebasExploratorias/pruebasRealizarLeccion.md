@@ -8,12 +8,11 @@
 #### Inicio: 
 22/11/2020 - 17:08am 
 
-####  Tester: 
-Agustina Disiot
 
 #### Duración de la sesión:
 Corta
 
+### Misión
 #### Descripción de la prueba
 Se probara que la pagina de realizar lección muestre a partir de la lista de lecciones existentes la posibilidad de seleccionar una leccion de la lista para visualizarla.
 
@@ -25,7 +24,7 @@ Pasos para recrear la prueba:
 1. Ve a la primera leccion listada
 2. Click en la flecha que se encuentra adentro del recuadro a la derecha de los datos de la canción
 
-### Misión
+
 #### Resultado esperado
 Se espera que aparezca una nueva pagina en donde solo se pueda leer la información de la canción. Esto incluye titulo, la tablatura con los acordes alineados y la letra de la canción.
 
@@ -59,12 +58,11 @@ En cuanto a las oportunidades que se tomaron, la mas importante fue que decidimo
 #### Inicio: 
 22/11/2020 - 18:43am 
 
-####  Tester: 
-Agustina Disiot
 
 #### Duración de la sesión:
 Corta
 
+### Misión
 #### Descripción de la prueba
 Se probaran los botones de la navegación en la pagina de realizar lección.
 
@@ -77,7 +75,7 @@ Pasos para recrear la prueba:
 2. Click en la flecha que se encuentra adentro del recuadro a la derecha de los datos de la canción
 3. En la barra de navegación arriba a la derecha click donde dice Mostrar Lección
 
-### Misión
+
 #### Resultado esperado
 Se espera que aparezca una nueva pagina en donde solo se pueda ver el listado de todas las lecciones.
 
@@ -106,12 +104,11 @@ En celulares la vista de esta barra de navegación se ve como un menú hamburgue
 #### Inicio: 
 22/11/2020 - 18:58am 
 
-####  Tester: 
-Agustina Disiot
 
 #### Duración de la sesión:
 Corta
 
+### Misión
 #### Descripción de la prueba
 Se probaran los botones de la navegación en la pagina de realizar lección.
 
@@ -124,7 +121,7 @@ Pasos para recrear la prueba:
 2. Click en la flecha que se encuentra adentro del recuadro a la derecha de los datos de la canción
 3. En la barra de navegación arriba a la derecha click donde dice Crear Lección
 
-### Misión
+
 #### Resultado esperado
 Se espera que cargue una nueva pagina en donde se pueda crear una lección nueva.
 
