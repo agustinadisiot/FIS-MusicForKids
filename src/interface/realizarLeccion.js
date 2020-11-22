@@ -1,6 +1,7 @@
 window.addEventListener("load", inicio);
 var sistema = new Sistema();
 var leccionActual = new Leccion();
+
 function levantarSistema() {
   let sisGuardado = localStorage.getItem("testSistema");
   if (sisGuardado) {
@@ -58,7 +59,7 @@ function inicio() {
 }
 
 
-function crearTablatura() {
+function crearTablatura(tabActual) {
   let ancho = 1;
   let clase = "cuadroTablatura";
   let cantidadCuadrados = Definiciones.cantidadCuadradosTab;
@@ -67,17 +68,17 @@ function crearTablatura() {
   let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
   for (let cuerda = 0; cuerda < 6; cuerda++) {
     tablatura.innerHTML = tablatura.innerHTML + "" + nomCuerdas[cuerda] + " ";
+    let cuerdaActual = tabActual.darCuerda(cuerda);
     for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
       let inputSolo = document.createElement("input");
       inputSolo.name = clase + "(" + cuerda + "-" + entrada + ")";
-      inputSolo.maxLength = "2";
-      inputSolo.max = 25;
-      inputSolo.min = 0;
+      inputSolo.readOnly = true;
+      inputSolo.value = cuerdaActual[entrada];
       //inputSolo.oninput = (this.value = controlInput(this.value));
       inputSolo.size = ancho;
       inputSolo.type = "text";
       inputSolo.placeholder = "-";
-      inputSolo.className = "browser-default " + clase;
+      inputSolo.className = "browser-default " + clase + " cuadroMostrar";
       tablatura.appendChild(inputSolo);
     }
     if (cuerda != 6) {
@@ -88,7 +89,7 @@ function crearTablatura() {
   return tablatura;
 }
 
-function crearInputsAcordes() {
+function crearInputsAcordes(acorActual) {
   let ancho = 1;
   let clase = "cuadroAcorde";
   let cantidadCuadrados = Definiciones.cantidadCuadradosTab;
@@ -102,8 +103,8 @@ function crearInputsAcordes() {
     inputSolo.name = clase + entrada;
     inputSolo.size = ancho;
     inputSolo.maxLength = "3";
-    inputSolo.type = "text";
-    inputSolo.placeholder = "";
+    inputSolo.readOnly = true;
+    //inputSolo.value = acorActual[entrada];
     inputSolo.className = "browser-default " + clase;
     acorde.appendChild(inputSolo);
   }
@@ -111,64 +112,54 @@ function crearInputsAcordes() {
   return acorde;
 }
 
-function imprimirTablatura(tab) {
-  let parrafo = document.createElement("p");
-  let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
-  for (let i = 0; i < 6; i++) {
-    let cuerda = tab.darCuerda(i);
-    parrafo.innerHTML = parrafo.innerHTML + nomCuerdas[i] + " | " + cuerda;
-    parrafo.appendChild(document.createElement("br"));
-  }
-  return parrafo;
+function crearInputLetra(letraActual) {
+  let largo = 100;
+  let letra = document.createElement("div");
+  letra.className = "letra";
+
+  let entrada = document.createElement("input");
+  entrada.maxlength = largo;
+  entrada.size = 90;
+  entrada.name = "cuadroLetra";
+  entrada.type = "text";
+  entrada.placeholder = "Ingrese la letra aqui";
+  entrada.className = "cuadroLetra";
+  entrada.readOnly = true;
+  entrada.value = letraActual;
+
+  letra.appendChild(entrada);
+  return letra;
 }
 
-function crearSeccion(pos) {
+function imprimirSeccion(puntero, pos, seccionActual) {
   //Defino seccion con su id
   let seccion = document.createElement("div");
   seccion.id = "div" + pos;
   seccion.className = "divSeccion";
 
-  let inTab = crearTablatura();
-  let inAcord = crearInputsAcordes();
-  let inLetra = crearInputLetra();
+  let inTab = crearTablatura(seccionActual.darTab());
+  let inAcord = crearInputsAcordes(seccionActual.darAcorde());
+  let inLetra = crearInputLetra(seccionActual.darLetra());
 
   seccion.appendChild(inTab);
-  bloque_form.appendChild(document.createElement("br"));
-  bloque_form.appendChild(inAcord);
-  bloque_form.appendChild(document.createElement("br"));
-  bloque_form.appendChild(inLetra);
-  bloque_form.appendChild(document.createElement("br"));
-  bloque_form.appendChild(document.createElement("br"));
-  seccion.appendChild(bloque_form);
+  seccion.appendChild(document.createElement("br"));
+  seccion.appendChild(inAcord);
+  seccion.appendChild(document.createElement("br"));
+  seccion.appendChild(inLetra);
+  seccion.appendChild(document.createElement("br"));
+  seccion.appendChild(document.createElement("br"));
 
-  let puntero;
-
-  puntero = document.getElementById("divLeccion");
   puntero.appendChild(seccion);
 }
 
 
-function imprimirSeccion(seccion, puntero) {
 
-  puntero.appendChild(imprimirTablatura(seccion.darTab()));
-
-  let acorde = document.createElement("p");
-  acorde.innerHTML = seccion.darAcorde();
-  puntero.appendChild(acorde);
-  puntero.appendChild(document.createElement("br"));
-
-  let letra = document.createElement("p");
-  letra.innerHTML = seccion.darLetra();
-  puntero.appendChild(letra);
-  puntero.appendChild(document.createElement("br"));
-
-}
 
 function mostrarLeccion() {
   let puntero = document.getElementById("divLeccion");
   let cant = leccionActual.secciones.length;
-  for (let i = 0; i < leccionActual.secciones.length; i++) {
-    imprimirSeccion(leccionActual.darSeccion(i), puntero);
+  for (let i = 0; i < cant; i++) {
+    imprimirSeccion(puntero, i, leccionActual.darSeccion(i));
   }
 
 }
