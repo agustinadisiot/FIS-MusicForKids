@@ -102,6 +102,12 @@ function crearInputsAcordes() {
 
   acorde.innerHTML = acorde.innerHTML + "Acordes: ";
   acorde.appendChild(document.createElement("br"));
+
+  //<span style="opacity:0;">This sentence is invisible</span> 
+  let vacio = document.createElement("span");
+  vacio.className = "vacio";
+  vacio.innerHTML = "->";
+  acorde.appendChild(vacio);
   for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
     let inputSolo = document.createElement("input");
     inputSolo.name = clase + entrada;

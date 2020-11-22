@@ -41,6 +41,11 @@ main{
   flex-direction: column;
 }
 
+/* caracter invicible*/
+.vacio{
+  opacity: 0;
+}
+
 .tablatura,
 .acorde,
 .letra {
