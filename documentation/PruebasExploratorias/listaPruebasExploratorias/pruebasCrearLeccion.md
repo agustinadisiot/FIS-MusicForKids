@@ -6,7 +6,7 @@ Prueba 1
 
 
 #### Inicio: 
-22/11/2020 - 19:44am 
+22/11/2020 - 19:44
 
 
 #### Duración de la sesión:

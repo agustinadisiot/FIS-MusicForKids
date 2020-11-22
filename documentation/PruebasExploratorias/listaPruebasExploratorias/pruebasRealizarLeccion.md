@@ -6,7 +6,7 @@
 
 
 #### Inicio: 
-22/11/2020 - 17:08am 
+22/11/2020 - 17:08
 
 
 #### Duración de la sesión:
@@ -56,7 +56,7 @@ En cuanto a las oportunidades que se tomaron, la mas importante fue que decidimo
 
 
 #### Inicio: 
-22/11/2020 - 18:43am 
+22/11/2020 - 18:43
 
 
 #### Duración de la sesión:
@@ -102,7 +102,7 @@ En celulares la vista de esta barra de navegación se ve como un menú hamburgue
 
 
 #### Inicio: 
-22/11/2020 - 18:58am 
+22/11/2020 - 18:58
 
 
 #### Duración de la sesión:

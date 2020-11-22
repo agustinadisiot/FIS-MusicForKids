@@ -5,7 +5,7 @@
 ---
 
 #### Inicio: 
-22/11/2020 - 15:30am 
+22/11/2020 - 15:30
 
 
 #### Duración de la sesión:
@@ -56,7 +56,7 @@ sin necesidad de pasar por el inicio otra vez.
 ---
 
 #### Inicio: 
-22/11/2020 - 16:15am 
+22/11/2020 - 16:15
 
 
 #### Duración de la sesión:
