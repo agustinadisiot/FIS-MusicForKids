@@ -27,6 +27,7 @@ Pasos para recrear la prueba:
 3. Scrollear hacia '....'
 4. Ver error.
 
+### Misión
 #### Resultado esperado
 Clara y concisa explicación de lo que se espera que ocurra.
 
