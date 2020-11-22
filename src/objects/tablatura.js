@@ -1,5 +1,5 @@
-const { Exceptions } = require("../common/exceptions");
-const { Definiciones } = require("../common/definiciones");
+// const { Exceptions } = require("../common/exceptions");
+// const { Definiciones } = require("../common/definiciones");
 
 class Tablatura {
   constructor() {
@@ -9,21 +9,32 @@ class Tablatura {
 
   //Valida y si cumple la verificacion, agrega la a cuerda nueva a la siguiente posicion vacia.
   agregarCuerda(cuerdaNueva) {
-    if (this.validarCuerda(cuerdaNueva) != true) {
-      return this.validarCuerda(cuerdaNueva);
+    let resp = this.validarCuerda(cuerdaNueva);
+    if (resp != true) {
+      return resp;
     }
 
     this.cuerdas[this.cantActual] = cuerdaNueva;
     this.cantActual++;
   }
 
+  //Devuelve la cantActual de la tablatura
   darCantActual() {
+    if (typeof this.cantActual != "number") {
+      return () => {
+        throw new Error(Exceptions.UNEXPECTED_VALUE);
+      };
+    }
+    if (this.cantActual < 0 || this.cantActual > 6) {
+      return () => {
+        throw new Error(Exceptions.UNEXPECTED_VALUE);
+      };
+    }
     return this.cantActual;
   }
 
   //Devuelve la cuerda que se pide, el valor debe ser entre 0 y 5, valida que la tablatura este terminada.
   darCuerda(num) {
-
     if (typeof num != "number") {
       return () => {
         throw new Error(Exceptions.UNEXPECTED_VALUE);
@@ -36,8 +47,9 @@ class Tablatura {
       };
     }
 
-    if (this.validarTablatura() != true) {
-      return this.validarTablatura();
+    let resp = this.validarTablatura();
+    if (resp != true) {
+      return resp;
     }
 
     return this.cuerdas[num];
@@ -45,14 +57,13 @@ class Tablatura {
 
   //Valida que la tablatura haya sido terminada. O sea que todas las cuerdas hayan sido agregadas.
   validarTablatura() {
-
-    if (this.cantActual < 6) {
+    if (this.cantActual < 6 && this.cantActual == this.cuerdas.length) {
       return () => {
         throw new Error(Exceptions.UNFINISHED_OBJECT);
       };
     }
 
-    if (this.cantActual > 6) {
+    if (this.cantActual > 6 && this.cantActual == this.cuerdas.length) {
       return () => {
         throw new Error(Exceptions.UNEXPECTED_LENGTH);
       };
@@ -60,8 +71,10 @@ class Tablatura {
 
     for (let i = 0; i < this.cantActual; i++) {
       let cuerda = this.cuerdas[i];
-      if (this.validarCuerda(cuerda) != true) {
-        return this.validarCuerda(cuerda);
+
+      let resp = this.validarCuerda(cuerda);
+      if (resp != true) {
+        return resp;
       }
     }
     return true;
@@ -89,10 +102,13 @@ class Tablatura {
 
     for (let i = 0; i < cuerda.length; i++) {
       let cuadrado = cuerda[i];
-      if (this.validarCuadrado(cuadrado) != true) {
-        return this.validarCuadrado(cuadrado);
+
+      let resp = this.validarCuadrado(cuadrado);
+      if (resp != true) {
+        return resp;
       }
     }
+
     return true;
   }
 
@@ -125,8 +141,9 @@ class Tablatura {
   toString() {
     return this.cuerda1 + " " + this.acorde + " " + this.letra;
   }
+
 }
 
-module.exports = {
-  Tablatura,
-};
+// module.exports = {
+//   Tablatura,
+// };
