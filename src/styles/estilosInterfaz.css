@@ -79,7 +79,16 @@ main{
   text-align: center;
 }
 
+.claseLetraCuerda{
+  color:rgb(0, 0, 0);
+  font-size: 22px;
+  border: none;
+  outline: none;
+}
+
 .cuadroMostrar{
+  color:rgb(0, 0, 0);
+  font-size: 22px;
   border: none;
   outline: none;  
 }

@@ -70,6 +70,7 @@ function crearTablatura(tabActual) {
     //tablatura.innerHTML = tablatura.innerHTML + "" + nomCuerdas[cuerda] + " ";
     let letraCuerda = document.createElement("bdi");
     letraCuerda.innerHTML = nomCuerdas[cuerda] + " ";
+    letraCuerda.className = "claseLetraCuerda"
     tablatura.appendChild(letraCuerda);
     let cuerdaActual = tabActual.darCuerda(cuerda);
 
