@@ -1,5 +1,5 @@
-// const { Exceptions } = require("../common/exceptions");
-// const { Definiciones } = require("../common/definiciones");
+const { Exceptions } = require("../common/exceptions");
+const { Definiciones } = require("../common/definiciones");
 
 class Tablatura {
   constructor() {
@@ -139,6 +139,6 @@ class Tablatura {
   }
 }
 
-// module.exports = {
-//   Tablatura,
-// };
+module.exports = {
+  Tablatura,
+};

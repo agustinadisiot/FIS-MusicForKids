@@ -1,8 +1,8 @@
 
-// const { Exceptions } = require("../common/exceptions");
-// const { Definiciones } = require("../common/definiciones");
-// const { Tablatura } = require("./tablatura");
-// const { Seccion } = require("./seccion");
+const { Exceptions } = require("../common/exceptions");
+const { Definiciones } = require("../common/definiciones");
+const { Tablatura } = require("./tablatura");
+const { Seccion } = require("./seccion");
 
 class Leccion {
   constructor() {
@@ -162,6 +162,6 @@ class Leccion {
   }
 }
 
-// module.exports = {
-//   Leccion,
-// };
+module.exports = {
+  Leccion,
+};

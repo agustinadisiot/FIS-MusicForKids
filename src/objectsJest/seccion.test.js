@@ -7,9 +7,8 @@ const { Seccion } = require("./seccion");
 describe("deberia probar el metodo verificarTab", () => {
 
   it("deberia probar que pasa al verificar una tablatura correcta", () => {
-
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
     let secc = new Seccion();
@@ -82,6 +81,15 @@ describe("deberia probar el metodo verificarAcorde", () => {
   });
 
 
+  it("deberia probar que pasa al verificar un acorde que no es un array", () => {
+    let secc = new Seccion();
+    let acorde = 1;
+    secc.acorde = acorde;
+
+    expect(secc.verificarAcorde(acorde)).toThrow(Exceptions.UNEXPECTED_VALUE);
+  });
+
+
   it("deberia probar que pasa al verificar un acorde correcto", () => {
     let secc = new Seccion();
     let acorde = ["A", "#D", "C", "B"];
@@ -124,7 +132,7 @@ describe("deberia probar el metodo darTab", () => {
   it("deberia probar que pasa al intentar dar una tablatura correcta", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
     let secc = new Seccion();
@@ -189,7 +197,7 @@ describe("deberia probar el metodo agregarTab", () => {
   it("deberia probar que pasa al intentar agregar una tablatura correcta", () => {
 
     let tab = new Tablatura();
-    let cuerda = ["1", "11", "1", "-", "1", "1", "1", "1", "1", "1", "1", "-", "-", "-", "-", "1", "-", "1", "1", "1", "1", "1", "1", "14", "18"];
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
     tab.cuerdas = [cuerda, cuerda, cuerda, cuerda, cuerda, cuerda];
     tab.cantActual = 6;
     let secc = new Seccion();
@@ -248,3 +256,29 @@ describe("deberia probar el metodo agregarAcorde", () => {
 
 });
 
+
+//Pruebas toString
+describe("deberia probar el metodo toString", () => {
+
+  it("deberia probar que pasa al intentar hacer toString() cuando esta incompleta", () => {
+
+    let secc = new Seccion();
+
+    expect(secc.toString()).toThrow(Exceptions.UNFINISHED_OBJECT);
+  });
+
+  it("deberia probar que pasa al intentar hacer toString() cuando es correcta", () => {
+    let secc = new Seccion();
+
+    let tab = new Tablatura();
+    let cuerda = ["1", "11", "1", "-", "1", "1", "-", "-", "-", "-", "1", "-", "1", "14", "18"];
+    for (let i = 0; i < 6; i++) {
+      tab.agregarCuerda(cuerda);
+    }
+    secc.agregarTab(tab);
+    expect(secc.toString()).toBe(tab.toString() + "  ");
+  });
+
+  //resto de prubas ya realizadas en las pruebas de verificarAcorde y verificarLetra
+
+});
