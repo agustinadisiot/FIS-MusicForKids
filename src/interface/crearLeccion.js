@@ -84,7 +84,6 @@ function controlInput(evt) {
   if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
     return false;
   return true;
-
 }
 
 function crearInputsAcordes() {
@@ -162,7 +161,7 @@ function crearSeccion() {
 }
 
 function validarEntradas() {
-  for (let i = 0; i < cantSecciones; i++) {
+  for (let i = 0; i < cantSecciones + 1; i++) {
     let formActual = document.forms[i];
     if (!formActual.checkValidity()) {
       return false;
@@ -187,7 +186,8 @@ function guardarTablatura(sec, tab, formActual) {
     if (tab.validarCuerda(cuerda) == true) {
       tab.agregarCuerda(cuerda);
     } else {
-      alert("Hay un error en las tablatura");
+      let num = (parseInt(formActual.id.replace("form", "")) + 1);
+      M.toast({ html: 'Hay un error en la cuerda ' + (i + 1) + " de la tablatura " + num });
       return false;
     }
 
@@ -255,9 +255,8 @@ function guardarSeccion(lec, sec, formActual) {
 
 function guardarLeccion() {
   let lec = new Leccion();
-  let valido = true;
   if (!validarEntradas()) {
-    alert("Error en las entradas");
+    M.toast({ html: 'Error en las entradas' });
   } else {
 
     let titulo = document.getElementById("titulo").value;
@@ -281,18 +280,18 @@ function guardarLeccion() {
       let sec = new Seccion();
 
       if (!guardarSeccion(lec, sec, formActual)) {
-        valido = false;
-        alert("Hay un error en la seccion " + numSec);
+        return;
       }
     }
 
     if (valido && sistema.verificarLeccion(lec) == true) {
       sistema.agregarLeccion(lec);
-      alert("Se guardo exitosamente");
+      M.toast({ html: 'Se guardo exitosamente la leccion' });
       guardarSistema();
       window.location.href = "./mostrarLecciones.html";
     } else {
-      alert("Hubo un problema al guardar la leccion, revise los datos ingresados, nuevamente");
+      M.toast({ html: 'Hubo un error al guardar la leccion. Revise datos e intentelo de nuevo.' });
+      return;
     }
   }
 }
