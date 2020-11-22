@@ -57,6 +57,60 @@ function inicio() {
   // document.getElementById("botonGuardar").addEventListener("click", guardarLeccion);
 }
 
+
+function crearTablatura() {
+  let ancho = 1;
+  let clase = "cuadroTablatura";
+  let cantidadCuadrados = Definiciones.cantidadCuadradosTab;
+  let tablatura = document.createElement("div");
+  tablatura.className = "browser-default tablatura";
+  let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
+  for (let cuerda = 0; cuerda < 6; cuerda++) {
+    tablatura.innerHTML = tablatura.innerHTML + "" + nomCuerdas[cuerda] + " ";
+    for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
+      let inputSolo = document.createElement("input");
+      inputSolo.name = clase + "(" + cuerda + "-" + entrada + ")";
+      inputSolo.maxLength = "2";
+      inputSolo.max = 25;
+      inputSolo.min = 0;
+      //inputSolo.oninput = (this.value = controlInput(this.value));
+      inputSolo.size = ancho;
+      inputSolo.type = "text";
+      inputSolo.placeholder = "-";
+      inputSolo.className = "browser-default " + clase;
+      tablatura.appendChild(inputSolo);
+    }
+    if (cuerda != 6) {
+      let salto = document.createElement("br");
+      tablatura.appendChild(salto);
+    }
+  }
+  return tablatura;
+}
+
+function crearInputsAcordes() {
+  let ancho = 1;
+  let clase = "cuadroAcorde";
+  let cantidadCuadrados = Definiciones.cantidadCuadradosTab;
+  let acorde = document.createElement("div");
+  acorde.className = "browser-default acorde";
+
+  acorde.innerHTML = acorde.innerHTML + "Acordes: ";
+  acorde.appendChild(document.createElement("br"));
+  for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
+    let inputSolo = document.createElement("input");
+    inputSolo.name = clase + entrada;
+    inputSolo.size = ancho;
+    inputSolo.maxLength = "3";
+    inputSolo.type = "text";
+    inputSolo.placeholder = "";
+    inputSolo.className = "browser-default " + clase;
+    acorde.appendChild(inputSolo);
+  }
+
+  return acorde;
+}
+
 function imprimirTablatura(tab) {
   let parrafo = document.createElement("p");
   let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
@@ -68,7 +122,34 @@ function imprimirTablatura(tab) {
   return parrafo;
 }
 
+function crearSeccion(pos) {
+  //Defino seccion con su id
+  let seccion = document.createElement("div");
+  seccion.id = "div" + pos;
+  seccion.className = "divSeccion";
+
+  let inTab = crearTablatura();
+  let inAcord = crearInputsAcordes();
+  let inLetra = crearInputLetra();
+
+  seccion.appendChild(inTab);
+  bloque_form.appendChild(document.createElement("br"));
+  bloque_form.appendChild(inAcord);
+  bloque_form.appendChild(document.createElement("br"));
+  bloque_form.appendChild(inLetra);
+  bloque_form.appendChild(document.createElement("br"));
+  bloque_form.appendChild(document.createElement("br"));
+  seccion.appendChild(bloque_form);
+
+  let puntero;
+
+  puntero = document.getElementById("divLeccion");
+  puntero.appendChild(seccion);
+}
+
+
 function imprimirSeccion(seccion, puntero) {
+
   puntero.appendChild(imprimirTablatura(seccion.darTab()));
 
   let acorde = document.createElement("p");

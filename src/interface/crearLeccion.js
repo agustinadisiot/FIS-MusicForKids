@@ -53,13 +53,8 @@ function crearTablatura() {
   let tablatura = document.createElement("div");
   tablatura.className = "browser-default tablatura";
   let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
-
   for (let cuerda = 0; cuerda < 6; cuerda++) {
-
-
     tablatura.innerHTML = tablatura.innerHTML + "" + nomCuerdas[cuerda] + " ";
-
-
     for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
       let inputSolo = document.createElement("input");
       inputSolo.name = clase + "(" + cuerda + "-" + entrada + ")";
