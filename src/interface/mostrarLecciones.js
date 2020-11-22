@@ -82,8 +82,9 @@ function crearLi(lec, pos) {
 function crearBoton(pos) {
   let boton = document.createElement("a");
   boton.className = "secondary-content";
+  boton.href = "#";
   let icono = document.createElement("i");
-  icono.className = "material-icons";
+  icono.className = "material-icons medium";
   icono.innerHTML = "play_arrow";
 
   boton.setAttribute("onclick", "elegirLeccion(" + pos + ")");

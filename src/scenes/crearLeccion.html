@@ -25,12 +25,12 @@
 </head>
 
 <body>
+
+  <!-- Nav -->
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-
       <a id="logo-container" href="../../index.html" class="tituloNav teal-text">Obligatorio2</a>
       <ul class="right hide-on-med-and-down">
-
         <li><a href="./mostrarLecciones.html">Realizar Leccion</a></li>
       </ul>
 
@@ -42,57 +42,60 @@
   </nav>
 
 
-
-
-  <div class="browser-default container">
-    <div class="row">
-      <h1 class="header left teal-text text-lighten-2">Crear Leccion</h1>
-    </div>
-    <div class="browser-default row center">
-      <div>
-        <form>
-          <div class="input-field row s6">
-            <input id="titulo" type="text" class="validate">
-            <label for="titulo">Titulo</label>
-          </div>
-          <br>
-          <div class="input-field row s6">
-            <input id="autor" type="text" class="validate">
-            <label for="autor">Autor</label>
-          </div>
-          <br>
-          <div class="input-field row s12">
-            <textarea id="descripcion" class="materialize-textarea"></textarea>
-            <label for="descripcion">Descripcion</label>
-          </div>
-          <br>
-        </form>
+  <!-- Main -->
+  <main>
+    <div class="browser-default container">
+      <div class="row">
+        <h1 class="header left teal-text text-lighten-2">Crear Leccion</h1>
       </div>
-      <div class="row center" id="divLeccion"></div>
-
-
-
-      <div class="container">
-        <div class="row center">
-          <a id="botonAgregar" class="btn-floating waves-effect waves-light"><i class="material-icons">add</i></a>
-          <br><br>
+      <div class="browser-default row center">
+        <div>
+          <form>
+            <div class="input-field row s6">
+              <input id="titulo" type="text" class="validate">
+              <label for="titulo">Titulo</label>
+            </div>
+            <br>
+            <div class="input-field row s6">
+              <input id="autor" type="text" class="validate">
+              <label for="autor">Autor</label>
+            </div>
+            <br>
+            <div class="input-field row s12">
+              <textarea id="descripcion" class="materialize-textarea"></textarea>
+              <label for="descripcion">Descripcion</label>
+            </div>
+            <br>
+          </form>
         </div>
-      </div>
+        <div class="row center" id="divLeccion"></div>
 
 
-      <div class="container">
-        <div class="row right">
-          <a id="botonGuardar" class="btn waves-effect waves-light teal lighten-1">
-            Guardar
-          </a>
+
+        <div class="container">
+          <div class="row center">
+            <a id="botonAgregar" class="btn-floating waves-effect waves-light"><i class="material-icons">add</i></a>
+            <br><br>
+          </div>
+        </div>
+
+
+        <div class="container">
+          <div class="row right">
+            <a id="botonGuardar" class="btn waves-effect waves-light teal lighten-1">
+              Guardar
+            </a>
+            <br><br>
+          </div>
           <br><br>
         </div>
         <br><br>
-      </div>
-      <br><br>
 
+      </div>
     </div>
-  </div>
+  </main>
+
+  <!-- Footer -->
   <footer class="page-footer teal">
     <div class="container">
       <div class="row">
