@@ -63,7 +63,7 @@ function controlInput(entrada) {
   }
   return entrada;
 
-};
+}
 
 function crearInputsAcordes() {
   var ancho = 1;

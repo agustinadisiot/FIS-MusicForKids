@@ -4,27 +4,37 @@
   align-items: center;
 }
 
+/* El placeholder de cada cuadrado de la tablatura*/
+.cuadroTablatura::-webkit-input-placeholder {
+  color:rgb(95, 95, 95);
+}
+
+/* Tarjeta Crear Leccion, menu inicial */
 .card1 {
   margin:5%;
   width: 40%;
   float: left;
 }
 
+/* Tarjeta Realizar Leccion, menu inicial */
 .card2 {
   margin:5%;
   width: 40%;
   float: right;
 }
 
+/* Titulo de la barra de navegador */
 .tituloNav{
   font-size: 40px;
   margin: 0.67em 0;
 }
 
+/* links dentro de las tarjetas del menu inicial */
 .cardLink{
   font-weight: bold;
 }
 
+/* Todo lo que este adentro del main */
 main{
   display: flex;
   min-height: 50vh;
