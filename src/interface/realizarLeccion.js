@@ -67,17 +67,20 @@ function crearTablatura(tabActual) {
   tablatura.className = "browser-default tablatura";
   let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
   for (let cuerda = 0; cuerda < 6; cuerda++) {
-    tablatura.innerHTML = tablatura.innerHTML + "" + nomCuerdas[cuerda] + " ";
+    //tablatura.innerHTML = tablatura.innerHTML + "" + nomCuerdas[cuerda] + " ";
+    let letraCuerda = document.createElement("bdi");
+    letraCuerda.innerHTML = nomCuerdas[cuerda] + " ";
+    tablatura.appendChild(letraCuerda);
     let cuerdaActual = tabActual.darCuerda(cuerda);
+
     for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
       let inputSolo = document.createElement("input");
       inputSolo.name = clase + "(" + cuerda + "-" + entrada + ")";
-      inputSolo.readOnly = true;
       inputSolo.value = cuerdaActual[entrada];
-      //inputSolo.oninput = (this.value = controlInput(this.value));
+      inputSolo.readOnly = true;
+      inputSolo.placeholder = "-";
       inputSolo.size = ancho;
       inputSolo.type = "text";
-      inputSolo.placeholder = "-";
       inputSolo.className = "browser-default " + clase + " cuadroMostrar";
       tablatura.appendChild(inputSolo);
     }

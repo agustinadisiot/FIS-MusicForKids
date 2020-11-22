@@ -54,14 +54,16 @@ function crearTablatura() {
   tablatura.className = "browser-default tablatura";
   let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
   for (let cuerda = 0; cuerda < 6; cuerda++) {
-    tablatura.innerHTML = tablatura.innerHTML + "" + nomCuerdas[cuerda] + " ";
+    let letraCuerda = document.createElement("bdi");
+    letraCuerda.innerHTML = nomCuerdas[cuerda] + " ";
+    tablatura.appendChild(letraCuerda);
     for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
       let inputSolo = document.createElement("input");
       inputSolo.name = clase + "(" + cuerda + "-" + entrada + ")";
       inputSolo.maxLength = "2";
       inputSolo.max = 25;
       inputSolo.min = 0;
-      //inputSolo.oninput = (this.value = controlInput(this.value));
+      inputSolo.oninput = "(this.value = controlInput(this.value))";
       inputSolo.size = ancho;
       inputSolo.type = "text";
       inputSolo.placeholder = "-";
