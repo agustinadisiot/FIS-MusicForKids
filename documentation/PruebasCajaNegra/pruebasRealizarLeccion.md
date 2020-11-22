@@ -1,5 +1,6 @@
 *Sesión de Testing Exploratorio:*
 ---
+### Prueba 1
 ## Titulo: Realizar lección
 ---
 
@@ -45,25 +46,7 @@ Si bien la prueba funciona en todos los dispositivos, esta optimizado para resol
 4. Configuración de las pruebas: 80%
 
 #### Contenido adicional
-En cuanto a las oportunidades que se tomaron, la mas importante fue que decidimos mostrar la tablatura y acordes de manera muy similar a como se escriben cuando se crea la lección. Asi como en la creación cada dato de la tablatura se ingresa en un campo.
+En cuanto a las oportunidades que se tomaron, la mas importante fue que decidimos mostrar la tablatura y acordes de manera muy similar a como se escriben cuando se crea la lección. Asi como en la creación cada dato de la tablatura se ingresa en un campo, al mostrarse se muestra el campo de la misma forma, sin borde y ineditable. Esto nos facilita el alineamiento de la tablatura de forma correcta y que todos los caracteres esten centrados.
 
 ---
 
-### Especificacion de las metricas:
-
-#### División de tareas
-Además de ayudar en la interpretación de los resultados de una sesión, el objetivo de la división de tareas es definir cuál será la duración y cómo se distribuye ese tiempo en el equipo.
-
-La duración de una sesión de prueba se clasifica según su extensión:
-
-Sesión corta (30 a 45 minutos).
-Sesión media (45 a 90 minutos).
-Y Sesión larga (90 a 120 minutos).
-Adicionalmente, se debe indicar cómo se distribuye el tiempo entre las siguientes tareas, determinando su porcentaje representativo:
-
-Diseño y Ejecución de Pruebas (%X).
-Investigación y Reporte de Defectos (%X).
-Armado de la Sesión (%X).
-Finalmente, se tendrá que especificar en % si la misión se centró en el objetivo, o bien, se fue por las ramas, es decir, se encontraron oportunidades:
-
-Misión vs. Oportunidad (X % / Y %).
