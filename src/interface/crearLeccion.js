@@ -284,11 +284,13 @@ function guardarLeccion() {
       }
     }
 
-    if (valido && sistema.verificarLeccion(lec) == true) {
+    if (sistema.verificarLeccion(lec) == true) {
       sistema.agregarLeccion(lec);
-      M.toast({ html: 'Se guardo exitosamente la leccion' });
+      const elem = document.getElementById('modalGuardar');
+      const instance = M.Modal.init(elem, { dismissible: false });
+      instance.open();
       guardarSistema();
-      window.location.href = "./mostrarLecciones.html";
+      //window.location.href = "./mostrarLecciones.html";
     } else {
       M.toast({ html: 'Hubo un error al guardar la leccion. Revise datos e intentelo de nuevo.' });
       return;
