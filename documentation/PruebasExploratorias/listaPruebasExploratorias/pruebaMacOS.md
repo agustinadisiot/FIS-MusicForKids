@@ -1,23 +1,23 @@
 *Sesión de Testing Exploratorio:*
 ---
-## Titulo: Prueba Exploratoria del sistema
+## Titulo: Prueba Exploratoria en MacOS
 ---
 
 
 #### Inicio: 
-22/11/2020 - 10:38am 
+22/11/2020 - 20:00 
 
 ####  Tester: 
-Nombre del tester
+Joaquín Meerhoff
 
 #### Duración de la sesión:
-Corta/Media/Larga
+Corta
 
 #### Descripción de la prueba
-Descripcion de lo que se va a probar a continuación.
+Prueba general del programa en el sistema operativo MacOS para verificar compatibilidad.
 
 #### Entorno
-Descripción de donde esta parado el usuario en la pagina o app para poder reproducir la prueba a continuación. 
+La prueba se realiza en una instalación limpia del repositorio en la rama testing desde la página de inicio (index.html).
 
 #### Para reproducir
 Pasos para recrear la prueba:

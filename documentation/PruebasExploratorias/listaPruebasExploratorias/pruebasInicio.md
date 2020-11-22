@@ -1,8 +1,10 @@
-*Sesión de Testing Exploratorio:*
+*Sesión de Testing Exploratorio:* 
+
 ---
+
 ### Prueba 1
 ## Titulo: Inicio de la pagina al intentar crear lección
----
+
 
 #### Inicio: 
 22/11/2020 - 15:30am 
@@ -56,7 +58,7 @@ sin necesidad de pasar por el inicio otra vez.
 
 ### Prueba 2
 ## Titulo: Inicio de la pagina al intentar realizar lección
----
+
 
 #### Inicio: 
 22/11/2020 - 16:15am 
