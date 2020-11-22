@@ -79,6 +79,7 @@ main{
   text-align: center;
 }
 
+/* Clase de los nombres de cada cuerda en realizar leccion*/
 .claseLetraCuerda{
   color:rgb(0, 0, 0);
   font-size: 22px;
@@ -86,6 +87,7 @@ main{
   outline: none;
 }
 
+/* Clase de la tablatura en realizar leccion*/
 .cuadroMostrar{
   color:rgb(0, 0, 0);
   font-size: 22px;
@@ -146,8 +148,15 @@ input[type="number"] {
     font-size: 12px;
     height: 21.5px;
     text-align: center;
-  
   }
+
+  /* Clase de los nombres de cada cuerda en realizar leccion*/
+  .claseLetraCuerda{
+  color:rgb(0, 0, 0);
+  font-size: 15px;
+  border: none;
+  outline: none;
+}
   
 }
 
