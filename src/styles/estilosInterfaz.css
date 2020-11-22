@@ -4,7 +4,47 @@
   align-items: center;
 }
 
+/* El placeholder de cada cuadrado de la tablatura*/
+.cuadroTablatura::-webkit-input-placeholder {
+  color:rgb(95, 95, 95);
+}
 
+/* Tarjeta Crear Leccion, menu inicial */
+.card1 {
+  margin:5%;
+  width: 40%;
+  float: left;
+}
+
+/* Tarjeta Realizar Leccion, menu inicial */
+.card2 {
+  margin:5%;
+  width: 40%;
+  float: right;
+}
+
+/* Titulo de la barra de navegador */
+.tituloNav{
+  font-size: 40px;
+  margin: 0.67em 0;
+}
+
+/* links dentro de las tarjetas del menu inicial */
+.cardLink{
+  font-weight: bold;
+}
+
+/* Todo lo que este adentro del main */
+main{
+  display: flex;
+  min-height: 80vh;
+  flex-direction: column;
+}
+
+/* caracter invicible*/
+.vacio{
+  opacity: 0;
+}
 
 .tablatura,
 .acorde,
@@ -14,8 +54,14 @@
   align-items: center;
   align-self: center;
   width: 100%;
+  margin:none;
 }
 
+.letra{
+  font-family:unset;
+  margin:auto;
+  width:50%;
+} 
 
 .cuadroTablatura,
 .cuadroAcorde,
@@ -41,6 +87,22 @@ input[type="number"] {
 
 @media screen and (max-width : 700px){
 
+  .card1,
+  .card2 {
+    margin:10%;
+    width: auto;
+    float: left;
+  }
+
+  .tituloNav{
+    font-size: 40px;
+    margin: 0.67em 0;
+  }
+  
+  .cardLink{
+    font-weight: bold;
+  }
+
   .tablatura,
   .acorde,
   .letra {
@@ -52,11 +114,16 @@ input[type="number"] {
     margin: none;
   }
   
+  .letra{
+    font-family:unset;
+    margin:auto;
+    width:75%;
+  } 
   
   .cuadroTablatura,
   .cuadroAcorde,
   .cuadroletra {
-    width: 21.5px;
+    width: 20.7px;
     font-size: 12px;
     height: 21.5px;
     text-align: center;
@@ -67,6 +134,22 @@ input[type="number"] {
 
 @media screen and (max-width : 350px){
 
+  .card1,
+  .card2 {
+    margin:auto;
+    width: auto;
+    float: left;
+  }
+
+  .tituloNav{
+    font-size: 40px;
+    margin: 0.67em 0;
+  }
+  
+  .cardLink{
+    font-weight: bold;
+  }
+
   .tablatura,
   .acorde,
   .letra {
@@ -78,6 +161,11 @@ input[type="number"] {
     margin: none;
   }
   
+  .letra{
+    font-family:unset;
+    margin:auto;
+    width:100%;
+  } 
   
   .cuadroTablatura,
   .cuadroAcorde,

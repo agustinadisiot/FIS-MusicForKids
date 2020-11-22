@@ -1,9 +1,10 @@
 window.addEventListener("load", inicio);
-var sistema = new Sistema();
-var cantSecciones = 0;
-var actual = 0;
+let sistema = new Sistema();
+let cantSecciones = 0;
+let actual = 0;
 
 function inicio() {
+  levantarSistema();
   crearSeccion();
   document
     .getElementById("botonAgregar")
@@ -13,20 +14,47 @@ function inicio() {
     .addEventListener("click", guardarLeccion);
 }
 
+function levantarSistema() {
+  let sisGuardado = localStorage.getItem("testSistema");
+  if (sisGuardado) {
+    let auxSistema = Object.assign(new Sistema(), JSON.parse(sisGuardado));
+    let array = auxSistema.lecciones;
+
+
+    for (let i = 0; i < array.length; i++) {
+      let auxLeccion = Object.assign(new Leccion(), (array[i]));
+      let leccion = new Leccion();
+      leccion.agregarTitulo(auxLeccion.titulo);
+      leccion.agregarAutor(auxLeccion.autor);
+      leccion.agregarDesc(auxLeccion.desc);
+      for (let j = 0; j < auxLeccion.secciones.length; j++) {
+        let auxSeccion = Object.assign(new Seccion(), (auxLeccion.secciones[j]));
+        let seccion = new Seccion();
+        let tab = Object.assign(new Tablatura(), (auxSeccion.tab));
+        seccion.agregarTab(tab);
+        seccion.agregarLetra(auxSeccion.letra);
+        seccion.agregarAcorde(auxSeccion.acorde);
+        leccion.agregarSeccion(seccion);
+      }
+      sistema.agregarLeccion(leccion);
+    }
+  }
+}
+
+function guardarSistema() {
+  let guardar = JSON.stringify(sistema);
+  localStorage.setItem("testSistema", guardar);
+}
+
 function crearTablatura() {
-  var ancho = 1;
-  var clase = "cuadroTablatura";
-  var cantidadCuadrados = Definiciones.cantidadCuadradosTab;
-  var tablatura = document.createElement("div");
+  let ancho = 1;
+  let clase = "cuadroTablatura";
+  let cantidadCuadrados = Definiciones.cantidadCuadradosTab;
+  let tablatura = document.createElement("div");
   tablatura.className = "browser-default tablatura";
   let nomCuerdas = ["e", "B", "G", "D", "A", "E"];
-
   for (let cuerda = 0; cuerda < 6; cuerda++) {
-
-
     tablatura.innerHTML = tablatura.innerHTML + "" + nomCuerdas[cuerda] + " ";
-
-
     for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
       let inputSolo = document.createElement("input");
       inputSolo.name = clase + "(" + cuerda + "-" + entrada + ")";
@@ -63,16 +91,23 @@ function controlInput(entrada) {
   }
   return entrada;
 
-};
+}
 
 function crearInputsAcordes() {
-  var ancho = 1;
-  var clase = "cuadroAcorde";
-  var cantidadCuadrados = Definiciones.cantidadCuadradosTab;
-  var acorde = document.createElement("div");
+  let ancho = 1;
+  let clase = "cuadroAcorde";
+  let cantidadCuadrados = Definiciones.cantidadCuadradosTab;
+  let acorde = document.createElement("div");
   acorde.className = "browser-default acorde";
 
   acorde.innerHTML = acorde.innerHTML + "Acordes: ";
+  acorde.appendChild(document.createElement("br"));
+
+  //<span style="opacity:0;">This sentence is invisible</span> 
+  let vacio = document.createElement("span");
+  vacio.className = "vacio";
+  vacio.innerHTML = "->";
+  acorde.appendChild(vacio);
   for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
     let inputSolo = document.createElement("input");
     inputSolo.name = clase + entrada;
@@ -88,11 +123,11 @@ function crearInputsAcordes() {
 }
 
 function crearInputLetra() {
-  var largo = 100;
-  var letra = document.createElement("div");
+  let largo = 100;
+  let letra = document.createElement("div");
   letra.className = "letra";
 
-  var entrada = document.createElement("input");
+  let entrada = document.createElement("input");
   entrada.maxlength = largo;
   entrada.size = 90;
   entrada.name = "cuadroLetra";
@@ -106,16 +141,16 @@ function crearInputLetra() {
 
 function crearSeccion() {
   //Defino seccion con su id
-  var seccion = document.createElement("div");
+  let seccion = document.createElement("div");
   seccion.id = "div" + cantSecciones;
   seccion.className = "divSeccion";
-  var bloque_form = document.createElement("form");
+  let bloque_form = document.createElement("form");
   bloque_form.id = "form" + cantSecciones;
   cantSecciones++;
 
-  var inTab = crearTablatura();
-  var inAcord = crearInputsAcordes();
-  var inLetra = crearInputLetra();
+  let inTab = crearTablatura();
+  let inAcord = crearInputsAcordes();
+  let inLetra = crearInputLetra();
 
   bloque_form.appendChild(inTab);
   bloque_form.appendChild(document.createElement("br"));
@@ -126,7 +161,7 @@ function crearSeccion() {
   bloque_form.appendChild(document.createElement("br"));
   seccion.appendChild(bloque_form);
 
-  var puntero;
+  let puntero;
 
   puntero = document.getElementById("divLeccion");
   puntero.appendChild(seccion);
@@ -260,6 +295,7 @@ function guardarLeccion() {
     if (valido && sistema.verificarLeccion(lec) == true) {
       sistema.agregarLeccion(lec);
       alert("Se guardo exitosamente");
+      guardarSistema();
     } else {
       alert("Hubo un problema al guardar la leccion, revise los datos ingresados, nuevamente");
     }

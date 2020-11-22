@@ -2,9 +2,18 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Inicio</title>
-  <link rel="stylesheet" href="../../bundle.css">
+  <!-- Template tomada de materialize: https://materializecss.com/templates/parallax-template/preview.html -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crear Lección</title>
+
+  <!-- CSS  Materialize-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../styles/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="../styles/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+
+  <!--Nuestro-->
   <link rel="stylesheet" href="../styles/estilosInterfaz.css">
 
   <script src="../common/definiciones.js"></script>
@@ -16,53 +25,115 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="titulo" id="tope">Obligatorio 2</h1>
-  </header>
 
-  <nav>
+  <!-- Nav -->
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="../../index.html" class="tituloNav teal-text">Obligatorio2</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="./mostrarLecciones.html">Realizar Leccion</a></li>
+      </ul>
 
-    <!-- <a id="verOperadores" href="#section1">Operadores</a>
-    <a id="verLlamadas" href="#section2">Llamadas</a>
-    <a id="verConsultas" href="#section3">Consultas</a> -->
-
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="./mostrarLecciones.html">Realizar Leccion</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
   </nav>
 
+
+  <!-- Main -->
   <main>
-    <div>
-      <form>
-        <input size="90" id="titulo" type="text" placeholder="Titulo">
-        <br>
-        <br>
-        <input size="90" id="autor" type="text" placeholder="Autor">
-        <br>
-        <br>
-        <textarea size="90" id="descripcion" type="text" placeholder="Descripcion"></textarea>
-      </form>
+    <div class="browser-default container">
+      <div class="row">
+        <h1 class="header left teal-text text-lighten-2">Crear Leccion</h1>
+      </div>
+      <div class="browser-default row center">
+        <div>
+          <form>
+            <div class="input-field row s6">
+              <input id="titulo" type="text" class="validate">
+              <label for="titulo">Titulo</label>
+            </div>
+            <br>
+            <div class="input-field row s6">
+              <input id="autor" type="text" class="validate">
+              <label for="autor">Autor</label>
+            </div>
+            <br>
+            <div class="input-field row s12">
+              <textarea id="descripcion" class="materialize-textarea"></textarea>
+              <label for="descripcion">Descripcion</label>
+            </div>
+            <br>
+          </form>
+        </div>
+        <div class="row center" id="divLeccion"></div>
+
+
+
+        <div class="container">
+          <div class="row center">
+            <a id="botonAgregar" class="btn-floating waves-effect waves-light"><i class="material-icons">add</i></a>
+            <br><br>
+          </div>
+        </div>
+
+
+        <div class="container">
+          <div class="row right">
+            <a id="botonGuardar" class="btn waves-effect waves-light teal lighten-1">
+              Guardar
+            </a>
+            <br><br>
+          </div>
+          <br><br>
+        </div>
+        <br><br>
+
+      </div>
     </div>
-
-    <div id="divLeccion"></div>
-
-
-
-    <div class="divBotonCentrado">
-      <button class="foo-button mdc-button" id="botonAgregar">
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Agregar</span>
-      </button>
-    </div>
-
-
-
-    <div>
-      <button class="foo-button mdc-button" id="botonGuardar">
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Guardar</span>
-      </button>
-    </div>
-
-
   </main>
+
+  <!-- Footer -->
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h3 class="white-text">Obligatorio 2</h3>
+          <p class="grey-text text-lighten-4">Este es nuestro segundo obligatorio para Fundamentos en Ingenieria de
+            Software</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Integrantes</h5>
+          <ul>
+            <li><a class="white-text">Santiago Diaz 240926</a></li>
+            <li><a class="white-text">Agustina Disiot 221025</a></li>
+            <li><a class="white-text">Joaquin Meerhoff 247096</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Profesor </h5>
+          <ul>
+            <li><a class="white-text">Martin Solari</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Documentado en <a class="brown-text text-lighten-3"
+          href="https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1">nuestro repositorio git</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../interface/materialize.js"></script>
+  <script src="../interface/init.js"></script>
 
 </body>
 
