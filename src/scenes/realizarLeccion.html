@@ -21,7 +21,7 @@
   <script src="../objects/seccion.js"></script>
   <script src="../objects/leccion.js"></script>
   <script src="../objects/sistema.js"></script>
-  <script src="../interface/crearLeccion.js"></script>
+  <script src="../interface/realizarLeccion.js"></script>
 </head>
 
 <body>
@@ -32,16 +32,23 @@
       <a id="logo-container" href="../../index.html" class="tituloNav teal-text text-lighten-2">Obligatorio2</a>
 
       <ul class="right hide-on-med-and-down">
-        <li><a class="teal-text text-lighten-2" href="./mostrarLecciones.html">Realizar Leccion</a></li>
+        <li><a class="teal-text text-lighten-2" href="./mostrarLecciones.html">Mostrar Leccion</a></li>
+
+        <li><a class="teal-text text-lighten-2" href="./crearLeccion.html">Crear Leccion</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
+        <li>
+          <div class="divider"></div>
+        </li>
+
+        <li><a class="teal-text text-lighten-2" href="./mostrarLecciones.html">Mostrar Leccion</a></li>
 
         <li>
           <div class="divider"></div>
         </li>
 
-        <li><a class="teal-text text-lighten-2" href="./mostrarLecciones.html">Realizar Leccion</a></li>
+        <li><a class="teal-text text-lighten-2" href="./crearLeccion.html">Crear Leccion</a></li>
 
         <!-- li que sirve para separar los links con el footer -->
         <li class="separarFooter">
@@ -77,78 +84,27 @@
     </div>
   </nav>
 
+
+
   <!-- Main -->
   <main>
     <div class="browser-default container">
+
       <div class="row">
-        <h1 class="header left teal-text text-lighten-2">Crear Leccion</h1>
+        <h1 class="header left teal-text text-lighten-2">Realizar Leccion</h1>
       </div>
+
       <div class="browser-default row center">
         <div>
-          <form>
-            <div class="input-field row s6">
-              <input id="titulo" type="text" class="validate" required>
-              <label for="titulo">Titulo</label>
-            </div>
-            <br>
-            <div class="input-field row s6">
-              <input id="autor" type="text" class="validate">
-              <label for="autor">Autor</label>
-            </div>
-            <br>
-            <div class="input-field row s12">
-              <textarea id="descripcion" class="materialize-textarea"></textarea>
-              <label for="descripcion">Descripcion</label>
-            </div>
-            <br>
-          </form>
+          <h1 id="titulo"></h1>
+          <h3 id="subtitulo"></h3>
+          <p id=descripcion></p>
         </div>
         <div class="row center" id="divLeccion"></div>
 
 
-
-        <div class="container">
-          <div class="row center">
-            <a id="botonAgregar" class="btn-floating waves-effect waves-light"><i class="material-icons">add</i></a>
-            <br><br>
-          </div>
-        </div>
-
-
-        <div class="container">
-          <div class="row right">
-            <a id="botonGuardar" class="btn waves-effect waves-light teal lighten-1">
-              <i class="material-icons inline-icon">save</i>
-              Guardar
-            </a>
-            <br><br>
-          </div>
-          <br><br>
-        </div>
-        <br><br>
-
-
       </div>
     </div>
-
-    <!-- Modal-->
-    <div id="modalGuardar" class="modal">
-      <div class="modal-content">
-        <h4 class="teal-text text-lighten-2">Guardado exitoso</h4>
-        <p>Se a guardado la leccion de forma correcta. Elija si desea crear una nueva lección o ir a la lista de
-          lecciones.</p>
-      </div>
-      <div class="modal-footer footerModal">
-        <a href="./crearLeccion.html" class="modal-action modal-close waves-effect btn teal lighten-2">Crear
-          nueva leccion</a>
-        <a href="./mostrarLecciones.html" class="modal-action modal-close waves-effect btn teal lighten-2">Ir
-          a lista lecciones</a>
-      </div>
-
-
-
-    </div>
-
   </main>
 
   <!-- Footer -->

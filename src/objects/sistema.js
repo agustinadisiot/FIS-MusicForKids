@@ -1,9 +1,8 @@
-
-const { Exceptions } = require("../common/exceptions");
-const { Definiciones } = require("../common/definiciones");
-const { Tablatura } = require("./tablatura");
-const { Seccion } = require("./seccion");
-const { Leccion } = require("./leccion");
+// const { Exceptions } = require("../common/exceptions");
+// const { Definiciones } = require("../common/definiciones");
+// const { Tablatura } = require("./tablatura");
+// const { Seccion } = require("./seccion");
+// const { Leccion } = require("./leccion");
 
 class Sistema {
   constructor() {
@@ -18,7 +17,7 @@ class Sistema {
     return ret;
   }
 
-  //Devuelve la leccion por titulo
+  //Devuelve la leccion por posicion
   darLeccion(pos) {
 
     let largo = this.lecciones.length;
@@ -79,6 +78,6 @@ class Sistema {
 
 }
 
-module.exports = {
-  Sistema,
-};
+// module.exports = {
+//   Sistema,
+// };

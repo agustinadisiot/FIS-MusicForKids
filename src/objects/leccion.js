@@ -1,7 +1,8 @@
-const { Exceptions } = require("../common/exceptions");
-const { Definiciones } = require("../common/definiciones");
-const { Tablatura } = require("./tablatura");
-const { Seccion } = require("./seccion");
+
+// const { Exceptions } = require("../common/exceptions");
+// const { Definiciones } = require("../common/definiciones");
+// const { Tablatura } = require("./tablatura");
+// const { Seccion } = require("./seccion");
 
 class Leccion {
   constructor() {
@@ -77,7 +78,6 @@ class Leccion {
     this.autor = this.capFirstLetters(autor.trim());
   }
 
-
   agregarDesc(desc) {
     if (this.verificarDesc(desc) != true) {
       return this.verificarDesc(desc);
@@ -117,7 +117,6 @@ class Leccion {
     }
     return true;
   }
-
 
   verificarSeccion(sec) {
     if (!(sec instanceof Seccion)) {
@@ -168,6 +167,6 @@ class Leccion {
 }
 
 
-module.exports = {
-  Leccion,
-};
+// module.exports = {
+//   Leccion,
+// };

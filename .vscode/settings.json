@@ -4,7 +4,11 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 3000,
     "editor.wrappingIndent": "deepIndent",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "eslint.format.enable": true,
+    "eslint.options": {
+    
+    }
     
 }
 

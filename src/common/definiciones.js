@@ -4,6 +4,6 @@ const Definiciones = {
   cantidadCuadradosTab: 15,
 };
 
-module.exports = {
-  Definiciones,
-};
+// module.exports = {
+//   Definiciones,
+// };
