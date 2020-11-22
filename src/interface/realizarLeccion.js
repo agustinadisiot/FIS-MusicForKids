@@ -86,11 +86,12 @@ function crearTablatura(tabActual) {
       tablatura.appendChild(salto);
     }
   }
+
   return tablatura;
 }
 
 function crearInputsAcordes(acordesActuales) {
-  let ancho = 1;
+  let cambio = false;
   let clase = "cuadroAcorde";
   let cantidadCuadrados = Definiciones.cantidadCuadradosTab;
   let acorde = document.createElement("div");
@@ -101,26 +102,38 @@ function crearInputsAcordes(acordesActuales) {
   vacio.className = "vacio";
   vacio.innerHTML = "->";
   acorde.appendChild(vacio);
+
   for (let entrada = 0; entrada < cantidadCuadrados; entrada++) {
     let inputSolo = document.createElement("input");
     inputSolo.name = clase + entrada;
-    inputSolo.size = ancho;
-    inputSolo.maxLength = "3";
+    inputSolo.size = 1;
     inputSolo.type = "text";
     inputSolo.readOnly = true;
     inputSolo.placeholder = "";
     let acordeActual = acordesActuales[entrada];
     if (!acordeActual) {
       acordeActual = " ";
+    } else {
+      cambio = true;
     }
     inputSolo.value = acordeActual;
     inputSolo.className = "browser-default " + clase + " cuadroMostrar";
     acorde.appendChild(inputSolo);
   }
-  return acorde;
+  if (cambio) {
+    return acorde;
+  } else {
+    return null;
+  }
+
 }
 
 function crearInputLetra(letraActual) {
+
+  if (!letraActual || letraActual.trim() == "") {
+    return null;
+  }
+
   let largo = 100;
   let letra = document.createElement("div");
   letra.className = "letra";
@@ -145,16 +158,24 @@ function imprimirSeccion(puntero, pos, seccionActual) {
   seccion.id = "div" + pos;
   seccion.className = "divSeccion";
 
-  let inTab = crearTablatura(seccionActual.darTab());
-  let inAcord = crearInputsAcordes(seccionActual.darAcorde());
-  let inLetra = crearInputLetra(seccionActual.darLetra());
 
+  let inTab = crearTablatura(seccionActual.darTab());
   seccion.appendChild(inTab);
   seccion.appendChild(document.createElement("br"));
-  seccion.appendChild(inAcord);
-  seccion.appendChild(document.createElement("br"));
-  seccion.appendChild(inLetra);
-  seccion.appendChild(document.createElement("br"));
+
+  let inAcord = crearInputsAcordes(seccionActual.darAcorde());
+  if (inAcord) {
+    seccion.appendChild(inAcord);
+    seccion.appendChild(document.createElement("br"));
+  }
+
+  let inLetra = crearInputLetra(seccionActual.darLetra());
+  if (inLetra) {
+    seccion.appendChild(inLetra);
+    seccion.appendChild(document.createElement("br"));
+  }
+
+
   seccion.appendChild(document.createElement("br"));
 
   puntero.appendChild(seccion);
