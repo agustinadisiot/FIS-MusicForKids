@@ -1,7 +1,7 @@
 *Sesión de Testing Exploratorio:*
 ---
 ### Prueba 1
-## Titulo: Inicio de la pagina
+## Titulo: Inicio de la pagina al intentar crear lección
 ---
 
 #### Inicio: 
@@ -55,7 +55,7 @@ sin necesidad de pasar por el inicio otra vez.
 
 
 ### Prueba 2
-## Titulo: Inicio de la pagina
+## Titulo: Inicio de la pagina al intentar realizar lección
 ---
 
 #### Inicio: 
