@@ -6,6 +6,6 @@ const Exceptions = {
   OUT_OF_BOUNDS: "Posicion pedida fuera del rango del objeto",
 };
 
-// module.exports = {
-//   Exceptions,
-// };
+module.exports = {
+  Exceptions,
+};
