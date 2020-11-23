@@ -179,7 +179,7 @@ Habiendo seguido estos pasos, se puede:
 
 Para testing funcional realizamos casos de prueba además de pruebas exploratorias. Además hicimos una prueba de [caja negra para crear lección](./documentation/PruebasCajaNegra/pruebasCrearLeccion.md).
 
-Las pruebas exploratorias las anotamos en una [lista](./documentation/PruebasExploratorias/listaPruebasExploratorias/README.md) que contiene los títulos, tester y más información además de un link a la prueba en si.
+Las pruebas exploratorias las anotamos en una [lista](./documentation/PruebasExploratorias/listaPruebasExploratorias/README.md#Lista-de-pruebas-exploratorias:) que contiene los títulos, tester y más información además de un link a la prueba en si.
 
 Estas pruebas fueron hechas a partir de un [template dado por los docentes.](./documentation/PruebasExploratorias/templateExploratorio.md).
 
@@ -279,3 +279,44 @@ Testing funcional
 
 Reporte de defectos
   - A partir de las pruebas exploratorias realizadas, generó issues con las herramientas de github y resolvió parte de estos, como alerts en la página que habían quedado de la fase de desarrollo temprano.
+
+
+## 8. Defensa
+
+### Git:
+
+A medida que fuimos trabajando con git fuimos aprendiendo cuales son malas y buenas prácticas de la herramienta. Por ejemplo, en un principio por miedo a tener problemas con merge conflicts, intentamos evitar problemas de uno escribir sobre lo de los demás. Pero después de que nos pasó una vez, empezamos a no preocuparnos tanto por eso.
+
+La forma en la que trabajamos con las ramas fue: intentar de que cada rama implicara solamente un cambio especifico al repositorio, para poder en la vista de [network](https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1/network) comprender fácilmente en que trabajo cada uno de los integrantes, además de ver como iban progresando las diferentes áreas del proyecto.
+
+Aquí surgen las ramas principales:
+
+- testing: Una rama que a medida que se completaban funcionalidades en su totalidad, las agregamos a esta rama.
+
+- avancesSistema: Esta rama se enfocó principalmente en la parte de las clases de javascript, que podría decirse la rama de "Back-end". A esta se le fue agregando lo que ramas más chicas avanzaban para agregarle.
+- avancesInterfaz: Esta rama se enfoco principalmente en la parte visual del proyecto, o sea, crear componentes javascript y las interacciones con el usuario. Esta sería entonces la rama "Front-End".
+- pruebaJest: Esta rama se encargaba de las pruebas unitarias de Jest, para tener a parte las clases con los require y export no comentados.
+- testingExploratorio: La mayoría de las pruebas exploratorias se realiaron en esta rama, para tener un repositorio estático durante la prueba.
+
+Hay más ramas, pero muchas de ellas solamente agregaban una funcionalidad específica o solucionaban un bug, como la de hotFixGuardar.
+
+
+Probablemente iríamos borrando las ramas que ya no se usen, pero para que quede el registro en la entrega, no fueron borradas. Notamos que la presencia de tantas ramas hizo difícil la lectura al hacer "git branch -a" y querer ver que ramas estan activas.
+
+Estas ramas fueron realizando merge entre ellas porque preciban funciones o clases de las otras, como pruebaJest precisaba las clases de avancesSistema.
+
+
+<br>
+
+### Aprendido
+
+En comparación al obligatorio anterior, se trabajó de forma mucho más individual asignando tareas específicas a cada integrante del equipo, esto hizo que el trabajo en paralelo fuera más rápido y eficiente con el tiempo.
+
+Creemos que deberíamos no haber creado quizas tantas ramas porque esto llevó a confusiones a lo largo del proyecto.
+
+
+También creemos que nos enfocamos demasiado en material design en un comienzo, y esto nos quitó mucho tiempo, porque no logramos hacerlo funcionar, pero no investigamos otras alternativas hasta tener ya poco tiempo. De todos modos, logramos utilizar Materialize y creemos que esta herramienta externa nos ayudó mucho en el diseño, ya que solo con css y html no podríamos haber creado algo del estilo.
+
+
+Sobre el tema de investigar, creemos que no solo para la interfaz pero en general, se debería haber investigado más tecnologías actuales, porque puede que existan ya herramientas y quizas su implementación podría ahorrarnos tiempo y problemas.
+
