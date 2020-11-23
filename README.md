@@ -52,11 +52,17 @@ Para toda clase x en nuestro programa, hicimos un archivo x.test.js, para asegur
 Creamos nuestro propio archivo de [excepciones](./src/common/exceptions.js)
 con excepciones como Exceptions.UNEXPECTED_VALUE para retornarlas cuándo no se reciben parámetros adecuados en los métodos de las clases.
 
-Esto nos causo varios problemas a la hora de abrir el programa en un buscador, porque los métodos require y export utilizados en las clases no son reconocidos por javascript y no funcionan las clases.
+Esto nos causo varios problemas a la hora de abrir el programa en un buscador, porque los métodos require y export utilizados en las clases no son reconocidos por javascript y no funcionan.
 
 Consultamos en las ayudantías, y una de las soluciones que surgieron fue tener una copia de las clases que son utilizadas para las pruebas de jest, y una copia para el funcionamiento normal del programa.
 
-Otra cosa que se nos dijo y asi lo aplicamos es que cuando estamos haciendo las pruebas a una funcion que llama a otras funciones no es necesario repetir las pruebas que ya hicimos para las funciones llamadas ya que quedan explicitas. Por lo que comentamos abajo de dicha prueba de la funcion donde estaria el resto de las verificaciones. Por esta razon al verificar con el coverage te marca que hay parte de funciones sin verificar, que repetiría pruebas realizadas ya en las de verificar. Todo esto se menciona ya en los métodos, donde con un comentario se explica donde las pruebas restantes son completadas.
+Otra cosa que se nos dijo, y asi lo aplicamos, es que cuando estamos haciendo las pruebas a una funcion que llama a otras funciones, no es necesario repetir las pruebas. Esto es porque ya hicimos para las funciones llamadas sus pruebas y esto queda explicito. Por lo que comentamos debajo de dichas pruebas de lase funciones donde estarian el resto de las verificaciones. 
+
+Por esto al correr npm run test, marca que el coverage no cubre todas las lineas de código, porque hay partes que llevan a otras funciones. 
+
+Todo esto se menciona ya en los métodos, donde con un comentario se explica donde las pruebas restantes son completadas.
+
+
 
 <br>
 
@@ -67,28 +73,62 @@ Otra cosa que se nos dijo y asi lo aplicamos es que cuando estamos haciendo las 
 En un principio, como fue mencionado en la introducción, se diseño diferentes interfaz a partir de ideas sobre en que dirección llevar el proyecto, y estas ideas se encuentran en [Ideas_Iniciales.pdf](./documentation/Ideas_Iniciales.pdf).
 No consideramos que algunas de las ideas podían ser más díficiles de lo que nos plantemos, y por lo tanto varias de las propuestas no fueron trabajadas.
 
+En el proyecto, se intento facilitar la usabilidad de la interfaz lo más posible, siguiendo por ejemplo, las heurísticas de nielsen.
+
+### Heurísticas de Nielsen:
+
+1. Visibilidad del estado del sistema: Cada vez que el usuario realiza una acción, se muestra por pantalla la reacción causada por esa acción. Por ejemplo, al ingresar datos incorrectos, se le avisa, o al cambiar de página, el título muestra el lugar en el que se encuentra el usuario.
+2. Coincidencia entre sistema y mundo real: Usamos imágenes en el sistema para que el usuario entienda a que sección lo llevaría la página al tocar un botón. El vocabulario que usamos son las que un usuario que toca una guitarra podría entender.
+3. Control y libertad del usuario: En toda página, está presente los controles de navegación para poder volver atrás a otra página sin perderse. 
+4. Consistencia y estándares: Intentamos utilizar iconos en la interfaz que sean estandarizados, como el floppy disk de guardar, o el boton hamburguesa para abrir la barra de navegación, para que sea más rápido e intuitivo el uso de la página.
+5. 
 
 ### Crear Lección:
 
-# !!!!!!!!!!!!!!!!!!IMAGEN DE LA PARTE!!!!!!!!!!!!!!!!!!!
+Vista en chrome:
+![Imagen en Chrome de index.html](./documentation/ImagenesREADME/indexChrome.PNG)
 
-La interfaz nuestra gira en torno a la creación de lecciónes, ya que por ahí es donde comenzamos la funcionalidad y el diseño. 
+La interfaz nuestra gira en torno a la creación de lecciónes, ya que por ahí es donde comenzamos la funcionalidad y el diseño, y por eso explicamos primero está parte, porque es necesaria para comprender el diseño de las otras. 
 El Resultado de esta interfaz se encuentra en el archivo [crearLeccion.html](./src/scenes/crearLeccion.html), que contiene inputs para ingresar el nombre de la canción que se esta guardando, el título del autor, una descripción, y las distintas secciones. Estas secciones se refieren a un conjunto de tablatura, acordes y letra.
 
 A pesar de tener integrantes que saben tocar instrumentos, lo vimos necesario investigar y definir los terminos previamente mencionados, además de otros para aclarar posible dudas:
 
 - Definiciones:
 
-  - Tablatura: Es una [notación musical simplificada que se basa en la representación de la posición de la nota en la cuerda o tecla del instrumento con que esta se toca.](https://www.google.com/search?q=definicion+tablatura&source=lmns&bih=1319&biw=1311&rlz=1C1GCEA_enUY797UY797&hl=en-US&sa=X&ved=2ahUKEwj9147gt5ntAhVACbkGHfLmCFkQ_AUoAHoECAEQAA) segun google. En nuestro caso, la tablatura es una matriz, cuyo eje horizontal indica el avance del tiempo, y en su eje vertical tiene 6 espacios (uno para cada una de las cuerdas en una guitarra estándar). En cada uno de estos espacios se escribe que traste se debe estar tocando en la guitarra en ese debido momento.
+  - Tablatura: Es una [notación musical simplificada que se basa en la representación de la posición de la nota en la cuerda o tecla del instrumento con que esta se toca.](https://www.google.com/search?q=definicion+tablatura&source=lmns&bih=1319&biw=1311&rlz=1C1GCEA_enUY797UY797&hl=en-US&sa=X&ved=2ahUKEwj9147gt5ntAhVACbkGHfLmCFkQ_AUoAHoECAEQAA) segun google.   En nuestro caso, la tablatura es una matriz, cuyo eje horizontal indica el avance del tiempo, y en su eje vertical tiene 6 espacios (uno para cada una de las cuerdas en una guitarra estándar). En cada uno de estos espacios se escribe que traste se debe estar tocando en la guitarra en ese debido momento.
   - Traste: Se encuentran en el mástil o cuello de la guitarra, están indicados por líneas perpendiculares a las cuerdas y dependiendo de cuál o cuales se esten presionando al tocar una o más cuerdas, se verá afectado el sonido resultante.
   - Acorde: Conjunto de notas que juntas forman una harmonía.
   - Nota: Sonido o frecuencia específica generada al tocar una cuerda (en una guitarra).
   - Letra: Sentencia asociada a un conjunto de acordes o una tablatura en especifico.
   - Sección: En nuestro proyecto, nos referimos a sección a un conjunto de tablatura, letra y acorde, aunque en caso de tener letra y/o acordes vacíos, a estos no se los muestra al realizar una lección, pero si a la tablatura. Esto es porque el programa se enfoca en la guitarra y no en el área de la letra.
+  - Lección: Un conjunto de secciones que contiene necesariamente un título, pero también puede contener un autor y descripción. 
+
+Se mencionó en las definiciones que se trabaja con 6 cuerdas, pero en un comienzo no estabamos seguros de si esto podría llegar a cambiar.
+Variables como la cantidad de cuerda, cantidad de trastes, u otros fueron definidos en un archivo [definiciones.js](./src/common/definiciones.js) que es referenciado en todas las clases del sistema, y su uso permitía poder modificar esta variable desde un solo lugar.
+
+
+Las pautas para crear una lección son las siguientes:
+
+- El título es necesario para que los usarios que quieren realizar una lección puedan distinguir una entre las otras. Como pueden haber dos canciones o lecciones que se quisiera tener bajo un mismo título, esto no se limita.
+- El autor y descripción no son campos obligatorios ya que puede ser anónimo o desconocido el autor, y por el lado de la descripción, puede que el creador de la lección no encuentre necesario el escribirla.
+- Las letras pueden quedar vacíos, como fue mencionado previamente. Las letras pueden incluir cualquier caracter y pueden ser de cualquier largo.
+- Los acordes también pueden quedar vacíos, pero no pueden incluir números, ni pueden ser mayores a 3 caracteres de largo. 
+- La tablatura puede quedar vacía tambien, pero a diferencia de los acordes y letras, al ser realizada, siempre se muestra. Las limitaciones de la tablatura son que los inputs solo aceptan números, y da un error si el número es mayor a 25 o menor a 0.
+- Se tiene un botón para agregar más secciones, que al ser presionado la agrega vacía al final.
+- Se tiene un botón para guardar que en el caso de no cumplir las pautas previas, muestra por pantalla donde esta el error a través de un ["Toast"](https://materializecss.com/toasts.html) de materialize, que es un mensaje en un cuadro rectangular que desaparece al pasar un determinado tiempo.
+- Al guardarse efectivamente, aparece un ["Modal"](https://materializecss.com/modals.html) y se da la opción de crear otra lección o ir a la lista de lecciones.
 
 
 
-### 
+### Mostrar Lección
+
+Vista en chrome:
+![Imagen en Chrome de index.html](./documentation/ImagenesREADME/mostrarLeccion.PNG)
+
+En esta parte de la página, se representan todas las lecciones que hayan sido creadas. En el caso del sistema estar vacío, se le informa al usuario y se le ofrece volver al inicio o crear una lección (Esto se puede probar con modo incógnito).
+
+El uso de esta parte es para llevar a un usuario a la lección que quiere realizar. A la derecha de cada lección, se muestra un botón de play para realizarla, el cual al apretarlo, lleva directamente a la lección.
+
 
 <br>
 
