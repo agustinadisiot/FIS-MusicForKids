@@ -177,3 +177,105 @@ Habiendo seguido estos pasos, se puede:
 
 ## 5. Testing funcional
 
+Para testing funcional realizamos casos de prueba además de pruebas exploratorias. Además hicimos una prueba de [caja negra para crear lección](./documentation/PruebasCajaNegra/pruebasCrearLeccion.md).
+
+Las pruebas exploratorias las anotamos en una [lista](./documentation/PruebasExploratorias/listaPruebasExploratorias/README.md) que contiene los títulos, tester y más información además de un link a la prueba en si.
+
+Estas pruebas fueron hechas a partir de un [template dado por los docentes.](./documentation/PruebasExploratorias/templateExploratorio.md).
+
+## 6. Reporte de defectos
+
+Una vez que la mayoría de la funcionalidad de la página quedo andando y comenzamos a hacer testing funcional, empezamos a registrar issues con las herramientas de github. Algunos pudimos [cerrarlos](https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1/issues?q=is%3Aissue+is%3Aclosed) mientras que otros quedaron [abiertos](https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1/issues).
+
+También utilizamos un [template para los issues](./documentation/templateIssue.md) para facilitar el reportarlos y marcarlos como corregidos.
+
+A pesar de haber intentado manener el software sin bugs en el desarrollo, por temas de tiempo se tuvo que priorizar algunos bugs que rompen el sistema antes que otros, y esto llevo a que algunos sigan abiertos. 
+
+## 7. Trabajo Individual
+
+### Santiago Diaz
+Calidad de código:
+  - A la hora de establecer un estándar de código Santiago se juntó con el equipo y se decidió entre todos seguir el estándar de Google. 
+  - Al igual que los demás, instaló los linters utilizados en el proyecto, y además configuró el workspace para seguir las reglas indentación.
+  - Contribuyó con el grupo para hacer la documentación de los estilos de codificación usados.
+Prueba unitaria:
+  - Hizo las la mayoría de las pruebas unitarias para las clases de:
+    - Tablatura.
+    - Seccion.
+    - Leccion.
+    - Sistema.
+    - Interfaz de usuario
+Interfaz de usuario: 
+  - Creó el primer diseño de Crear Lección que tenía solo html.
+  - Mientras hacía las pruebas unitarias verificó, creó y corrigió todos los métodos de las clases mencionadas. 
+  - Cuando el equipo decidió usar Materialize el se encargo de:
+    - Crear en su totalidad el html y el css del menú inicial.
+    - Agregar todos los links a la barra de navegación y arreglar su css en todas las secciones de la página.
+    - Crear y adaptar correctamente el footer en todas las secciones de la página.
+  - Justo con sus compañeros arreglar el css de Crear Lección, y la lista de lecciones.
+  - Arreglar el html y css del modal de Crear Lección.
+Testing funcional:
+  - Se encargó de hacer la prueba de caja negra de la sección Crear Leccion de la página.
+  - Se encargó de hacer una prueba exploratoria de la funcionalidad de la barra de navegación de todo el sistema, tanto para modo desktop como para modo celular.
+Reporte de defectos:
+  - A partir de la prueba de caja negra realizada Santiago pudo encontrar dos defectos con el sistema.
+  - Al ingresar un acorde no válido en vez de saltar un toasts saltaba un alert (este issue fue reportado y solucionado).
+  - Al ingresar un acorde de tres letras se tomaba como no válido (este issue fue reportado).
+  - Genero el issue del menu de hamburguesa al cambiar de resolucion.
+
+
+
+### Agustina Disiot
+Calidad de código: 
+- Agustina se juntó con el equipo entero para definir el estándar de código a utilizar en todo el proyecto. Esto incluye la investigación de las style guides de google para indentación de archivos JavaScript y HTML.
+  - Al igual que los demás, instaló los linters utilizados en el proyecto, y además configuró el workspace para seguir las reglas indentación.
+  - Contribuyó con el grupo para hacer la documentación de los estilos de codificación usados.
+Prueba unitaria:
+  - Agustina se encargó de hacer algunas de las pruebas Jest para la clase tablatura y sección
+Interfaz de Usuario: 
+  - Agustina se encargó de codificar la mayor parte de los métodos de la clase lección.js y sistema.js 
+  - Codificación de métodos que verifican la validez de los campos HTML y métodos que se utilizan para hacer las pruebas Jest.
+  - Codificó gran parte de los métodos:
+    - agregarSeccion, que después de verificar que este correcta, la agrega a la lista de secciones de una lección
+    - verificarTitulo
+    - verificarAutor
+    - verificarDesc
+    - verificarSeccion, verifica que los datos de la sección estén correctos, como el título, autor y su descripción
+    - darLeccion, que devuelve la lección dada la posición en el array
+    - verificarLeccion, verifica que todas las secciones de lección estén correctas
+    - agregarLeccion, que agrega, después de verificar, la lección al sistema
+Cuando el equipo decidió usar Materialize:
+  - Investigo sobre componentes que se podían utilizar para la página.
+  - Creó el primer diseño de Mostrar Lecciones con estilos de Materialize
+Testing Funcional:
+  - Realizo pruebas exploratorias para windows 10, con especificaciones para celulares.
+  - Realizó algunas pruebas exploratorias para todas las páginas, esto incluye la página de inicio, mostrar lecciones, crear lección y realizar lección.
+  - Realizo pruebas exploratorias para verificar la precisión de los errores al crear lección.
+Reporte de defectos:
+  - A partir de las pruebas exploratorias realizadas, generó issues con las herramientas de github. En estas hay screenshots de los defectos, algunos de estos quedaran sin resolver
+
+### Joaquin Meerhoff
+Calidad de código
+  - Al igual que los demás, instaló los linters utilizados en el proyecto, y además configuró el workspace para seguir las reglas indentación.
+  - Contribuyó con el grupo para hacer la documentación de los estilos de codificación usados.
+Prueba unitaria
+  - Incluyó los export y requiere para las pruebas jest e hizo la instalación de Jest junto al equipo.
+  - Realizó algunas pruebas de la clase tablatura y sección. 
+Interfaz de Usuario
+  - Codificó la mayor parte de los métodos:
+    - crearSeccion, que crea inputs en js y los agrega al html para ingresar tablatura, acorde y letra.
+    - agregarLeccion (para html) que permite agregar una sección más para crear lección desde html.
+    - guardarLeccion que copia los valores de los inputs de las secciones, además de título, autor y descripción de la lección en el sistema.
+    - mostrarLección, que toma la lista de lecciones del sistema y las muestra en html en el template de materialize.
+    - levantarSistema y guardarSistema, se encargan de guardar y cargar del localStorage del buscador, el sistema con lecciones, tablaturas, acordes, letras, etc. Se persiste esta información para poder trabajar en distintas ventanas y compartir el mismo sistema.
+    - guardarLeccion (para html) para guardar la lección que se acaba de elegir desde el html.
+Cuando el equipo decidió usar Materialize:
+  - Modificó los métodos que crean componentes de html para que sigan el nuevo estilo de interfaz.
+  - Ayudó para los "Modals" o mensajes de avisos en crear lección para que cuando un usuario guarda una lección, confirme que quiere continuar.
+
+Testing funcional
+  - Realizó pruebas exploratorias en windows 10 además de en Mac, para probar la compatibilidad con otros sistemas operativos.
+  - Probó la compatibilidad en los buscadores Chrome y Safari.
+
+Reporte de defectos
+  - A partir de las pruebas exploratorias realizadas, generó issues con las herramientas de github y resolvió parte de estos, como alerts en la página que habían quedado de la fase de desarrollo temprano.
