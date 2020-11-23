@@ -7,10 +7,8 @@
 
 
 #### Inicio: 
-22/11/2020 - 15:30am 
+22/11/2020 - 15:30
 
-####  Tester: 
-Agustina Disiot
 
 #### Duración de la sesión:
 Sesión corta
@@ -27,7 +25,6 @@ Pasos para recrear la prueba:
 1. Ve a la opcion de la izquierda donde se muestra una imagen con una partitura
 2. Click en CREAR LECCION
 
-### Misión:
 #### Resultado esperado:
 Se espera que cargue una nueva sección en donde el titulo sea Crear Lección y se permita ingresar todos los datos de una canción
 
@@ -61,10 +58,8 @@ sin necesidad de pasar por el inicio otra vez.
 
 
 #### Inicio: 
-22/11/2020 - 16:15am 
+22/11/2020 - 16:15
 
-####  Tester: 
-Agustina Disiot
 
 #### Duración de la sesión:
 Sesión corta
@@ -81,7 +76,6 @@ Pasos para recrear la prueba:
 1. Ve a la opcion de la izquierda donde se muestra una imagen con una partitura
 2. Click en REALIZAR LECCION
 
-### Misión:
 #### Resultado esperado:
 Se espera que cargue una nueva sección en donde el titulo es Lecciones y se muestra una lista de lecciones ya creadas, o de de lo contrario
 muestra que no hay ninguna lección.

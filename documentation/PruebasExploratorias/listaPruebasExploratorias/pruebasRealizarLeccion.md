@@ -6,14 +6,13 @@
 
 
 #### Inicio: 
-22/11/2020 - 18:58am 
+22/11/2020 - 18:58
 
-####  Tester: 
-Agustina Disiot
 
 #### Duración de la sesión:
 Corta
 
+### Misión
 #### Descripción de la prueba
 Se probaran los botones de la navegación en la pagina de realizar lección.
 
@@ -26,7 +25,7 @@ Pasos para recrear la prueba:
 2. Click en la flecha que se encuentra adentro del recuadro a la derecha de los datos de la canción
 3. En la barra de navegación arriba a la derecha click donde dice Crear Lección
 
-### Misión
+
 #### Resultado esperado
 Se espera que cargue una nueva pagina en donde se pueda crear una lección nueva.
 

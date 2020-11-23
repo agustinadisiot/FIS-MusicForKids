@@ -8,8 +8,6 @@
 #### Inicio: 
 22/11/2020 - 10:38am 
 
-####  Tester: 
-Nombre del tester
 
 #### Duración de la sesión:
 Corta/Media/Larga
