@@ -190,9 +190,24 @@ function imprimirSeccion(puntero, pos, seccionActual) {
 
 function mostrarLeccion() {
   let puntero = document.getElementById("divLeccion");
+
+
+  let titulo = document.getElementById("titulo");
+  titulo.innerHTML = leccionActual.darTitulo();
+
+
+  let autor = document.getElementById("autor");
+  let autorTexto = leccionActual.darAutor();
+  if (!autorTexto || autorTexto.trim() == "") {
+    autorTexto = "Anónimo o desconocido";
+  }
+  autor.innerHTML = autorTexto;
+
+  let desc = document.getElementById("descripcion");
+  desc.innerHTML = leccionActual.darDesc();
+
   let cant = leccionActual.secciones.length;
   for (let i = 0; i < cant; i++) {
     imprimirSeccion(puntero, i, leccionActual.darSeccion(i));
   }
-
 }
