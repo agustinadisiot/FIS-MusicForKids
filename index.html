@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="./src/interface/materialize.js"></script>
+  <script src="./src/interface/init.js"></script>
+
+  <!-- Template tomada de materialize: https://materializecss.com/templates/parallax-template/preview.html -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio</title>
+
+  <!-- CSS  Materialize-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./src/styles/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="./src/styles/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+
+  <link rel="stylesheet" href="./src/styles/estilosInterfaz.css">
+  <script src="./src/common/definiciones.js"></script>
+  <script src="./src/objects/tablatura.js"></script>
+  <script src="./src/objects/seccion.js"></script>
+  <script src="./src/objects/leccion.js"></script>
+  <script src="./src/objects/sistema.js"></script>
+  <script src="./src/interface/inicio.js"></script>
+</head>
+
+<body>
+  <!-- Nav -->
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+
+      <a id="logo-container" href="./index.html" class="tituloNav teal-text text-lighten-2">Obligatorio2</a>
+
+      <ul class="right hide-on-med-and-down">
+        <li><a class="teal-text text-lighten-2" href="./src/scenes/mostrarLecciones.html">Realizar Leccion</a></li>
+
+        <li><a class="teal-text text-lighten-2" href="./src/scenes/crearLeccion.html">Crear Leccion</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li>
+          <div class="divider"></div>
+        </li>
+
+        <li><a class="teal-text text-lighten-2" href="./src/scenes/mostrarLecciones.html">Realizar Leccion</a></li>
+
+        <li>
+          <div class="divider"></div>
+        </li>
+
+        <li><a class="teal-text text-lighten-2" href="./src/scenes/crearLeccion.html">Crear Leccion</a></li>
+
+        <!-- li que sirve para separar los links con el footer -->
+        <li class="separarFooter">
+          <div class="divider"></div>
+        </li>
+
+        <!-- footer adentro de burger menu -->
+        <li>
+          <footer class="page-footer teal">
+            <div class="container">
+              <div class="row">
+                <div class="col l3 s12">
+                  <h5 class="white-text">Integrantes</h5>
+                  <ul>
+                    <li><a class="white-text">Santiago Diaz 240926</a></li>
+                    <li><a class="white-text">Agustina Disiot 221025</a></li>
+                    <li><a class="white-text">Joaquin Meerhoff 247096</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+                Documentado en <a class="brown-text text-lighten-3"
+                  href="https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1">nuestro repositorio git</a>
+              </div>
+            </div>
+          </footer>
+        </li>
+        <!-- footer adentro de burger menu -->
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main>
+    <div class="col s12 m7">
+      <div class="card card1">
+
+        <div class="card-image">
+          <img src="./src/assets/fotoCrearLeccion.jpg">
+        </div>
+
+        <div class="card-content">
+          <p>Aqui puedes crear nuevas lecciones para tus alumnos. </p>
+        </div>
+        <div class="card-action">
+          <a class="teal-text cardLink" href="./src/scenes/crearLeccion.html">Crear Leccion</a>
+        </div>
+      </div>
+
+      <div class="card card2">
+        <div class="card-image">
+          <img src="./src/assets/fotoRealizarLeccion.jpg">
+        </div>
+
+        <div class="card-content">
+          <p>Aqui puedes realizar todas las lecciones creadas</p>
+        </div>
+
+        <div class="card-action">
+          <a class="teal-text cardLink" href=./src/scenes/mostrarLecciones.html>Realizar Leccion</a>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h3 class="white-text">Obligatorio 2</h3>
+          <p class="grey-text text-lighten-4">Este es nuestro segundo obligatorio para Fundamentos en Ingenieria de
+            Software</p>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Integrantes</h5>
+          <ul>
+            <li><a class="white-text">Santiago Diaz 240926</a></li>
+            <li><a class="white-text">Agustina Disiot 221025</a></li>
+            <li><a class="white-text">Joaquin Meerhoff 247096</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Profesor </h5>
+          <ul>
+            <li><a class="white-text">Martin Solari</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Documentado en <a class="brown-text text-lighten-3"
+          href="https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1">nuestro repositorio git</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
