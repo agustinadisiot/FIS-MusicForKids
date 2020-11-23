@@ -5,6 +5,17 @@
 - Agustina Disiot 221025
 - Joaquín Meerhoff 247096
 
+### Link al repositorio: https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1
+(Los hipervínculos están escritos de forma relativa a la carpeta de github, si se usan en el archivo pdf, puede que no lleven a los archivos correctos)
+
+## 0. Introducción al proyecto en general:
+
+
+El proyecto del obligatorio 2, sobre enseñar el tocar guitarra a niños, lo realizamos utilizando varios tipos de tecnologías, como node.js, jest y materialize, que serán explicados en más detalle en sus categorías correspondientes.
+Se fue tomando a medida que se realizó el proyecto un [informe general](./documentation/informeGeneral.md) que contiene las ideas, problemas y deciciones que se fueron tomando con el progreso del proyecto. 
+Otro documento que se utilizó fue el de [fuentes.md](./documentation/fuentes.md) donde se anotaron las principales fuentes o lugares de donde se extrajo código.
+Esto no quita que en cada lugar donde se utilizó código 100% externo, se comento junto al código de donde provenía.
+
 ## 1. Calidad de código
 
 En el obligatorio seguimos de base la style guide de google, para hacer una lista de reglas que nos comprometimos a seguir al escribir código. 

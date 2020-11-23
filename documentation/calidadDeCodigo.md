@@ -2,6 +2,10 @@
 
 Utilizamos de referencia el styleguide de [google](https://google.github.io/styleguide/jsguide.html#formatting)
 
+<br>
+
+# 1. Javascript
+
 ## Llaves:
 1. Toda estructura de control lleva llaves:
    ```javascript
@@ -41,12 +45,12 @@ Utilizamos de referencia el styleguide de [google](https://google.github.io/styl
 
 6. Ajustes de Linea
     - Hacer los saltos de línea donde no dificulten la lectura del código.
-Reglas:
-    - Cuando se hace salto de línea a la mitad de una sentencia se hacen los saltos después del símbolo (como dividir, sumar o multiplicar).
-    - Un constructor se mantiene junto al paréntesis que lo sigue.
-    - Una coma se mantiene junto al ítem que le precede.
+    - Reglas:
+        - Cuando se hace salto de línea a la mitad de una sentencia se hacen los saltos después del símbolo (como dividir, sumar o multiplicar).
+        - Un constructor se mantiene junto al paréntesis que lo sigue.
+        - Una coma se mantiene junto al ítem que le precede.
 
-    - Cuando se corta una línea por la mitad, se dejan 4 espacios antes, a no ser que siga las reglas de indentación de 2.
+        - Cuando se corta una línea por la mitad, se dejan 4 espacios antes, a no ser que siga las reglas de indentación de 2.
 
 
 7. Espacios en blanco
@@ -79,3 +83,20 @@ Reglas:
 9. Clases
     - Cada clase tiene su propio documento js.
     - Cada clase tiene su propio test.js.
+
+
+<br>
+
+# 2. HTML
+
+1. Indentación:
+    - Indentación de 2 espacios cada nivel más adentro en un los tags.
+
+2. Saltos de Linea:
+    - Si se considera necesario para facilitar la lectura, se puede realizar saltos de linea para tags o secciones que quizas podrían haberse contenido en una sola.
+    - Si una sentencia no puede ser escrita en una sola linea, se debe, al igual que en javascript, dejar una indentación de 4 espacios comparado al del origen de la linea. 
+3. Espacios:
+    1. Verticales:
+        - Si se considera necesario, se puede generar separación de más de una línea entre secciones, como puede ser el main del nav o footer, para facilitar la distinción de donde se originan los tags.
+    2. Horizontales:
+        - Separar dentro de tags los atributos con sus valores de los demás con espacios.

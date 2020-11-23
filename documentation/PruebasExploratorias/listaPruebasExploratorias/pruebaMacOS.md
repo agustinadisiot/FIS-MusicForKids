@@ -22,7 +22,7 @@ La prueba se realiza en una instalación limpia del repositorio en la rama testi
 #### Para reproducir
 Pasos para recrear la prueba:
 1. Elegir "Realizar Leccion" debajo de la imagen derecha.
-2. La lista aparece vacía pero no se indica nada. [Esto es un issue]()
+2. La lista aparece vacía pero no se indica nada. [Esto es un issue](https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1/issues/3)
 3. Se ajusta la ventana hasta que aparezca el botón hamburgesa.
 4. Se clickea el botón hamburguesa.
 5. Se abre el "nav bar".
@@ -41,5 +41,11 @@ Se encontro varios errores, de los cuales se crearan issues nuevos.
 #### Dispositivo (si es relevante):
  - Device: [Macbook Pro 2013]
  - OS: [Mac OS Catalina]
+
+## Métricas de Testing Exploratorio:
+1. Misión vs Oportunidad: 50-50
+2. Investigación y reporte: 50%
+3. Diseño y ejecución:  40%
+4. Configuración de las pruebas: 10%
 
 ---

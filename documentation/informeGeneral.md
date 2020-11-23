@@ -1,7 +1,7 @@
 # Informe General cronológico
 
 ## Comienzo del Obligatorio:
-  - Al principio comenzamos con brain storming para hacernos una idea de en que dirección habría que llevar el proyecto. Esto esta en el pdf de primeras ideas, donde nos imaginamos soluciones a problemas como la tablatura, el diseño en general, y algunos detalles, como tener la posibilidad de reproducir la tablatura a un ritmo y que podamos ir para adelante y atrás con un slider de material design de google.
+  - Al principio comenzamos con brain storming para hacernos una idea de en que dirección habría que llevar el proyecto. Esto esta en el pdf de [Ideas_Iniciales](./Ideas_Iniciales.pdf), donde nos imaginamos soluciones a problemas como la tablatura, el diseño en general, y algunos detalles, como tener la posibilidad de reproducir la tablatura a un ritmo y que podamos ir para adelante y atrás con un slider de material design de google. Este documento tiene anotado las días no sólo de este comienzo, si no también los diseños que se fueron realizando con el progreso del proyecto. Asi que no todo lo que se encuentra en el pdf fue escrito en la primera sesión.
 
   - Lo siguiente que nos planteamos fue comprender la guía de ayudantía de github con sus ejemplos, desde la estructura correcta de un repositorio, pero principalmente el comprender el ejemplo 4, sobre la utilización de webpack, npm y material design.  
 
