@@ -81,12 +81,16 @@ En el proyecto, se intento facilitar la usabilidad de la interfaz lo más posibl
 2. Coincidencia entre sistema y mundo real: Usamos imágenes en el sistema para que el usuario entienda a que sección lo llevaría la página al tocar un botón. El vocabulario que usamos son las que un usuario que toca una guitarra podría entender.
 3. Control y libertad del usuario: En toda página, está presente los controles de navegación para poder volver atrás a otra página sin perderse. 
 4. Consistencia y estándares: Intentamos utilizar iconos en la interfaz que sean estandarizados, como el floppy disk de guardar, o el boton hamburguesa para abrir la barra de navegación, para que sea más rápido e intuitivo el uso de la página.
-5. 
+5. Prevención de error: Para evitarle problemas al usuario, consideramos que es necesario confirmar antes de guardar una lección, por si toco el botón por error, o si cambia de opinión.
+6. Reconocer en vez de recordar: Para facilitarle al usuario el uso de la página, se le informa siempre de en donde se encuentra, y al abrir la página se le muestra con imágenes y texto las dos categorías principales a las que puede ir.
+7. Flexibilidad y eficiencia de uso: La barra de navegación le brinda a los usuarios atajos en la interfaz para facilitar el movimiento entre las partes.
+8. Estética y minimalismo: Para cumplir con el diseño miminalista y fácil de comprender, utilizamos [Materialize](https://materializecss.com/), especificamente el template [Parallax](https://materializecss.com/templates/parallax-template/preview.html).
+9. Ayudar a los usuarios reconocer, diagnosticar y recuperarse de errores: En los inputs de crear lección, cada error tiene un mensaje específico, que por ejemplo, si se escribe un error en una cuerda, se le indica en que sección y cuerda es que esta el error.
 
 ### Crear Lección:
 
 Vista en chrome:
-![Imagen en Chrome de index.html](./documentation/ImagenesREADME/indexChrome.PNG)
+![Imagen en Chrome de crearLeccion.html](./documentation/ImagenesREADME/crearLeccion.PNG)
 
 La interfaz nuestra gira en torno a la creación de lecciónes, ya que por ahí es donde comenzamos la funcionalidad y el diseño, y por eso explicamos primero está parte, porque es necesaria para comprender el diseño de las otras. 
 El Resultado de esta interfaz se encuentra en el archivo [crearLeccion.html](./src/scenes/crearLeccion.html), que contiene inputs para ingresar el nombre de la canción que se esta guardando, el título del autor, una descripción, y las distintas secciones. Estas secciones se refieren a un conjunto de tablatura, acordes y letra.
@@ -123,13 +127,53 @@ Las pautas para crear una lección son las siguientes:
 ### Mostrar Lección
 
 Vista en chrome:
-![Imagen en Chrome de index.html](./documentation/ImagenesREADME/mostrarLeccion.PNG)
+![Imagen en Chrome de mostrarLeccion.html](./documentation/ImagenesREADME/mostrarLeccion.PNG)
 
 En esta parte de la página, se representan todas las lecciones que hayan sido creadas. En el caso del sistema estar vacío, se le informa al usuario y se le ofrece volver al inicio o crear una lección (Esto se puede probar con modo incógnito).
 
 El uso de esta parte es para llevar a un usuario a la lección que quiere realizar. A la derecha de cada lección, se muestra un botón de play para realizarla, el cual al apretarlo, lleva directamente a la lección.
 
 
+### Realizar Lección
+
+Vista en chrome:
+![Imagen en Chrome de realizarLeccion.html](./documentation/ImagenesREADME/realizarLeccion.PNG)
+
+Esta parte de la página es utilizada para visualizar una lección que haya sido guardada en el sistema. Para llegar aquí, se debe necesariamente haber creado una lección, además de haber pasado por mostrar Lecciones, donde se eligió la leccion a mostrar.
+
+La forma en la que se representa, es a partir de las mismas estructuras con las cuales se hizo el crearLección, sólo que ya no se puede ni escribir, ni borrar los datos de los inputs. 
+
+Aquí el usuario práctica la lección todas las veces que quiere, y después puede volver atrás a partir del menú de navegación.
+
+### Menu Inicial
+
+Vista en chrome:
+![Imagen en Chrome de index.html](./documentation/ImagenesREADME/index.PNG)
+
+Esta es la pantalla de inicio de la página, y le brinda al usuario dos opciones principales (sin incluir el menú de navegación).
+
+Estas dos opciones sirven para explicarle al usuario las dos acciones que puede hacer. 
+
+Estas son: 
+  - Crear una lección
+  - Realizar una lección
+
 <br>
 
 ---
+## 4. Construcción
+
+Para poder tener la página andando, se deben seguir los siguientes pasos:
+
+1. Tener instalado node.js en una versión estable, porque se requiere npm.
+2. Copiar el repositorio de github en un directorio local con el commando: "git clone https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1.git"
+3. Luego se debe ejecutar el comando "npm install" en el directorio donde se encuentre el root del repositorio para instalar todas las dependencias del proyecto.
+
+Habiendo seguido estos pasos, se puede:
+
+- Abrir directamente el index.html para abrir la página.
+- Ejecutar el comando "npm run test" en el directorio para realizar las pruebas unitarias de jest, que incluyen el cubrimiento.
+
+
+## 5. Testing funcional
+
