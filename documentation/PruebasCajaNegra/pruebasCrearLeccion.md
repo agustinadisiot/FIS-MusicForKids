@@ -37,3 +37,6 @@
 |      CP 7      | `   `  | No Te Va Gustar | Cancion de NTVG   | input 3 de la cuerda 4 = 25   | acorde 3 = ab   | chau         | Mensaje: Error en las entradas       | Mensaje: Error en las entradas         | 7, 2, 3, 4, 5, 6                  |
 |      CP 8      | Chau   | No Te Va Gustar | Cancion de NTVG   | `input 3 de la cuerda 4 = 26` | acorde 6 = z    | chau         | Mensaje: Hay un error en la cuerda 4 | Mensaje: Hay un error en la cuerda 4   | 1, 8, 2, 3, 5, 6                  |
 |      CP 9      | Chau   | No Te Va Gustar | Cancion de NTVG   | input 3 de la cuerda 4 = 25   | `acorde 3 = 22` | chau         | Mensaje: Hay un error en los acordes | Mensaje: Hay un error en los acordes   | 1, 8, 2, 3, 6, 9                  |
+
+<br><br>
+### Error encontrado al ingresar un acorde con tres letras.
