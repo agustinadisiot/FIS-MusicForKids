@@ -14,7 +14,7 @@ Joaquín Meerhoff
 Corta
 
 #### Descripción de la prueba
-Prueba general del programa en el sistema operativo MacOS para verificar compatibilidad.
+Prueba de inicio, ventana y sistema vacio.
 
 #### Entorno
 La prueba se realiza en una instalación limpia del repositorio en la rama testing desde la página de inicio (index.html).
@@ -28,11 +28,11 @@ Pasos para recrear la prueba:
 5. Se abre el "nav bar".
 6. Se ajusta la ventana hasta que desaparezca el botón hamburgesa.
 7. Se rompe el texto del navbar. [Esto es un issue]()
-8. Ver error.
+8. 
 
 ### Misión
 #### Resultado esperado
-Clara y concisa explicación de lo que se espera que ocurra.
+Visitar
 
 ### Resultado obtenido
 Clara y concisa explicación de lo que ocurre al reproducir la prueba.
