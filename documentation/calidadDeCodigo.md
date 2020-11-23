@@ -94,7 +94,7 @@ Utilizamos de referencia el styleguide de [google](https://google.github.io/styl
 
 2. Saltos de Linea:
     - Si se considera necesario para facilitar la lectura, se puede realizar saltos de linea para tags o secciones que quizas podrían haberse contenido en una sola.
-    - Si una sentencia no puede ser escrita en una sola linea, se debe, al igual que en javascript, dejar una indentación de 4 espacios comparado al del origen de la linea. 
+    - Al llegar a la columna 80, se debe realizar un salto de linea (si un punto llega a la 81, se realiza el salto de linea despues del punto). 
 3. Espacios:
     1. Verticales:
         - Si se considera necesario, se puede generar separación de más de una línea entre secciones, como puede ser el main del nav o footer, para facilitar la distinción de donde se originan los tags.
