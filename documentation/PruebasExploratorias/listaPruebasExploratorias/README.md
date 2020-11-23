@@ -1,8 +1,10 @@
 # Lista de pruebas exploratorias:
 
-  | Titulo                                           | Tester          | Duración | Misión                | Plataforma         | Link                                |
-  | ------------------------------------------------ | --------------- | -------- | --------------------- | ------------------ | ----------------------------------- |
-  | Inicio de la pagina al intentar crear lección    | Agustina Disiot | Corta    | Probar página inicial | Windows 10, Chrome | [link](./pruebasInicio.md#Prueba-1) |
-  | Inicio de la pagina al intentar realizar lección | Agustina Disiot | Corta    | Probar página inicial | Windows 10, Chrome | [link](./pruebasInicio.md#Prueba-2) |
-  |                                                  |                 |          |                       |                    |                                     |
-  |                                                  |                 |          |                       |                    |                                     |
+  | Titulo                                           | Tester           | Duración | Misión                                                                                               | Plataforma         | Link                                         |
+  | ------------------------------------------------ | ---------------- | -------- | ---------------------------------------------------------------------------------------------------- | ------------------ | -------------------------------------------- |
+  | Inicio de la pagina al intentar crear lección    | Agustina Disiot  | Corta    | Probar página inicial                                                                                | Windows 10, Chrome | [link](./pruebasInicio.md#prueba-1)          |
+  | Inicio de la pagina al intentar realizar lección | Agustina Disiot  | Corta    | Probar página inicial                                                                                | Windows 10, Chrome | [link](./pruebasInicio.md#prueba-2)          |
+  | Mostrar Lección                                  | Agustina Disiot  | Corta    | Probar página mostrar lección                                                                        | Widnows 10, Chrome | [link](./pruebasMostrarLeccion.md#prueba-1)  |
+  | Barra de navegación de mostrar lección           | Agustina Disiot  | Corta    | Probar botones navegación en pagína mostrar lección                                                  | Widnows 10, Chrome | [link](./pruebasMostrarLeccion.md#prueba-2)  |
+  | Barra de navegación de realizar lección          | Agustina Disiot  | Corta    | Probar botones navegación en pagína realizar lección                                                 | Widnows 10, Chrome | [link](./pruebasRealizarLeccion.md#prueba-1) |
+  | Prueba Exploratoria Mac OS                       | Joaquín Meerhoff | Corta    | Probar página de inicio y mostrar lección, compatibilidad de UI en Mac, y pruebas con sistema vacío. | Widnows 10, Chrome | [link](./pruebasMacOS.md#Inicio:)            |
