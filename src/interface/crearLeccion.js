@@ -1,5 +1,6 @@
 window.addEventListener("load", inicio);
 let sistema = new Sistema();
+let leccionActual = new Leccion();
 let cantSecciones = 0;
 let actual = 0;
 
@@ -251,15 +252,32 @@ function guardarSeccion(lec, sec, formActual) {
 
 function verificarYGuardar(lec) {
   if (sistema.verificarLeccion(lec) == true) {
-    sistema.agregarLeccion(lec);
-    const elem = document.getElementById('modalGuardar');
+    const elem = document.getElementById('modalConfirmar');
     const instance = M.Modal.init(elem, { dismissible: false });
+    leccionActual = lec;
     instance.open();
-    guardarSistema();
-    //window.location.href = "./mostrarLecciones.html";
   } else {
     M.toast({ html: 'Hubo un error al guardar la leccion. Revise datos e intentelo de nuevo.' });
   }
+}
+
+function guardarConfirmado() {
+  sistema.agregarLeccion(leccionActual);
+  const elem = document.getElementById('modalGuardar');
+  const instance = M.Modal.init(elem, { dismissible: false });
+  instance.open();
+  guardarSistema();
+  //window.location.href = "./mostrarLecciones.html";
+}
+
+function cerrarModal() {
+  const elem = document.getElementById('modalConfirmar');
+  const instance = M.Modal.init(elem, {
+    onCloseEnd: $('body').css({
+      overflow: 'visible'
+    })
+  });
+  instance.destroy();
 }
 
 function guardarLeccion() {
