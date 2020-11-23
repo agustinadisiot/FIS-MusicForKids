@@ -68,7 +68,9 @@ El resultado obtenido fue lo que se esperaba, se pudo navegar entre todas las se
 
 ---
 
-### Prueba 1
+
+
+### Prueba 2
 Prueba de la barra de Navegacion en modo iPhone X
 
 #### Inicio: 
