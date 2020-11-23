@@ -40,5 +40,6 @@
 
 <br><br>
 ### Errores encontrads:
-- al ingresar un acorde con tres letras. [issueReportado] (https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1/issues/4)
-- al ingresar un acorde no valido. [IsueReportadoYCerrado] (https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1/issues/2)
+- al ingresar un acorde con tres letras. [issueReportado](https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1/issues/4)
+- al ingresar un acorde no valido. [IsueReportadoYCerrado](https://github.com/ORT-FIS-202008/ob2-diaz-disiot-meerhoff-1/issues/2)
+
