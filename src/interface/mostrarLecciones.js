@@ -6,7 +6,7 @@ var sistema = new Sistema();
 
 
 function levantarSistema() {
-  let sisGuardado = localStorage.getItem("testSistema");
+  let sisGuardado = localStorage.getItem("Sistema");
   if (sisGuardado) {
     let auxSistema = Object.assign(new Sistema(), JSON.parse(sisGuardado));
     let array = auxSistema.lecciones;
@@ -31,10 +31,17 @@ function levantarSistema() {
     }
   }
 
+  if (sistema.lecciones.length == 0) {
+    sistemaVacio();
+  }
 }
 
 
-
+function sistemaVacio() {
+  const elem = document.getElementById('modalGuardar');
+  const instance = M.Modal.init(elem, { dismissible: false });
+  instance.open();
+}
 
 function inicio() {
   levantarSistema();
