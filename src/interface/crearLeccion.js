@@ -111,7 +111,6 @@ function crearInputsAcordes() {
     inputSolo.className = "browser-default " + clase;
     acorde.appendChild(inputSolo);
   }
-
   return acorde;
 }
 
@@ -190,10 +189,7 @@ function guardarTablatura(sec, tab, formActual) {
       M.toast({ html: 'Hay un error en la cuerda ' + (i + 1) + " de la tablatura " + num });
       return false;
     }
-
   }
-
-
   if (!sec.verificarTab(tab)) {
     return false;
   }
@@ -253,13 +249,24 @@ function guardarSeccion(lec, sec, formActual) {
   return true;
 }
 
+function verificarYGuardar(lec) {
+  if (sistema.verificarLeccion(lec) == true) {
+    sistema.agregarLeccion(lec);
+    const elem = document.getElementById('modalGuardar');
+    const instance = M.Modal.init(elem, { dismissible: false });
+    instance.open();
+    guardarSistema();
+    //window.location.href = "./mostrarLecciones.html";
+  } else {
+    M.toast({ html: 'Hubo un error al guardar la leccion. Revise datos e intentelo de nuevo.' });
+  }
+}
 
 function guardarLeccion() {
   let lec = new Leccion();
   if (!validarEntradas()) {
     M.toast({ html: 'Error en las entradas' });
   } else {
-
     let titulo = document.getElementById("titulo").value;
     let autor = document.getElementById("autor").value;
     let desc = document.getElementById("descripcion").value;
@@ -267,11 +274,9 @@ function guardarLeccion() {
     if (lec.verificarTitulo(titulo) == true) {
       lec.agregarTitulo(titulo);
     }
-
     if (lec.verificarAutor(autor) == true) {
       lec.agregarAutor(autor);
     }
-
     if (lec.verificarDesc(desc) == true) {
       lec.agregarDesc(desc);
     }
@@ -279,22 +284,10 @@ function guardarLeccion() {
     for (let numSec = 0; numSec < cantSecciones; numSec++) {
       let formActual = document.getElementById("form" + numSec);
       let sec = new Seccion();
-
       if (!guardarSeccion(lec, sec, formActual)) {
         return;
       }
     }
-
-    if (sistema.verificarLeccion(lec) == true) {
-      sistema.agregarLeccion(lec);
-      const elem = document.getElementById('modalGuardar');
-      const instance = M.Modal.init(elem, { dismissible: false });
-      instance.open();
-      guardarSistema();
-      //window.location.href = "./mostrarLecciones.html";
-    } else {
-      M.toast({ html: 'Hubo un error al guardar la leccion. Revise datos e intentelo de nuevo.' });
-      return;
-    }
+    verificarYGuardar(lec);
   }
 }

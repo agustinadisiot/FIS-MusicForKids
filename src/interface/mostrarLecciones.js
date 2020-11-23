@@ -6,7 +6,7 @@ var sistema = new Sistema();
 
 
 function levantarSistema() {
-  let sisGuardado = localStorage.getItem("Sistema");
+  let sisGuardado = localStorage.getItem("testSistema");
   if (sisGuardado) {
     let auxSistema = Object.assign(new Sistema(), JSON.parse(sisGuardado));
     let array = auxSistema.lecciones;
@@ -108,11 +108,7 @@ function mostrarLecciones() {
   for (let i = 0; i < cant; i++) {
     let lec = sistema.darLeccion(i);
     let elem = crearLi(lec, i);
-
     puntero.append(elem);
-
-
-
   }
 
 }
