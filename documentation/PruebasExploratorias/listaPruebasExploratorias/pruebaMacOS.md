@@ -28,47 +28,18 @@ Pasos para recrear la prueba:
 5. Se abre el "nav bar".
 6. Se ajusta la ventana hasta que desaparezca el botón hamburgesa.
 7. Se rompe el texto del navbar. [Esto es un issue]()
-8. 
+8. Fin de Prueba.
 
 ### Misión
 #### Resultado esperado
-Visitar
+Recorrer las diferentes secciones del programa en un sistema operativo distinto al cual se utilizó para crearlo, además se probar un sistema vacío.
 
 ### Resultado obtenido
-Clara y concisa explicación de lo que ocurre al reproducir la prueba.
+Se encontro varios errores, de los cuales se crearan issues nuevos.
 
 
 #### Dispositivo (si es relevante):
- - Device: [e.g. Google Pixel4]
- - OS: [e.g. Android 5.0]
-
-## Métricas de Testing Exploratorio:
-1. Misión vs Oportunidad: 100-0
-2. Investigación y reporte: 0%
-3. Diseño y ejecución: 20 %
-4. Configuración de las pruebas: 80%
-
-#### Contenido adicional
-Agrega cualquier otro aspecto de la prueba o problema aqui.
+ - Device: [Macbook Pro 2013]
+ - OS: [Mac OS Catalina]
 
 ---
-
-### Especificacion de las metricas:
-
-#### División de tareas
-Además de ayudar en la interpretación de los resultados de una sesión, el objetivo de la división de tareas es definir cuál será la duración y cómo se distribuye ese tiempo en el equipo.
-
-La duración de una sesión de prueba se clasifica según su extensión:
-
-Sesión corta (30 a 45 minutos).
-Sesión media (45 a 90 minutos).
-Y Sesión larga (90 a 120 minutos).
-Adicionalmente, se debe indicar cómo se distribuye el tiempo entre las siguientes tareas, determinando su porcentaje representativo:
-
-Diseño y Ejecución de Pruebas (%X).
-Investigación y Reporte de Defectos (%X).
-Armado de la Sesión (%X).
-Finalmente, se tendrá que especificar en % si la misión se centró en el objetivo, o bien, se fue por las ramas, es decir, se encontraron oportunidades:
-
-Misión vs. Oportunidad (X % / Y %).
-****

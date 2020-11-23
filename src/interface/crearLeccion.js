@@ -210,7 +210,8 @@ function guardarAcorde(sec, acorde, formActual) {
   if (sec.verificarAcorde(acorde) == true) {
     sec.agregarAcorde(acorde);
   } else {
-    alert("Hay un error en los acordes de la seccion");
+    let num = (parseInt(formActual.id.replace("form", "")) + 1);
+    M.toast({ html: 'Hay un error en los acordes de la sección ' + num });
     return false;
   }
   return true;
