@@ -55,7 +55,7 @@ function crearLi(lec, pos) {
   elem.className = "collection-item avatar";
 
   let imagen = document.createElement("img");
-  imagen.src = "https://cdn.discordapp.com/attachments/773925818594230293/779714431541444669/circle-flat-general-5186824a4-512.png";
+  imagen.src = "../assets/logoGuitarra.png";
   imagen.className = "circle";
   elem.appendChild(imagen);
 
